@@ -20,7 +20,7 @@
   "resource": [
     "projektor13"
   ],
-  "studentExceptions": [ // är detta verkligen användbart i praktiken?
+  "studentExceptions": [
     {
       "studentId": "2819c223-7f76-453a-919d-413861904646",
       "dateTimeRange": {
@@ -30,9 +30,10 @@
       "type": "foobar" // värdeförråd?
     },
   ],
-  "teacherExceptions": [ // är detta verkligen användbart i praktiken?
+  "teacherExceptions": [
     {
       "teacherId": "2add1433-7f76-453a-919d-413861904646",
+      // är detta verkligen användbart i praktiken? :
       "dateTimeRange": {
         "start" : "2016-05-24T14:45",
         "end" : "2016-05-24T15:00"
@@ -41,9 +42,10 @@
       "type": "foobar" // värdeförråd?
     },
   ],
-  "groupExceptions": [ // är detta verkligen användbart i praktiken?
+  "groupExceptions": [
     {
       "groupId": "2aaaaa33-7f76-453a-919d-413861904646",
+      // är detta verkligen användbart i praktiken? :
       "dateTimeRange": {
         "start" : "2016-05-24T14:45",
         "end" : "2016-05-24T15:00"
