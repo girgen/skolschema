@@ -5,7 +5,7 @@
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "MATMAT01 N3A",
   "school": "32c231ff-7f76-453a-919d-413861904646",
-  "course": "1211fdca-1f76-153a-919d-413861904646", // FLERA? UUID eller kod?
+  "course": "1211fdca-1f76-153a-919d-413861904646", // FLERA? Andra skolformer - UUID eller kod?
   "groups": [
     "e9e30dba-f08f-4109-8486-d5c6a331660a"
   ],
@@ -23,7 +23,7 @@
       "timeplanned": 3600
     }
   ],
-  "parentactivity": "9823a472-7f76-453a-919d-413861904646",
+  "parentactivity": "9823a472-7f76-453a-919d-413861904646", //Flera NO-exempel?
   "meta": {
     "resourceType": "Activity",
     "created": "2010-01-23T04:56:22Z",
