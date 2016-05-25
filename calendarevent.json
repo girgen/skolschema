@@ -1,0 +1,64 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:skola:calendarevent:1.0"
+  ],
+  "activity": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "id": "92834792-f08f-4109-8486-d5c6a331660a",
+  "cancelled": false,
+  "comment": "hej en kommentar",
+  "createdBySystem": "Nova",
+  "dateTimeRange": { // bättre namn? kolla iCal?
+    "start" : "2016-05-24T14:00",
+    "end" : "2016-05-24T15:00"
+  },
+  "teachingLengthTeacher": 45,
+  "teachingLengthGroup": 60,
+  "rooms": [
+    "Sal 13",
+    "Pionen"
+  ],
+  "resource": [
+    "projektor13"
+  ],
+  "studentExceptions": [ // är detta verkligen användbart i praktiken?
+    {
+      "studentId": "2819c223-7f76-453a-919d-413861904646",
+      "dateTimeRange": {
+        "start" : "2016-05-24T14:45",
+        "end" : "2016-05-24T15:00"
+      },
+      "type": "foobar" // värdeförråd?
+    },
+  ],
+  "teacherExceptions": [ // är detta verkligen användbart i praktiken?
+    {
+      "teacherId": "2add1433-7f76-453a-919d-413861904646",
+      "dateTimeRange": {
+        "start" : "2016-05-24T14:45",
+        "end" : "2016-05-24T15:00"
+      },
+      "teachingLengthTeacher": 30,
+      "type": "foobar" // värdeförråd?
+    },
+  ],
+  "groupExceptions": [ // är detta verkligen användbart i praktiken?
+    {
+      "groupId": "2aaaaa33-7f76-453a-919d-413861904646",
+      "dateTimeRange": {
+        "start" : "2016-05-24T14:45",
+        "end" : "2016-05-24T15:00"
+      },
+      "teachingLengthGroup": 30,
+      "type": "foobar" // värdeförråd?
+    },
+  ],
+
+  }
+  "meta": {
+    "resourceType": "CalendarEvent",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W\/\"3694e05e9dff592\"",
+    "location": "https://example.com/v2/CalendarEvent/92834792-f08f-4109-8486-d5c6a331660a"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:skola:activity:1.0"
+  ],
+  "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "displayName": "MATMAT01 N3A",
+  "school": "32c231ff-7f76-453a-919d-413861904646",
+  "course": "1211fdca-1f76-153a-919d-413861904646", // FLERA? UUID eller kod?
+  "groups": [
+    "e9e30dba-f08f-4109-8486-d5c6a331660a"
+  ],
+  "students": [
+    "2819c223-7f76-453a-919d-413861904646", // behövs $ref mm som för grupper???
+    "902c246b-6245-4190-8e05-00816be7344a", // behövs daterange?
+  ],
+  "teacherAssignments": [
+    {
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "daterange": {
+        "start": "2016-01-01",
+        "end": "2016-06-30"
+      },
+      "timeplanned": 3600
+    }
+  ],
+  "parentactivity": "9823a472-7f76-453a-919d-413861904646",
+  "meta": {
+    "resourceType": "Activity",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W\/\"3694e05e9dff592\"",
+    "location": "https://example.com/v2/Activities/e9e30dba-f08f-4109-8486-d5c6a331660a"
+  }
+}
