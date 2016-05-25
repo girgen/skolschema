@@ -7,13 +7,11 @@
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
       "display": "Barbara Jensen",
-      "type": "teacher"
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
       "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
       "display": "Mandy Pepperidge",
-      "type": "elev"
     }
   ],
   "urn:scim:schemas:extension:skola:grupp:1.0": {
