@@ -6,7 +6,6 @@
   "id": "92834792-f08f-4109-8486-d5c6a331660a",
   "cancelled": false,
   "comment": "hej en kommentar",
-  "createdBySystem": "Nova",
   "dateTimeRange": { // bättre namn? kolla iCal?
     "start" : "2016-05-24T14:00",
     "end" : "2016-05-24T15:00"

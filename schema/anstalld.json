@@ -1,0 +1,42 @@
+[
+  {
+    "id" : "urn:scim:schemas:extension:skola:anstalld:1.0",
+    "name" : "Person",
+    "description" : "Attributes for employees.",
+    "attributes" : [
+      {
+      "name" : "id",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "UUID for the employment.",
+        "required" : true,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "global"	
+      },
+      {
+        "name" : "arsarbetstid",
+        "type" : "integer",
+        "multiValued" : false,
+        "description" : "'Årsarbetstid' in hours per year.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+      {
+        "name" : "signatur",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Signature for school schema presentation.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      }
+    ]
+  }
+]

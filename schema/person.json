@@ -1,0 +1,20 @@
+[
+  {
+    "id" : "urn:scim:schemas:extension:skola:person:1.0",
+    "name" : "Person",
+    "description" : "Person specific attributes.",
+    "attributes" : [
+      {
+        "name" : "pnr",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Swedish personnummer (Social security number). The format is 201601011234.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "global"
+      },
+    ]
+  }
+]

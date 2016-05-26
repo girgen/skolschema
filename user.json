@@ -44,13 +44,25 @@
   "urn:scim:schemas:extension:skola:person:1.0": {
     "pnr": "198410042710"
   },
-  "urn:scim:schemas:extension:skola:anstalld:1.0": {
-    "anstallningsnr": "1234-5678",
-    "anställningstid": {
-      "start": "2015-03-16"
+  "urn:scim:schemas:extension:skola:anstalld:1.0": [
+    {
+      "id": "fc348aa8-3835-40eb-a20b-c726e15c55b5",
+      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+        "start": "2015-03-16",
+        "end": "2016-05-24"
+      },
+      "tjanstgoringsgrad": 1200,
+      "signatur": "PAL"
     },
-    "tjanstgoringsgrad": "???",
-    "signatur": "???"
+    {
+      "id": "fc34fff8-38f5-40eb-a20b-c726e15c55b5",
+      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+        "start": "2015-03-16"
+      },
+      "tjanstgoringsgrad": 600,
+      "signatur": "???"
+    },
+  ]    
   },
   "urn:scim:schemas:extension:skola:elev:1.0": {
     "kontaktpersoner": {

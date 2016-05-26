@@ -5,25 +5,44 @@
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "MATMAT01 N3A",
   "school": "32c231ff-7f76-453a-919d-413861904646",
-  "course": "1211fdca-1f76-153a-919d-413861904646", // FLERA? Andra skolformer - UUID eller kod?
+  "course": "MATMAT01",
+  "type": "course",
+  "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+    "start": "2016-02-25",
+    "end": "2016-04-15"
+  },
   "groups": [
-    "e9e30dba-f08f-4109-8486-d5c6a331660a"
+    {
+      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "display": "MATMAT01 N3A"
+    }
   ],
   "students": [
-    "2819c223-7f76-453a-919d-413861904646", // behövs $ref mm som för grupper???
-    "902c246b-6245-4190-8e05-00816be7344a", // behövs daterange?
+    {
+      "value": "2819c223-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
+      "display": "Barbara Jensen"
+    },
+    {
+      "value": "902c246b-6245-4190-8e05-00816be7344a",
+      "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
+      "display": "Mandy Pepperidge"
+    },
   ],
   "teacherAssignments": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "daterange": {
-        "start": "2016-01-01",
-        "end": "2016-06-30"
+      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Palle Girgensohn",
+      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+        "start": "2016-02-25",
+        "end": "2016-04-15"
       },
       "timeplanned": 3600
     }
   ],
-  "parentactivity": "9823a472-7f76-453a-919d-413861904646", //Flera NO-exempel?
+  "parentactivity": "9823a472-7f76-453a-919d-413861904646",
   "meta": {
     "resourceType": "Activity",
     "created": "2010-01-23T04:56:22Z",

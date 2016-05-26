@@ -1,7 +1,7 @@
 {
   "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "displayName": "Tour Guides",
+  "displayName": "MATMAT01 N3A",
   "members": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646",
@@ -23,15 +23,10 @@
     "end": "2015-12-31"
   },
   "urn:scim:schemas:extension:skola:group:1.0": {
-    "type": "klass",
-    "parentgroup": "902cfdaa-6245-4190-8e05-00816be7344a"
+    "type": "kursgrupp",
+    "parentgroup": "902cfdaa-6245-4190-8e05-00816be7344a",
+    "courses": [ "MATMAT01", "MATMAT02" ],
   },
-  "urn:scim:schemas:extension:skola:roles:1.0": [
-    {
-      "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "role" : "klasslärare"
-    }
-  ],
   "meta": {
     "resourceType": "Group",
     "created": "2010-01-23T04:56:22Z",
