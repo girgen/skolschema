@@ -25,3 +25,24 @@ activity.type sätter egentligen lärarens roll. behövs flera lärarroller i sa
 datumintervall som gått ur tiden ska väl inte behöva kommuniceras i evighet? Men hur får man då fram historisk data? Var går gränsen, eller hur avgränsar man?
 
 Tjänstgöringsgrad - årsarbetstid är kanske bättre?
+
+Var är man anställd? Skola? Kommun? Skolenhet? "Skola + skolform"?
+
+Många frågor kring anställning. Olika antal timmar över tid?
+
+Lärare hör inte till skolenhet, utan normalt sett till skola+skolform. I LifeCare kan man välja att koppla anställningen till en Skola eller till kommunen.
+
+Skolenhet kopplar *bara* ihop elever och rektor.
+
+Kommun
+ Förvaltning
+        anställning musik
+  Skola 1
+  Skola 2
+     Skola 1 Sär
+        anställning asdfsadf
+
+Lärarroll på grupp? Klasslärare? 
+
+
+för grupper med olika typer, hur spärrar vi  olika typers attribut?

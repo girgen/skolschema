@@ -16,6 +16,28 @@
         "uniqueness" : "global"	
       },
       {
+        "name" : "start",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "starttid för anställningen i ISO-8601 YYYY-MM-DD.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+      {
+        "name" : "end",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "sluttid.",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+      {
         "name" : "arsarbetstid",
         "type" : "integer",
         "multiValued" : false,

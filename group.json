@@ -1,5 +1,8 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "urn:scim:schemas:extension:skola:datumintervall:1.0"
+  ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "Tour Guides",
   "members": [
@@ -7,10 +10,18 @@
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
       "display": "Barbara Jensen",
-      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
-        "start": "2015-01-01",
-        "end": "2015-10-30"
-      }
+      "datespans": [
+        {
+          "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+            "start": "2015-01-01",
+            "end": "2015-10-30"
+          },
+          "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+            "start": "2016-05-01",
+            "end": "2016-11-30"
+          },
+        }
+      ]
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
@@ -24,12 +35,23 @@
   },
   "urn:scim:schemas:extension:skola:group:1.0": {
     "type": "klass",
+    "skolform": "GR",
+    "parentgroup": "902cfdaa-6245-4190-8e05-00816be7344a"
+  }, // alternativ:
+  "urn:scim:schemas:extension:skola:group:1.0": {
+    "type": "ämnesgrupp",
+    "ämneskod": "Ma",
     "parentgroup": "902cfdaa-6245-4190-8e05-00816be7344a"
   },
   "urn:scim:schemas:extension:skola:roles:1.0": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "role" : "klasslärare"
+      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "role" : "klasslärare",
+      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+        "start": "2016-05-01",
+        "end": "2016-11-30"
+      },
     }
   ],
   "meta": {
