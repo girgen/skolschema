@@ -1,5 +1,7 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Group"
+  ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "MATMAT01 N3A",
   "members": [
@@ -7,15 +9,17 @@
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
       "display": "Barbara Jensen",
-      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
-        "start": "2015-01-01",
-        "end": "2015-10-30"
-      }
+      "urn:scim:schemas:extension:skola:datumintervall:1.0": [
+        {
+          "start": "2015-01-01",
+          "end": "2015-10-30"
+        }
+      ]
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
       "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
-      "display": "Mandy Pepperidge",
+      "display": "Mandy Pepperidge"
     }
   ],
   "urn:scim:schemas:extension:skola:datumintervall:1.0": {
@@ -23,16 +27,21 @@
     "end": "2015-12-31"
   },
   "urn:scim:schemas:extension:skola:group:1.0": {
-    "type": "kursgrupp",
-    "parentgroup": "902cfdaa-6245-4190-8e05-00816be7344a",
-    "courses": [ "MATMAT01", "MATMAT02" ],
+    "urn:scim:schemas:extension:skola:grouptype:coursegroup:1.0": {
+      "skolform": "GY",
+      "courseCode": "MATMAT01"
+    },
+    "parentgroup": {
+      "value": "2819c223-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
+      "display": "Lillbäcksgymnasiet"
+    }
   },
   "meta": {
     "resourceType": "Group",
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
-    "version": "W\/\"3694e05e9dff592\"",
-    "location":
-    "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a"
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a"
   }
 }

@@ -1,10 +1,9 @@
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "urn:scim:schemas:extension:skola:datumintervall:1.0"
+    "urn:ietf:params:scim:schemas:core:2.0:Group"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "displayName": "Tour Guides",
+  "displayName": "Matematik 7A",
   "members": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646",
@@ -14,10 +13,6 @@
         {
           "start": "2015-01-01",
           "end": "2015-10-30"
-        },
-        {
-          "start": "2016-05-01",
-          "end": "2016-11-30"
         }
       ]
     },
@@ -32,19 +27,9 @@
     "end": "2015-12-31"
   },
   "urn:scim:schemas:extension:skola:group:1.0": {
-    "urn:scim:schemas:extension:skola:grouptype:class:1.0": {
+    "urn:scim:schemas:extension:skola:grouptype:coursegroup:1.0": {
       "skolform": "GR",
-      "responsibles": [
-        {
-          "value": "2819c223-7f76-453a-919d-413861904646",
-          "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
-          "formatted": "Patrik Karlsson",
-          "urn:scim:schemas:extension:skola:datumintervall:1.0": {
-            "start": "2016-05-01",
-            "end": "2016-11-30"
-          }
-        }
-      ]
+      "subjectCode": "MA"
     },
     "parentgroup": {
       "value": "2819c223-7f76-453a-919d-413861904646",

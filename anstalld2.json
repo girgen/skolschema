@@ -23,12 +23,13 @@
       },
     }
   ],
-  "parentgroup": {
+  "parentgroup":
+  {
     "value": "e9ddadba-f08f-4109-8486-d5c6a331660a",
     "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
     "display": "Jönköpings kommun",
   },
-  "signatur": "PAL",
+  "signatur": "PAK",
   
   "meta": {
     "resourceType": "Anstallning",

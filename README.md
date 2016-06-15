@@ -46,3 +46,22 @@ Lärarroll på grupp? Klasslärare?
 
 
 för grupper med olika typer, hur spärrar vi  olika typers attribut?
+
+Employeegroup, oklart, ska den verkligen gruppera anställningar? Onödigt komplicerat och oklart syfte?
+
+Course och subject ska väl också ha UUID om det är egna objekt och kan ha olika värdeförråd i skolformer, vissa helt fria.
+
+behöver vi ha historik på årskurs?
+
+Skolenhet / Skola på anställning, funkar det med ref till grupp?
+
+Grupper kan väl inte ha skolform, bara elever?
+
+Behövs flera responsible (ändring över tid?) för klasser?
+
+Behövs flera kurskoder för en grupp?
+
+Enklare att ha gruppmodell för skolor och skolenheter. Ibland kan skolan innehålla flera skolenheter, en det omvända borde kunna finnas, att flera skolor bildar en skolenhet.
+
+Skolenhet, municipality code, gäller det även friskolor?
+Skolenhet: vad är "ownerType"?

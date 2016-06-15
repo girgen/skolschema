@@ -1,0 +1,33 @@
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:Group"
+  ],
+  "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "displayName": "Rudbäcksskolan",
+  "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+    "start": "1970-01-01"
+  },
+  "urn:scim:schemas:extension:skola:group:1.0": {
+    "urn:scim:schemas:extension:skola:grouptype:schoolunit:1.0": {
+      "schoolUnitCode": "141177126",
+      "schoolTypes": [
+        "GR",
+        "GRSÄR"
+      ],
+      "ownerType": "foobar",
+      "municipalityCode": "12345"
+    },
+    "parentgroup": {
+      "value": "2819c223-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
+      "display": "Rudbäcksskolan"
+    }
+  },
+  "meta": {
+    "resourceType": "Group",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a"
+  }
+}
