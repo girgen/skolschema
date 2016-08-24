@@ -4,11 +4,11 @@
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "Rudbäcksskolan",
-  "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+  "urn:scim:schemas:extension:sis:school:daterange:1.0": {
     "start": "1970-01-01"
   },
-  "urn:scim:schemas:extension:skola:group:1.0": {
-    "urn:scim:schemas:extension:skola:grouptype:schoolunit:1.0": {
+  "urn:scim:schemas:extension:sis:school:group:1.0": {
+    "urn:scim:schemas:extension:sis:school:grouptype:schoolunit:1.0": {
       "schoolUnitCode": "141177126",
       "schoolTypes": [
         "GR",

@@ -1,13 +1,13 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:skola:activity:1.0"
+    "urn:scim:schemas:extension:sis:school:activity:1.0"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "MATMAT01 N3A",
   "school": "32c231ff-7f76-453a-919d-413861904646",
   "course": "MATMAT01",
   "type": "course",
-  "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+  "urn:scim:schemas:extension:sis:school:daterange:1.0": {
     "start": "2016-02-25",
     "end": "2016-04-15"
   },
@@ -35,7 +35,7 @@
       "value": "87dda8fa-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Palle Girgensohn",
-      "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+      "urn:scim:schemas:extension:sis:school:daterange:1.0": {
         "start": "2016-02-25",
         "end": "2016-04-15"
       },

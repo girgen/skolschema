@@ -1,8 +1,8 @@
 {
   "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:skola:person:1.0",
-    "urn:scim:schemas:extension:skola:anstalld:1.0",
-    "urn:scim:schemas:extension:skola:elev:1.0" ],
+    "urn:scim:schemas:extension:sis:school:person:1.0",
+    "urn:scim:schemas:extension:sis:school:employee:1.0",
+    "urn:scim:schemas:extension:sis:school:student:1.0" ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
   "userName": "girgen@example.com",
   "name": {
@@ -38,14 +38,14 @@
       "display": "Elevrådet",
     }
   ],
-  "urn:scim:schemas:extension:skola:person:1.0": {
+  "urn:scim:schemas:extension:sis:school:person:1.0": {
     "pnr": "200710042710"
   },
-  "urn:scim:schemas:extension:skola:student:1.0": {
+  "urn:scim:schemas:extension:sis:school:student:1.0": {
     "nativeLanguage": "sv",
     "schools": [
       {
-        "urn:scim:schemas:extension:skola:datumintervall:1.0" : {
+        "urn:scim:schemas:extension:sis:school:daterange:1.0" : {
           "start": "2015-08-20",
           "end": "2016-06-14"
         },
@@ -55,7 +55,7 @@
         "programCode" : "FOO"
       },
       {
-        "urn:scim:schemas:extension:skola:datumintervall:1.0" : {
+        "urn:scim:schemas:extension:sis:school:daterange:1.0" : {
           "start": "2014-08-20",
           "end": "2015-08-19"
         },

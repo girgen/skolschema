@@ -1,6 +1,6 @@
 [
   {
-    "id" : "urn:scim:schemas:extension:skola:person:1.0",
+    "id" : "urn:scim:schemas:extension:sis:school:person:1.0",
     "name" : "Person",
     "description" : "Person specific attributes.",
     "attributes" : [

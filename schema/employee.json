@@ -1,6 +1,6 @@
 [
   {
-    "id" : "urn:scim:schemas:extension:skola:anstalld:1.0",
+    "id" : "urn:scim:schemas:extension:sis:school:employee:1.0",
     "name" : "Person",
     "description" : "Attributes for employees.",
     "attributes" : [

@@ -1,6 +1,6 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:skola:calendarevent:1.0"
+    "urn:scim:schemas:extension:sis:school:calendarevent:1.0"
   ],
   "activity": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "id": "92834792-f08f-4109-8486-d5c6a331660a",

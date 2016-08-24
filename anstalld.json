@@ -1,6 +1,6 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:skola:anstalld:1.0",
+    "urn:scim:schemas:extension:sis:school:employee:1.0",
   ],
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "user": {
@@ -12,12 +12,12 @@
   "anstallningtyp": "Lärare",
   "datespans": [
     {
-      "urn:scim:schemas:extension:skola:datespan:1.0": {
+      "urn:scim:schemas:extension:sis:school:datespan:1.0": {
         "start": "2013-01-23",
         "end": "2013-06-30",
         "årsarbetstid": 1200,
       },
-      "urn:scim:schemas:extension:skola:datespan:1.0": {
+      "urn:scim:schemas:extension:sis:school:datespan:1.0": {
         "start": "2014-01-23",
         "årsarbetstid": 1200,
       },

@@ -1,6 +1,6 @@
 [
   {
-    "id" : "urn:scim:schemas:extension:skola:datumintervall:1.0",
+    "id" : "urn:scim:schemas:extension:sis:school:daterange:1.0",
     "name" : "Date interval",
     "description" : "Used to set a date interval for a group or membership to a group,
      or for an activity or teacher assignment for an activity.

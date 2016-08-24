@@ -9,7 +9,7 @@
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
       "display": "Barbara Jensen",
-      "urn:scim:schemas:extension:skola:datumintervall:1.0": [
+      "urn:scim:schemas:extension:sis:school:daterange:1.0": [
         {
           "start": "2015-01-01",
           "end": "2015-10-30"
@@ -22,12 +22,12 @@
       "display": "Mandy Pepperidge"
     }
   ],
-  "urn:scim:schemas:extension:skola:datumintervall:1.0": {
+  "urn:scim:schemas:extension:sis:school:daterange:1.0": {
     "start": "2015-01-01",
     "end": "2015-12-31"
   },
-  "urn:scim:schemas:extension:skola:group:1.0": {
-    "urn:scim:schemas:extension:skola:grouptype:coursegroup:1.0": {
+  "urn:scim:schemas:extension:sis:school:group:1.0": {
+    "urn:scim:schemas:extension:sis:school:grouptype:coursegroup:1.0": {
       "skolform": "GR",
       "subjectCode": "MA"
     },

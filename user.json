@@ -1,8 +1,8 @@
 {
   "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:skola:person:1.0",
-    "urn:scim:schemas:extension:skola:anstalld:1.0",
-    "urn:scim:schemas:extension:skola:elev:1.0" ],
+    "urn:scim:schemas:extension:sis:school:person:1.0",
+    "urn:scim:schemas:extension:sis:school:employee:1.0",
+    "urn:scim:schemas:extension:sis:school:student:1.0" ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
   "userName": "bjensen@example.com",
   "name": {
@@ -41,10 +41,10 @@
       "display": "Employees",
     }
   ],
-  "urn:scim:schemas:extension:skola:person:1.0": {
+  "urn:scim:schemas:extension:sis:school:person:1.0": {
     "pnr": "198410042710"
   },
-  "urn:scim:schemas:extension:skola:anstalld:1.0": [
+  "urn:scim:schemas:extension:sis:school:employee:1.0": [
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
       "$ref": "https://example.com/v2/Anstallning/e9e30dba-f08f-4109-8486-d5c6a331660a",
@@ -56,7 +56,7 @@
     },
   ]    
   },
-  "urn:scim:schemas:extension:skola:elev:1.0": {
+  "urn:scim:schemas:extension:sis:school:student:1.0": {
     "kontaktpersoner": {
       "value": "26118915-6090-4610-87e4-49d8ca9f808d",
       "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
