@@ -1,0 +1,23 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:employment:1.0"
+  ],
+  "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "employmentPercent": 100,
+  "employmentTime": [
+    "urn:scim:schemas:extension:sis:school:datespan:1.0": {
+      "start": "1970-01-23",
+      "end": "2013-06-30"
+    }
+  ],
+  "isTeacher": true,
+  "schoolUnit": // parentGroup?
+  {
+    "value": "e9ddadba-f08f-4109-8486-d5c6a331660a",
+    "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+    "display": "SkolenhetA"
+  },
+//"school_id" <- skippa?
+ 
+  "signatur": "PAK",
+}
