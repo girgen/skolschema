@@ -6,7 +6,8 @@
   "displayName": "MATMAT01 N3A",
   "school": "32c231ff-7f76-453a-919d-413861904646",
   "course": "MATMAT01",
-  "type": "course",
+  "activityType": "Undervisning",
+  "timePlanned": 60,
   "urn:scim:schemas:extension:sis:school:daterange:1.0": {
     "start": "2016-02-25",
     "end": "2016-04-15"
@@ -54,7 +55,7 @@
       "timeplanned": 3600
     }
   ],
-  "parentactivity": "9823a472-7f76-453a-919d-413861904646",
+  "parentactivity": "9823a472-7f76-453a-919d-413861904646", // Flera?
   "meta": {
     "resourceType": "Activity",
     "created": "2010-01-23T04:56:22Z",
