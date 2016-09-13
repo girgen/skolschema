@@ -65,3 +65,26 @@ Enklare att ha gruppmodell för skolor och skolenheter. Ibland kan skolan inneh�
 
 Skolenhet, municipality code, gäller det även friskolor?
 Skolenhet: vad är "ownerType"?
+
+
+Ägare: hur gör vi? utökare meta-taggen?
+
+Telefon i core-schemat, vi förutsätter att "mobile" innebär att det går att SMS:a. Det bör noteras i dokumentet?
+
+schoolYear på grupp är inte optimalt, kan vi ta bort det? kanske?
+
+nativelanguage? behövs det alls? i så fall på person-objektet.
+
+student har vi problem med: årskurs program skolform är alla tidbundna. var är egentligen "student"objektet ? Tidigare har det *bara* innehållit kontaktpersoner.
+
+student kopplas till activity både direkt och via studentassignment, varför? vad tillförs i studentassignment som gör att det behöver vara ett relationsobjekt?
+
+
+Varför skola: 
+- schemaläggning avser just lokaler, dvs skola...
+- lärare som jobbar på ett gymnasium med flera enheter så bestäms fördelningen i tjänstefördelningen, om alls. så var är läraren anställd?
+- grupper som gäller flera skolenheter? egentligen tillhör *enbart* personer en enhet. grupperna tillhör ingen enhet, och bara utfallet av vilka elever som till slut fanns i gruppen ligger till grund för rapporteringen.
+
+
+Employeegroup, är det verkligen något som finns och i så fall vad används det till?
+

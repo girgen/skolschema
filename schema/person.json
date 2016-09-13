@@ -15,6 +15,39 @@
         "returned" : "default",
         "uniqueness" : "global"
       },
+      {
+        "name" : "nativelanguage",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Security marked person",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "global"
+      },
+      {
+        "name" : "securitymarking",
+        "type" : "boolean",
+        "multiValued" : false,
+        "description" : "Security marked person",
+        "required" : false,
+        "caseExact" : false,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "global"
+      },
+      {
+        "name" : "gender",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Person's biological gender.",
+        "required" : false,
+        "caseExact" : true,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "global"
+      },
     ]
   }
 ]
