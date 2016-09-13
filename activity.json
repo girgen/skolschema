@@ -6,29 +6,42 @@
   "displayName": "MATMAT01 N3A",
   "school": "32c231ff-7f76-453a-919d-413861904646",
   "course": "MATMAT01",
-  "type": "course",
+  "activityType": "Undervisning",
+  "timePlanned": 60,
   "urn:scim:schemas:extension:sis:school:daterange:1.0": {
     "start": "2016-02-25",
     "end": "2016-04-15"
   },
-  "groups": [
+  "groupAssignments": [
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
       "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "MATMAT01 N3A"
+      "display": "MATMAT01 N3A",
+      "urn:scim:schemas:extension:sis:school:daterange:1.0": {
+        "start": "2016-02-25",
+        "end": "2016-04-15"
+      }
     }
   ],
-  "students": [
+  "studentAssignments": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
-      "display": "Barbara Jensen"
+      "display": "Barbara Jensen",
+      "urn:scim:schemas:extension:sis:school:daterange:1.0": {
+        "start": "2016-02-25",
+        "end": "2016-04-15"
+      }
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
       "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
-      "display": "Mandy Pepperidge"
-    },
+      "display": "Mandy Pepperidge",
+      "urn:scim:schemas:extension:sis:school:daterange:1.0": {
+        "start": "2016-02-25",
+        "end": "2016-04-15"
+      }
+    }
   ],
   "teacherAssignments": [
     {
@@ -42,7 +55,7 @@
       "timeplanned": 3600
     }
   ],
-  "parentactivity": "9823a472-7f76-453a-919d-413861904646",
+  "parentactivity": "9823a472-7f76-453a-919d-413861904646", // Flera?
   "meta": {
     "resourceType": "Activity",
     "created": "2010-01-23T04:56:22Z",

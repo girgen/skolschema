@@ -13,11 +13,27 @@
   "teachingLengthTeacher": 45,
   "teachingLengthGroup": 60,
   "rooms": [
-    "Sal 13",
-    "Pionen"
+    {
+      "id": "92834792-f08f-4109-8486-d5c6a",
+      "name": "Sal 13",
+      "seats": 25
+    },
+    {
+      "id": "92834792-f08f-4109-8486-d5c6b",
+      "name": "Pionen",
+      "seats": 10
+    }
   ],
   "resource": [
-    "projektor13"
+    {
+      "id": "id_projektor13",
+      "name": "projektor13",
+      "description": "HDMI+VGA"
+    },
+    {
+      "id": "id_ipad2",
+      "name": "ipad2"
+    }
   ],
   "studentExceptions": [
     {
