@@ -3,20 +3,24 @@
     "urn:scim:schemas:extension:sis:school:employment:1.0"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "employmentTime": {
+    "start": "1970-01-23",
+    "end": "2013-06-30"
+  },
   "employmentPercent": 100,
-  "employmentTime": [
-    "urn:scim:schemas:extension:sis:school:datespan:1.0": {
-      "start": "1970-01-23",
-      "end": "2013-06-30"
-    }
-  ],
+  "hoursPerYear": 1340,
   "isTeacher": true,
-  "schoolUnit": // parentGroup?
-  {
+  "signature": "PAK",
+  "employedAt": {
     "value": "e9ddadba-f08f-4109-8486-d5c6a331660a",
     "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
     "display": "SkolenhetA"
   },
-//"school_id" <- skippa?
-  "signatur": "PAK",
+  "meta": {
+    "resourceType": "Employment",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff590\"",
+    "location": "https://example.com/v2/Employments/2819c223-7f76-453a-919d-413861904646"
+  }
 }

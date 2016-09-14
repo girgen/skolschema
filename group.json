@@ -1,6 +1,7 @@
 {
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "urn:scim:schemas:extension:sis:school:group:1.0",
     "urn:scim:schemas:extension:sis:school:daterange:1.0"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
@@ -27,11 +28,11 @@
       "display": "Mandy Pepperidge"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:daterange:1.0": {
-    "start": "2015-01-01",
-    "end": "2015-12-31"
-  },
   "urn:scim:schemas:extension:sis:school:group:1.0": {
+    "dateRange": {
+      "start": "2015-01-01",
+      "end": "2015-12-31"
+    },
     "parentgroup": {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",

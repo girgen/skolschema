@@ -1,6 +1,8 @@
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:Group"
+    "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "urn:scim:schemas:extension:sis:school:group:1.0",
+    "urn:scim:schemas:extension:sis:school:grouptype:schoolunit:1.0"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "Rudbäcksskolan",
@@ -8,20 +10,21 @@
     "start": "1970-01-01"
   },
   "urn:scim:schemas:extension:sis:school:group:1.0": {
-    "urn:scim:schemas:extension:sis:school:grouptype:schoolunit:1.0": {
-      "schoolUnitCode": "141177126",
-      "schoolTypes": [
-        "GR",
-        "GRSÄR"
-      ],
-      "ownerType": "foobar",
-      "municipalityCode": "12345"
-    },
     "parentgroup": {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
       "display": "Rudbäcksskolan"
     }
+  },
+  "urn:scim:schemas:extension:sis:school:grouptype:schoolunit:1.0": {
+    "schoolUnitCode": "141177126",
+    "schoolTypes": [
+      "GR",
+      "GRSÄR"
+    ],
+    "ownerType": "foobar",
+    "ownerName": "Jönköpings kommun",
+    "municipalityCode": "12345"
   },
   "meta": {
     "resourceType": "Group",

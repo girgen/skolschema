@@ -2,80 +2,88 @@
   "schemas": [
     "urn:scim:schemas:extension:sis:school:calendarevent:1.0"
   ],
-  "activity": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "id": "92834792-f08f-4109-8486-d5c6a331660a",
   "cancelled": false,
   "comment": "hej en kommentar",
-  "dateTimeRange": { // bättre namn? kolla iCal?
-    "start" : "2016-05-24T14:00",
-    "end" : "2016-05-24T15:00"
+  "dateTimeRange": {
+    "start": "2016-05-24T14:00",
+    "end": "2016-05-24T15:00"
   },
   "teachingLengthTeacher": 45,
-  "teachingLengthGroup": 60,
+  "teachingLengthStudent": 60,
   "rooms": [
     {
-      "id": "92834792-f08f-4109-8486-d5c6a",
-      "name": "Sal 13",
-      "seats": 25
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Safiren"
     },
     {
-      "id": "92834792-f08f-4109-8486-d5c6b",
-      "name": "Pionen",
-      "seats": 10
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Pionen"
     }
   ],
-  "resource": [
+  "resources": [
     {
-      "id": "id_projektor13",
-      "name": "projektor13",
-      "description": "HDMI+VGA"
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "projektor13"
     },
     {
-      "id": "id_ipad2",
-      "name": "ipad2"
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "ipad2"
     }
   ],
   "studentExceptions": [
     {
-      "studentId": "2819c223-7f76-453a-919d-413861904646",
+      "participates": true,
+      "teachingLengthStudent": 40,
       "dateTimeRange": {
-        "start" : "2016-05-24T14:45",
-        "end" : "2016-05-24T15:00"
+        "start": "2016-05-24T14:45",
+        "end": "2016-05-24T15:00"
       },
-      "type": "foobar" // värdeförråd?
-    },
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Palle Girgensohn"
+    }
   ],
   "teacherExceptions": [
     {
-      "teacherId": "2add1433-7f76-453a-919d-413861904646",
-      // är detta verkligen användbart i praktiken? :
-      "dateTimeRange": {
-        "start" : "2016-05-24T14:45",
-        "end" : "2016-05-24T15:00"
-      },
+      "participates": true,
       "teachingLengthTeacher": 30,
-      "type": "foobar" // värdeförråd?
-    },
+      "dateTimeRange": {
+        "start": "2016-05-24T14:45",
+        "end": "2016-05-24T15:00"
+      },
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Bosse Larsson"
+    }
   ],
   "groupExceptions": [
     {
-      "groupId": "2aaaaa33-7f76-453a-919d-413861904646",
-      // är detta verkligen användbart i praktiken? :
+      "participates": true,
+      "teachingLengthStudent": 30,
       "dateTimeRange": {
-        "start" : "2016-05-24T14:45",
-        "end" : "2016-05-24T15:00"
+        "start": "2016-05-24T14:45",
+        "end": "2016-05-24T15:00"
       },
-      "teachingLengthGroup": 30,
-      "type": "foobar" // värdeförråd?
-    },
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Groups/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Bosse Larsson"
+    }
   ],
-
-  }
+  "activity": {
+    "value": "87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "https://example.com/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
+    "display": "Matematik A"
+  },
   "meta": {
     "resourceType": "CalendarEvent",
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
-    "version": "W\/\"3694e05e9dff592\"",
+    "version": "W/\"3694e05e9dff592\"",
     "location": "https://example.com/v2/CalendarEvent/92834792-f08f-4109-8486-d5c6a331660a"
   }
 }

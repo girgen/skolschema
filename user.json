@@ -1,26 +1,22 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:sis:school:person:1.0",
-    "urn:scim:schemas:extension:sis:school:employee:1.0",
-    "urn:scim:schemas:extension:sis:school:student:1.0" ],
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
-  "userName": "bjensen@example.com",
+  "userName": "girgen@example.com",
   "name": {
-    "formatted": "Ms. Barbara J Jensen, III",
-    "familyName": "Jensen",
-    "givenName": "Barbara",
-    "middleName": "Jane",
-    "honorificPrefix": "Ms.",
-    "honorificSuffix": "III"
+    "formatted": "Palle Girgensohn",
+    "familyName": "Girgensohn",
+    "givenName": "Palle"
   },
   "emails": [
     {
-      "value": "bjensen@example.com",
+      "value": "girgen@example.com",
       "type": "work",
       "primary": true
     },
     {
-      "value": "babs@jensen.org",
+      "value": "girgen@foobar.nu",
       "type": "home"
     }
   ],
@@ -28,47 +24,29 @@
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
       "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Klass 5A",
+      "display": "Klass 5A"
     },
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
       "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Pedagogik för Mellanstadiet",
+      "display": "Pedagogik för Mellanstadiet"
     },
     {
       "value": "fc348aa8-3835-40eb-a20b-c726e15c55b5",
       "$ref": "https://example.com/v2/Groups/fc348aa8-3835-40eb-a20b-c726e15c55b5",
-      "display": "Employees",
+      "display": "Elevrådet"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:person:1.0": {
-    "pnr": "198410042710"
-  },
-  "urn:scim:schemas:extension:sis:school:employee:1.0": [
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/Anstallning/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "signatur": "PAL"
-    },
-    {
-      "value": "aaaaaaaa-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/Users/aaaaaaaa-f08f-4109-8486-d5c6a331660a",
-    },
-  ]    
-  },
-  "urn:scim:schemas:extension:sis:school:student:1.0": {
-    "kontaktpersoner": {
-      "value": "26118915-6090-4610-87e4-49d8ca9f808d",
-      "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
-      "displayName": "John Smith"
-    }
+  "urn:scim:schemas:extension:sis:school:user:1.0": {
+    "civicNo": "200710042710",
+    "gender": "male",
+    "securityMarking": "false",
   },
   "meta": {
     "resourceType": "User",
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
-    "version": "W\/\"3694e05e9dff590\"",
-    "location":
-     "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+    "version": "W/\"3694e05e9dff590\"",
+    "location": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
   }
 }
