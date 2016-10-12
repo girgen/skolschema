@@ -1,89 +1,85 @@
-{
-  "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:sis:school:user:1.0"
-  ],
-  "externalId": "2819c223-7f76-453a-919d-413861904646",
-  "userName": "girgen@example.com",
-  "name": {
-    "formatted": "Palle Girgensohn",
-    "familyName": "Girgensohn",
-    "givenName": "Palle"
-  },
-  "emails": [
-    {
-      "value": "girgen@example.com",
-      "type": "work",
-      "primary": true
-    },
-    {
-      "value": "girgen@foobar.nu",
-      "type": "home"
-    }
-  ],
-  "groups": [
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Klass 5A"
-    },
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Pedagogik för Mellanstadiet"
-    },
-    {
-      "value": "fc348aa8-3835-40eb-a20b-c726e15c55b5",
-      "$ref": "https://example.com/v2/Groups/fc348aa8-3835-40eb-a20b-c726e15c55b5",
-      "display": "Elevrådet"
-    }
-  ],
-  "urn:scim:schemas:extension:sis:school:user:1.0": {
-    "civicNo": "200710042710",
-    "gender": "male",
-    "securityMarking": "false",
-    "urn:scim:schemas:extension:sis:school:contactPerson:1.0": [
-      {
-        "value": "26118915-6090-4610-87e4-49d8ca9f808d",
-        "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
-        "displayName": "John Smith",
-        "contactType": "Guardian"
+{  
+   "schemas":[  
+      "urn:ietf:params:scim:schemas:core:2.0:User",
+      "urn:scim:schemas:extension:sis:school:user:1.0"
+   ],
+   "externalId":"2819c223-7f76-453a-919d-413861904646",
+   "userName":"girgen@example.com",
+   "name":{  
+      "formatted":"Palle Girgensohn",
+      "familyName":"Girgensohn",
+      "givenName":"Palle"
+   },
+   "emails":[  
+      {  
+         "value":"girgen@example.com",
+         "type":"work",
+         "primary":true
       },
-      {
-        "value": "26118915-6090-4610-87e4-4f1234234223",
-        "$ref": "../Users/26118915-6090-4610-87e4-4f1234234223",
-        "displayName": "Gullan Olsson",
-        "contactType": "Guardian"
+      {  
+         "value":"girgen@foobar.nu",
+         "type":"home"
       }
-    ],
-    "urn:scim:schemas:extension:sis:school:enrolment:1.0": [
-      {
-        "schoolUnitCode": "14122127283",
-        "schoolType": "GY",
-        "programCode": "NA",
-        "schoolYear": 11,
-        "dateRange": {
-          "start": "2014-08-20",
-          "end": "2015-06-14"
-        }
+   ],
+   "groups":[  
+      {  
+         "value":"e9e30dba-f08f-4109-8486-d5c6a331660a",
+         "$ref":"https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+         "display":"Klass 5A"
       },
-      {
-        "schoolUnitCode": "14122127283",
-        "schoolType": "GY",
-        "programCode": "NA",
-        "schoolYear": 12,
-        "dateRange": {
-          "start": "2015-08-20",
-          "end": "2016-06-14"
-        }
+      {  
+         "value":"e9e30dba-f08f-4109-8486-d5c6a331660a",
+         "$ref":"https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+         "display":"Pedagogik för Mellanstadiet"
+      },
+      {  
+         "value":"fc348aa8-3835-40eb-a20b-c726e15c55b5",
+         "$ref":"https://example.com/v2/Groups/fc348aa8-3835-40eb-a20b-c726e15c55b5",
+         "display":"Elevrådet"
       }
-    ]
-  },
-  "meta": {
-    "resourceType": "User",
-    "created": "2010-01-23T04:56:22Z",
-    "lastModified": "2011-05-13T04:42:34Z",
-    "version": "W/\"3694e05e9dff590\"",
-    "location": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
-  }
+   ],
+   "urn:scim:schemas:extension:sis:school:user:1.0":{  
+      "civicNo":"200710042710",
+      "gender":"male",
+      "securityMarking":"false",
+      "urn:scim:schemas:extension:sis:school:contactPerson:1.0":[  
+         {  
+            "value":"26118915-6090-4610-87e4-49d8ca9f808d",
+            "$ref":"../Users/26118915-6090-4610-87e4-49d8ca9f808d",
+            "displayName":"John Smith",
+            "contactType":"Guardian"
+         },
+         {  
+            "value":"26118915-6090-4610-87e4-4f1234234223",
+            "$ref":"../Users/26118915-6090-4610-87e4-4f1234234223",
+            "displayName":"Gullan Olsson",
+            "contactType":"Guardian"
+         }
+      ]
+   },
+   "enrolments":[  
+      {  
+         "schoolUnitCode":"14122127283",
+         "schoolType":"GY",
+         "programCode":"NA",
+         "schoolYear":11,
+         "beginDate":"2014-08-20",
+         "endDate":"2015-06-14"
+      },
+      {  
+         "schoolUnitCode":"14122127283",
+         "schoolType":"GY",
+         "programCode":"NA",
+         "schoolYear":12,
+         "beginDate":"2015-08-20",
+         "endDate":"2016-06-14"
+      }
+   ],
+   "meta":{  
+      "resourceType":"User",
+      "created":"2010-01-23T04:56:22Z",
+      "lastModified":"2011-05-13T04:42:34Z",
+      "version":"W/\"3694e05e9dff590\"",
+      "location":"https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646"
+   }
 }
