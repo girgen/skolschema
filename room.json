@@ -5,6 +5,11 @@
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "name": "Matematik",
   "seats": 10,
+  "schoolGroup": {
+      "value": "2819c223-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
+      "display": "Rudbäcksskolan"
+  },
   "meta": {
     "resourceType": "Room",
     "created": "2010-01-23T04:56:22Z",
