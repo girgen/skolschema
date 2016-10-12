@@ -42,7 +42,7 @@
     "civicNo": "200710042710",
     "gender": "male",
     "securityMarking": "false",
-    "urn:scim:schemas:extension:sis:school:contactPerson:1.0": [
+    "contactPersons": [
       {
         "value": "26118915-6090-4610-87e4-49d8ca9f808d",
         "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
@@ -56,7 +56,7 @@
         "contactType": "Guardian"
       }
     ],
-    "urn:scim:schemas:extension:sis:school:enrolment:1.0": [
+    "enrolments": [
       {
         "schoolUnitCode": "14122127283",
         "schoolType": "GY",

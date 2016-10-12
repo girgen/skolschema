@@ -1,0 +1,149 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:user:1.0",
+    "name": "User",
+    "description": "Users specific attributes.",
+    "attributes": [
+      {
+        "name": "civicNo",
+        "type": "string",
+        "multiValued": false,
+        "description": "Swedish personnummer (Social security number). The format is 201601011234.",
+        "required": false,
+        "caseExact": false,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "global"
+      },
+      {
+        "name": "gender",
+        "type": "string",
+        "multiValued": false,
+        "description": "Person's biological gender.",
+        "required": false,
+        "caseExact": true,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "global"
+      },
+      {
+        "name": "securitymarking",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Security marked person",
+        "required": false,
+        "caseExact": false,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "global"
+      },
+      {
+        "name": "contactPersons",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Contact persons",
+        "required": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifier of a contact person for this User.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "code_ContactType",
+            "type": "string",
+            "multiValued": false,
+            "description": "One of \"Guardian\"...[TODO].",
+            "required": false,
+            "caseExact": true,
+            "canonicalValues": [
+              "Guardian",
+              "Other"
+            ],
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          }
+        ],
+        "caseExact": false,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "global"
+      }
+    ]
+  }, 
+  {
+        "name": "enrolments",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Student enrolments",
+        "required": false,
+        "subAttributes": [
+          {
+            "name": "schoolUnitCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "School unit code for the student's enrolments.",
+            "required": true,
+            "caseExact": false,
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "code_ContactType",
+            "type": "string",
+            "multiValued": false,
+            "description": "One of \"Guardian\"...[TODO].",
+            "required": false,
+            "caseExact": true,
+            "canonicalValues": [
+              "Guardian",
+              "Other"
+            ],
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          }
+        ],
+        "caseExact": false,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "global"
+      }
+}
+}

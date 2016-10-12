@@ -1,0 +1,58 @@
+[
+	{
+    "id" : "urn:scim:schemas:extension:sis:school:schoolUnit:1.0",
+    "name" : "School unit",
+    "description" : "TBD. A school unit *must* have a school group as parentGroup.",
+    "attributes" : [
+      {
+        "name" : "schoolUnitCode",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "School unit code accourding to Skolverket.",
+        "required" : true,
+        "caseExact" : true,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none"
+      },
+      {
+        "name" : "schoolType",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Type of school.",
+        "required" : false,
+        "caseExact" : true,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none",
+        "canonicalValues": [ "GR", "GRSÄR", "GY", "GYSÄR", "SFI", "VUX",
+                	"YH", "FÖRSKOLA", "FÖRSKOLEKLASS", "FRITIDS", "SPEC", "SAME", "SÄRVUX", "KULTUR",
+                	"ÖPPENFÖRSKOLA", "ÖPPENFRITIDS", "PEDOMSORG", "OMSORGOBEKVÄM" ],
+      },
+      {
+        "name" : "ownerType",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Type of 'huvudman'.",
+        "required" : false,
+        "caseExact" : true,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none",
+        "canonicalValues": [ "STAT", "KOMMUN", "LANDSTING", "ENSKILD", "UTLAND" ],
+      },
+      {
+        "name" : "municipalityCode",
+        "type" : "string",
+        "multiValued" : false,
+        "description" : "Kommunkod.",
+        "required" : false,
+        "caseExact" : true,
+        "mutability" : "readWrite",
+        "returned" : "default",
+        "uniqueness" : "none",
+        "canonicalValues": [ "STAT", "KOMMUN", "LANDSTING", "ENSKILD", "UTLAND" ],
+      },
+    ]
+  }
+]
