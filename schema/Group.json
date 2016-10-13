@@ -1,54 +1,90 @@
 [
   {
-    "id": "urn:scim:schemas:extension:sis:school:1.0:User",
-    "name": "User",
-    "description": "User's specific attributes.",
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Group",
+    "name": "Group extensions for Schools",
+    "description": "TBD.",
     "attributes": [
       {
-        "name": "civicNo",
+        "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Swedish personnummer (Social security number). The format is 201601011234.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
-      },
-      {
-        "name": "gender",
-        "type": "string",
-        "multiValued": false,
-        "description": "Person's biological gender.",
+        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment.",
         "required": false,
         "caseExact": true,
         "mutability": "readWrite",
         "returned": "default",
-        "uniqueness": "global"
+        "uniqueness": "none"
       },
       {
-        "name": "securitymarking",
-        "type": "boolean",
+        "name": "endDate",
+        "type": "string",
         "multiValued": false,
-        "description": "Security marked person",
+        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment.",
         "required": false,
-        "caseExact": false,
+        "caseExact": true,
         "mutability": "readWrite",
         "returned": "default",
-        "uniqueness": "global"
+        "uniqueness": "none"
       },
       {
-        "name": "contactPersons",
+        "name": "parentGroup",
         "type": "complex",
-        "multiValued": true,
-        "description": "Contact persons",
+        "multiValued": false,
+        "description": "The parent group in a group hierarchy.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of a contact person for this User.",
+            "description": "The identifier of the parent Group.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "readOnly",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Group"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Group' resource.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "readOnly",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
+            "required": false,
+            "caseExact": false,
+            "mutability": "readOnly",
+            "returned": "default",
+            "uniqueness": "none"
+          }
+        ],
+        "mutability": "readOnly",
+        "returned": "default"
+      },
+      {
+        "name": "members",
+        "type": "complex",
+        "multiValued": true,
+        "description": "A list of members of the Group.",
+        "required": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifier of the member of this Group.",
             "required": false,
             "caseExact": false,
             "mutability": "immutable",
@@ -59,10 +95,11 @@
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "User"
+              "User",
+              "Group"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "description": "The URI corresponding to a SCIM resource that is a member of this Group.",
             "required": false,
             "caseExact": false,
             "mutability": "immutable",
@@ -70,87 +107,16 @@
             "uniqueness": "none"
           },
           {
-            "name": "code_ContactType",
+            "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "One of \"Guardian\"...[TODO].",
-            "required": false,
-            "caseExact": true,
-            "canonicalValues": [
-              "Guardian",
-              "Other"
-            ],
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
-          }
-        ],
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
-      },
-      {
-        "name": "enrolments",
-        "type": "complex",
-        "multiValued": true,
-        "description": "Student enrolments",
-        "required": false,
-        "subAttributes": [
-          {
-            "name": "schoolUnitCode",
-            "type": "string",
-            "multiValued": false,
-            "description": "School unit code for the student's enrolments.",
-            "required": true,
-            "caseExact": false,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
-          },
-          {
-            "name": "schoolType",
-            "type": "string",
-            "multiValued": false,
-            "description": "The school type within the school unit.",
+            "description": "A label indicating the type of resource, e.g., 'User' or 'Group'.",
             "required": false,
             "caseExact": false,
             "canonicalValues": [
-              "FS",
-              "FSK",
-              "GR",
-              "GRS",
-              "SP",
-              "SAM",
-              "GY",
-              "GYS",
-              "VUX",
-              "SUV",
-              "YH",
-              "FHS"
+              "User",
+              "Group"
             ],
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
-          },
-          {
-            "name": "programCode",
-            "type": "string",
-            "multiValued": false,
-            "description": "The program code for GY/GYSÄR students.",
-            "required": false,
-            "caseExact": true,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
-          },
-          {
-            "name": "schoolYear",
-            "type": "string",
-            "multiValued": false,
-            "description": "The student's school year, or F for pre-school.",
-            "required": false,
-            "caseExact": true,
             "mutability": "immutable",
             "returned": "default",
             "uniqueness": "none"
@@ -178,10 +144,8 @@
             "uniqueness": "none"
           }
         ],
-        "caseExact": false,
         "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        "returned": "default"
       }
     ]
   }
