@@ -18,9 +18,9 @@
         "description": "Person's biological gender. This is expected to be the same as the gender noted by the civicNo.",
         "caseExact": true,
         "canonicalValues": [
-              "M",
-              "F"
-            ]
+          "M",
+          "F"
+        ]
       },
       {
         "name": "securityMarking",
@@ -61,11 +61,11 @@
             ]
           },
           {
-            "name" : "displayName",
-            "type" : "string",
-            "multiValued" : false,
-            "description" : "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
-            "mutability" : "readOnly"
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       },
@@ -122,11 +122,11 @@
             ]
           },
           {
-            "name" : "schoolUnitName",
-            "type" : "string",
-            "multiValued" : false,
-            "description" : "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
-            "mutability" : "readOnly"
+            "name": "schoolUnitName",
+            "type": "string",
+            "multiValued": false,
+            "description": "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
+            "mutability": "readOnly"
           },
           {
             "name": "programCode",
@@ -175,9 +175,9 @@
         ]
       }
     ],
-    "meta" : {
-      "resourceType" : "Schema",
-      "location" : "/sis/v1/Schemas/urn:scim:schemas:extension:sis:school:1.0:User"
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/sis/v1/Schemas/urn:scim:schemas:extension:sis:school:1.0:User"
     }
   }
 ]
