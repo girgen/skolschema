@@ -88,3 +88,11 @@ Varför skola:
 
 Employeegroup, är det verkligen något som finns och i så fall vad används det till?
 
+2016-11-23
+kan personnummer få vara globlat unikt?
+
+kontaktpersoner har tappats bort i diagrammet, har alltid funnits i diskussionen och i det svartvita arket.
+
+Pilarna från StudentAssignment och StudentException ska till User.
+
+canonicalvalues på årskurs i enrolment...

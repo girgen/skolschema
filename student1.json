@@ -38,7 +38,7 @@
       "display": "Elevrådet"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:user:1.0": {
+  "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "gender": "male",
     "securityMarking": "false",
@@ -58,6 +58,8 @@
     ],
     "enrolments": [
       {
+        "schoolUnit" : "26118915-6090-4610-87e4-4f1234234224",
+        "$ref": "../SchoolUnits/26118915-6090-4610-87e4-4f1234234224",
         "schoolUnitCode": "14122127283",
         "schoolType": "GY",
         "programCode": "NA",
@@ -66,6 +68,8 @@
         "endDate": "2015-06-14"
       },
       {
+        "schoolUnit" : "26118915-6090-4610-87e4-4f1234234224",
+        "$ref": "../SchoolUnits/26118915-6090-4610-87e4-4f1234234224",
         "schoolUnitCode": "14122127283",
         "schoolType": "GY",
         "programCode": "NA",

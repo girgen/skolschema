@@ -1,7 +1,7 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Group",
-    "name": "Group extensions for Schools",
+    "name": "Group extensions for SIS school groups",
     "description": "TBD.",
     "attributes": [
       {

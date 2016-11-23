@@ -1,14 +1,14 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
-    "name": "School unit",
+    "name": "Extensions for a school unit",
     "description": "TBD. A school unit *must* have a school group as parentGroup.",
     "attributes": [
       {
         "name": "schoolUnitCode",
         "type": "string",
         "multiValued": false,
-        "description": "School unit code accourding to Skolverket.",
+        "description": "School unit code according to Skolverket.",
         "required": true,
         "caseExact": true,
         "mutability": "readWrite",

@@ -1,6 +1,7 @@
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:User"
+    "urn:ietf:params:scim:schemas:core:2.0:User",
+    "urn:scim:schemas:extension:sis:school:1.0:User"
   ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
   "userName": "girgen@example.com",
@@ -37,7 +38,7 @@
       "display": "Elevrådet"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:user:1.0": {
+  "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "gender": "male",
     "securityMarking": "false",

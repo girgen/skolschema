@@ -9,51 +9,36 @@
         "type": "string",
         "multiValued": false,
         "description": "Swedish personnummer (Social security number). The format is 201601011234.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
         "uniqueness": "global"
       },
       {
         "name": "gender",
         "type": "string",
         "multiValued": false,
-        "description": "Person's biological gender.",
-        "required": false,
+        "description": "Person's biological gender. This is expected to be the same as the gender noted by the civicNo.",
         "caseExact": true,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        "canonicalValues": [
+              "M",
+              "F"
+            ]
       },
       {
-        "name": "securitymarking",
+        "name": "securityMarking",
         "type": "boolean",
         "multiValued": false,
-        "description": "Security marked person",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        "description": "Security marked person"
       },
       {
         "name": "contactPersons",
         "type": "complex",
         "multiValued": true,
-        "description": "Contact persons",
-        "required": false,
+        "description": "Contact persons for the user",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of a contact person for this User.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "Identifier of a contact person for this User."
           },
           {
             "name": "$ref",
@@ -62,51 +47,57 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User."
           },
           {
-            "name": "code_ContactType",
+            "name": "contactType",
             "type": "string",
             "multiValued": false,
             "description": "One of \"Guardian\"...[TODO].",
-            "required": false,
             "caseExact": true,
             "canonicalValues": [
               "Guardian",
               "Other"
-            ],
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            ]
+          },
+          {
+            "name" : "displayName",
+            "type" : "string",
+            "multiValued" : false,
+            "description" : "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
+            "mutability" : "readOnly"
           }
-        ],
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        ]
       },
       {
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
         "description": "Student enrolments",
-        "required": false,
         "subAttributes": [
+          {
+            "name": "schoolUnit",
+            "type": "string",
+            "multiValued": false,
+            "description": "UUID identifier of a school unit group."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "TODO."
+          },
           {
             "name": "schoolUnitCode",
             "type": "string",
             "multiValued": false,
-            "description": "School unit code for the student's enrolments.",
+            "description": "School unit code for the student's enrolments. READ-ONLY.",
             "required": true,
-            "caseExact": false,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            "caseExact": true,
+            "mutability": "readOnly"
           },
           {
             "name": "schoolType",
@@ -128,61 +119,65 @@
               "SUV",
               "YH",
               "FHS"
-            ],
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            ]
+          },
+          {
+            "name" : "schoolUnitName",
+            "type" : "string",
+            "multiValued" : false,
+            "description" : "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
+            "mutability" : "readOnly"
           },
           {
             "name": "programCode",
             "type": "string",
             "multiValued": false,
             "description": "The program code for GY/GYSÄR students.",
-            "required": false,
-            "caseExact": true,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            "caseExact": true
           },
           {
             "name": "schoolYear",
             "type": "string",
             "multiValued": false,
-            "description": "The student's school year, or F for pre-school.",
-            "required": false,
+            "description": "The student's school year (årskurs), or F for pre-school.",
             "caseExact": true,
-            "mutability": "immutable",
-            "returned": "default",
-            "uniqueness": "none"
+            "canonicalValues": [
+              "F",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14"
+            ]
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment.",
-            "required": false,
-            "caseExact": true,
-            "mutability": "readWrite",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment.",
-            "required": false,
-            "caseExact": true,
-            "mutability": "readWrite",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
           }
-        ],
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        ]
       }
-    ]
+    ],
+    "meta" : {
+      "resourceType" : "Schema",
+      "location" : "/sis/v1/Schemas/urn:scim:schemas:extension:sis:school:1.0:User"
+    }
   }
 ]
