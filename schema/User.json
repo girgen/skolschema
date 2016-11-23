@@ -76,7 +76,7 @@
         "description": "Student enrolments",
         "subAttributes": [
           {
-            "name": "schoolUnit",
+            "name": "schoolUnitValue",
             "type": "string",
             "multiValued": false,
             "description": "UUID identifier of a school unit group."
@@ -96,7 +96,13 @@
             "multiValued": false,
             "description": "School unit code for the student's enrolments. READ-ONLY.",
             "required": true,
-            "caseExact": true,
+            "mutability": "readOnly"
+          },
+          {
+            "name": "schoolUnitName",
+            "type": "string",
+            "multiValued": false,
+            "description": "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -120,13 +126,6 @@
               "YH",
               "FHS"
             ]
-          },
-          {
-            "name": "schoolUnitName",
-            "type": "string",
-            "multiValued": false,
-            "description": "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
-            "mutability": "readOnly"
           },
           {
             "name": "programCode",
@@ -177,7 +176,7 @@
     ],
     "meta": {
       "resourceType": "Schema",
-      "location": "/sis/v1/Schemas/urn:scim:schemas:extension:sis:school:1.0:User"
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:User"
     }
   }
 ]
