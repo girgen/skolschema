@@ -32,7 +32,7 @@
       "start": "2015-01-01",
       "end": "2015-12-31"
     },
-    "parentgroup": {
+    "parentGroup": {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
       "display": "Rudbäcksskolan"

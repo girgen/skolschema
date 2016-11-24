@@ -95,4 +95,6 @@ kontaktpersoner har tappats bort i diagrammet, har alltid funnits i diskussionen
 
 Pilarna från StudentAssignment och StudentException ska till User.
 
-canonicalvalues på årskurs i enrolment...
+canonicalvalues på årskurs i enrolment och studengroup?
+
+vi har hoppat fram och tillbaka med om studentgrupper behöver ha en lista med ämnen eller kurser som de är ämnade för. alltså om en studengrupp är skapade för att ha matematik, ska det listas, eller måste schemaprogrammet/schemaläggaren gissa det från namnet?

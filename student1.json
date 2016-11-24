@@ -1,7 +1,7 @@
 {
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:sis:school:user:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:User"
   ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
   "userName": "girgen@example.com",
@@ -40,7 +40,7 @@
   ],
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
-    "gender": "male",
+    "gender": "M",
     "securityMarking": "false",
     "contactPersons": [
       {
@@ -64,7 +64,7 @@
         "schoolUnitName": "Rudbäcksgymnasiet",
         "schoolType": "GY",
         "programCode": "NA",
-        "schoolYear": 11,
+        "schoolYear": 1,
         "startDate": "2014-08-20",
         "endDate": "2015-06-14"
       },
@@ -75,7 +75,7 @@
         "schoolUnitName": "Rudbäcksgymnasiet",
         "schoolType": "GY",
         "programCode": "NA",
-        "schoolYear": 12,
+        "schoolYear": 2,
         "startDate": "2015-08-20",
         "endDate": "2016-06-14"
       }

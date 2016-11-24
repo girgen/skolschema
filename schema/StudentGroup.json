@@ -1,54 +1,62 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
-    "name": "School unit",
-    "description": "TBD. A school unit *must* have a school group as parentGroup.",
+    "name": "Student group",
+    "description": "TODO",
     "attributes": [
       {
         "name": "studentGroupType",
         "type": "string",
         "multiValued": false,
-        "description": "Type of school.",
-        "required": false,
+        "description": "Type of student group.",
+        "required": true,
         "caseExact": true,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none",
+        "mutability": "immutable",
         "canonicalValues": [
-          "UNDERVISNING",
-          "KLASS",
-          "MENTOR",
-          "ÖVRIGT"
+          "Undervisning",
+          "Klass",
+          "Mentor",
+          "Övrigt"
         ]
       },
       {
-        "name": "schoolYear",
+        "name": "schoolYears",
         "type": "string",
-        "multiValued": false,
-        "description": "The student group's school year, or F for pre-school. For mixed classes, leave this field empty.",
+        "multiValued": true,
+        "description": "The student group's school years (årskurs), or F for pre-school. For mixed classes, leave this field empty.",
         "required": false,
         "caseExact": true,
-        "mutability": "immutable",
-        "returned": "default",
-        "uniqueness": "none"
+        "canonicalValues": [
+          "F",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
       },
       {
         "name": "subjects",
         "type": "complex",
         "multiValued": true,
         "description": "A list of subjects for this student group.",
-        "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
             "description": "The identifier of the Subject.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           },
           {
             "name": "$ref",
@@ -58,44 +66,30 @@
             ],
             "multiValued": false,
             "description": "The URI of the corresponding 'Subject' resource.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           }
         ],
-        "mutability": "readOnly",
-        "returned": "default"
+        "mutability": "readOnly"
       },
       {
         "name": "courses",
         "type": "complex",
         "multiValued": true,
         "description": "A list of courses for this student group.",
-        "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
             "description": "The identifier of the Course.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           },
           {
             "name": "$ref",
@@ -105,26 +99,17 @@
             ],
             "multiValued": false,
             "description": "The URI of the corresponding 'Course' resource.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           }
         ],
-        "mutability": "readOnly",
-        "returned": "default"
+        "mutability": "readOnly"
       }
     ]
   }

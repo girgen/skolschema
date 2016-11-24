@@ -10,7 +10,7 @@
     "start": "1970-01-01"
   },
   "urn:scim:schemas:extension:sis:school:group:1.0": {
-    "parentgroup": {
+    "parentGroup": {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
       "display": "Rudbäcksskolan"
