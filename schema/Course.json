@@ -1,0 +1,48 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Course",
+    "name": "Course",
+    "description": "A course, TBD.",
+    "attributes": [
+      {
+        "name": "courseCode",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "The course code."
+      },
+      {
+        "name": "official",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Is this an official course defined by Skolverket."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "description": "The name of the course in human-readable form.",
+        "required": true
+      },
+      {
+        "name": "subjectShortName",
+        "type": "string",
+        "multiValued": false,
+        "description": "The subject for this course in its short name.",
+        "required": true
+      },
+      {
+        "name": "points",
+        "type": "integer",
+        "multiValued": false,
+        "description": "The number of points for this course.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Course"
+    }
+  }
+]

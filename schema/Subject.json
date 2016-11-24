@@ -1,0 +1,41 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Subject",
+    "name": "Subject",
+    "description": "A subject, TBD.",
+    "attributes": [
+      {
+        "name": "subjectCode",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "The subject code."
+      },
+      {
+        "name": "official",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Is this an official subject defined by Skolverket."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "description": "The name of the subject in human-readable form.",
+        "required": true
+      },
+      {
+        "name": "shortName",
+        "type": "string",
+        "multiValued": false,
+        "description": "The subject's short name.",
+        "required": true
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Subject"
+    }
+  }
+]

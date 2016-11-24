@@ -29,7 +29,7 @@
         "description": "Security marked person"
       },
       {
-        "name": "contactPersons",
+        "name": "userRelations",
         "type": "complex",
         "multiValued": true,
         "description": "Contact persons for the user",
@@ -50,7 +50,7 @@
             "description": "The URI corresponding to a SCIM resource that is a contact person for this User."
           },
           {
-            "name": "contactType",
+            "name": "relationType",
             "type": "string",
             "multiValued": false,
             "description": "One of \"Guardian\"...[TODO].",

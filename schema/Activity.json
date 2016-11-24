@@ -1,0 +1,296 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Activity",
+    "name": "Activity",
+    "description": "An activity, TBD.",
+    "attributes": [
+      {
+        "name": "activityType",
+        "type": "string",
+        "multiValued": false,
+        "description": "The type.",
+        "canonicalValues": [
+          "Undervisning",
+          "Elevaktivitet",
+          "Läraraktivitet",
+          "Övrigt"
+        ]
+      },
+      {
+        "name": "calendarEventsRequired",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Does this actvivity require calendar events."
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+      },
+      {
+        "name": "minutesPlanned",
+        "type": "integer",
+        "multiValued": false,
+        "description": "TBD.",
+        "required": true
+      },
+      {
+        "name": "comment",
+        "type": "string",
+        "multiValued": false,
+        "description": "TBD"
+      },
+      {
+        "name": "groups",
+        "type": "complex",
+        "multiValued": true,
+        "description": "The student groups assigned to the activity.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the StudentGroup."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'User' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable group name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          }
+        ]
+      },
+      {
+        "name": "teachers",
+        "type": "complex",
+        "multiValued": true,
+        "description": "The teachers asssigned to the activity.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Employment."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Employment"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Employment' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "The signature for the employment, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "minutesPlanned",
+            "type": "integer",
+            "multiValued": false,
+            "description": "The planned time span for this teacher, if it differs from the activity's."
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          }
+        ]
+      },
+      {
+        "name": "students",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Individual students asssigned to the activity.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the User."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'User' resource"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "The name of the user, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+          }
+        ]
+      },
+      {
+        "name": "topic",
+        "type": "complex",
+        "multiValued": false,
+        "description": "The course of the subject, i.e. the topic for this activity.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Course or Subject."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Course",
+              "Subject"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Course' or 'Subject' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "The name of the course or subject, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "The type of the corresponding 'Course' or 'Subject' resource",
+            "canonicalValues": [
+              "Course",
+              "Subject"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "owner",
+        "type": "complex",
+        "multiValued": false,
+        "description": "The owner of this activity. A school or school unit.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the School or SchoolUnit."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "School",
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "The name of the school's or school unit's group, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "The type of the corresponding 'School' or 'SchoolUnit' resource",
+            "canonicalValues": [
+              "School",
+              "SchoolUnit"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "parentActivity",
+        "type": "complex",
+        "multiValued": false,
+        "description": "A parent activity.",
+        "required": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the parent Activity.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Activity"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Activity' resource.",
+            "mutability": "immutable"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Activity"
+    }
+  }
+]
