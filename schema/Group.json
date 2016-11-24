@@ -65,6 +65,10 @@
           }
         ]
       }
-    ]
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Group"
+    }
   }
 ]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:School",
+    "name": "Extensions for a school unit",
+    "description": "TBD. A school unit *must* have a school group as parentGroup.",
+    "attributes": [
+      {
+        "name": "municipalityCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kommunkod.",
+        "required": false,
+        "caseExact": true
+      },
+      {
+        "name": "ownerType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Type of 'huvudman'.",
+        "caseExact": true,
+        "canonicalValues": [
+          "Stat",
+          "Kommun",
+          "Landsting",
+          "Enskild",
+          "Utlandsskola"
+        ]
+      },
+      {
+        "name": "ownerName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Name of the huvudman.",
+        "caseExact": true
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:School"
+    }
+  }
+]

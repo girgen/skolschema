@@ -5,15 +5,22 @@
     "description": "An employment, TBD.",
     "attributes": [
       {
-        "name": "id",
+        "name": "isTeacher",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Does this employment represent a teacher."
+      },
+      {
+        "name": "signature",
         "type": "string",
         "multiValued": false,
-        "description": "UUID for the employment.",
-        "required": true,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "global"
+        "description": "Signature for school schema presentation."
+      },
+      {
+        "name": "employmentPercent",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Employment as percentage of a full time employment."
       },
       {
         "name": "startDate",
@@ -38,17 +45,6 @@
         "uniqueness": "none"
       },
       {
-        "name": "employmentPercent",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Employment as percentage of a full time employment.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
-      },
-      {
         "name": "hoursPerYear",
         "type": "integer",
         "multiValued": false,
@@ -60,44 +56,16 @@
         "uniqueness": "none"
       },
       {
-        "name": "isTeacher",
-        "type": "boolean",
-        "multiValued": false,
-        "description": "Does this employment represent a teacher.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
-      },
-      {
-        "name": "signature",
-        "type": "string",
-        "multiValued": false,
-        "description": "Signature for school schema presentation.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
-      },
-      {
         "name": "user",
         "type": "complex",
         "multiValued": false,
         "description": "The employed user. This can be empty for vacant employments.",
-        "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the User.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "The identifier of the User."
           },
           {
             "name": "$ref",
@@ -106,28 +74,21 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "description": "The URI of the corresponding 'User' resource"
           },
           {
-            "name": "display",
+            "name": "displayName",
             "type": "string",
             "multiValued": false,
             "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
-            "required": false,
-            "caseExact": false,
-            "mutability": "readOnly",
-            "returned": "default",
-            "uniqueness": "none"
+            "mutability": "readOnly"
           }
-        ],
-        "mutability": "readOnly",
-        "returned": "default"
+        ]
       }
-    ]
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Employment"
+    }
   }
 ]
