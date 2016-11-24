@@ -99,13 +99,6 @@
             "mutability": "readOnly"
           },
           {
-            "name": "schoolUnitName",
-            "type": "string",
-            "multiValued": false,
-            "description": "The displayName of the User's SchoolUnit. OPTIONAL and READ-ONLY.",
-            "mutability": "readOnly"
-          },
-          {
             "name": "schoolType",
             "type": "string",
             "multiValued": false,

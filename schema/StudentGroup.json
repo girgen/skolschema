@@ -20,97 +20,83 @@
         ]
       },
       {
-        "name": "schoolYears",
+        "name": "schoolType",
         "type": "string",
-        "multiValued": true,
-        "description": "The student group's school years (årskurs), or F for pre-school. For mixed classes, leave this field empty.",
+        "multiValued": false,
+        "description": "Type of school.",
         "required": false,
         "caseExact": true,
+        "mutability": "readWrite",
+        "returned": "default",
+        "uniqueness": "none",
         "canonicalValues": [
-          "F",
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "10",
-          "11",
-          "12",
-          "13",
-          "14"
+          "FS",
+          "FSK",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS"
         ]
       },
       {
-        "name": "subjects",
-        "type": "complex",
+        "name": "schoolYears",
+        "type": "integer",
         "multiValued": true,
-        "description": "A list of subjects for this student group.",
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "The identifier of the Subject.",
-            "mutability": "readOnly"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "Subject"
-            ],
-            "multiValued": false,
-            "description": "The URI of the corresponding 'Subject' resource.",
-            "mutability": "readOnly"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
-            "mutability": "readOnly"
-          }
-        ],
-        "mutability": "readOnly"
+        "description": "The student group's school years (årskurs).",
+        "required": false
       },
       {
-        "name": "courses",
+        "name": "studentMemberships",
         "type": "complex",
         "multiValued": true,
-        "description": "A list of courses for this student group.",
+        "description": "The students in the group.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Course.",
-            "mutability": "readOnly"
+            "description": "Identifier of the User."
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Course"
+              "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Course' resource.",
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User."
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
             "mutability": "readOnly"
           },
           {
-            "name": "display",
+            "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
-            "mutability": "readOnly"
+            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
           }
-        ],
-        "mutability": "readOnly"
+        ]
       }
-    ]
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:StudentGroup"
+    }
   }
 ]
