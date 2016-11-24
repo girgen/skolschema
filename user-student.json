@@ -61,18 +61,18 @@
         "schoolUnitValue" : "26118915-6090-4610-87e4-4f1234234224",
         "$ref": "../SchoolUnits/26118915-6090-4610-87e4-4f1234234224",
         "schoolUnitCode": "14122127283",
-        "schoolUnitName": "Rudbäcksgymnasiet",
-        "schoolType": "GY",
-        "programCode": "NA",
+
         "schoolYear": 1,
         "startDate": "2014-08-20",
-        "endDate": "2015-06-14"
+        "endDate": "2015-06-14",
+        "schoolType": "GY",
+        "programCode": "NA"
       },
       {
         "schoolUnitValue" : "26118915-6090-4610-87e4-4f1234234224",
         "$ref": "../SchoolUnits/26118915-6090-4610-87e4-4f1234234224",
         "schoolUnitCode": "14122127283",
-        "schoolUnitName": "Rudbäcksgymnasiet",
+
         "schoolType": "GY",
         "programCode": "NA",
         "schoolYear": 2,
