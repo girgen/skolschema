@@ -9,6 +9,10 @@
   "comment": "hej en kommentar",
   "teachingLengthTeacher": 45,
   "teachingLengthGoup": 60,
+  "activity": {
+    "value": "87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904646"
+  },
   "rooms": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
@@ -66,10 +70,6 @@
       "display": "Bosse Larsson"
     }
   ],
-  "activity": {
-    "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904646"
-  },
   "meta": {
     "resourceType": "CalendarEvent",
     "created": "2010-01-23T04:56:22Z",

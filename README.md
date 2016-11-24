@@ -116,3 +116,6 @@ notera att xxxAssigments "finns inte" riktigt...
 
 calendarevent -> activity ska vara pil
 
+
+scims group.member[type="Group"] är samma sak som vår parentGroup. dokumentera det?
+
