@@ -1,12 +1,12 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:Course:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:Course"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "courseCode": "MATMAT01",
-  "name": "Matematik A",
-  "subjectShortName": "Matte",
   "official": true,
+  "name": "Matematik A",
+  "subjectShortName": "MAT",
   "points": 100,
   "meta": {
     "resourceType": "Course",

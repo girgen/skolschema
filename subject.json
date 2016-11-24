@@ -1,12 +1,12 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:Subject:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:Subject"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "subjectCode": "MA",
-  "name": "Matematik",
-  "subjectShortName": "Matte",
+  "subjectCode": "GRGRMAT01",
   "official": true,
+  "name": "Matematik",
+  "shortName": "MA",
   "meta": {
     "resourceType": "Subject",
     "created": "2010-01-23T04:56:22Z",

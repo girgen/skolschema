@@ -98,3 +98,21 @@ Pilarna från StudentAssignment och StudentException ska till User.
 canonicalvalues på årskurs i enrolment och studengroup?
 
 vi har hoppat fram och tillbaka med om studentgrupper behöver ha en lista med ämnen eller kurser som de är ämnade för. alltså om en studengrupp är skapade för att ha matematik, ska det listas, eller måste schemaprogrammet/schemaläggaren gissa det från namnet?
+
+
+
+schoolunit.schoolTypeS
+
+
+activity last changed finns i metadata.
+
+
+daterange finns på många ställen...
+
+
+i ativity: owner (skola eller enhet) och topic (ämne eller kurs)
+notera att xxxAssigments "finns inte" riktigt...
+
+
+calendarevent -> activity ska vara pil
+

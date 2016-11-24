@@ -1,14 +1,15 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:Room:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:Room"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "name": "Matematik",
+  "name": "Safiren",
   "seats": 10,
-  "schoolGroup": {
-      "value": "2819c223-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Group/2819c223-7f76-453a-919d-413861904646",
-      "display": "Rudbäcksskolan"
+  "owner": {
+    "value": "2819c223-7f76-453a-919d-413861904646",
+    "$ref": "https://example.com/v2/Schools/2819c223-7f76-453a-919d-413861904646",
+    "display": "Rudbäcksskolan",
+    "type": "School"
   },
   "meta": {
     "resourceType": "Room",

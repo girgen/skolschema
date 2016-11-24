@@ -42,18 +42,18 @@
     "civicNo": "200710042710",
     "gender": "M",
     "securityMarking": "false",
-    "contactPersons": [
+    "userRelations": [
       {
         "value": "26118915-6090-4610-87e4-49d8ca9f808d",
         "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
         "displayName": "John Smith",
-        "contactType": "Guardian"
+        "relationType": "Guardian"
       },
       {
         "value": "26118915-6090-4610-87e4-4f1234234223",
         "$ref": "../Users/26118915-6090-4610-87e4-4f1234234223",
         "displayName": "Gullan Olsson",
-        "contactType": "Guardian"
+        "relationType": "Guardian"
       }
     ],
     "enrolments": [

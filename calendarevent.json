@@ -1,16 +1,14 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:calendarevent:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:CalendarEvent"
   ],
   "id": "92834792-f08f-4109-8486-d5c6a331660a",
+  "startDate": "2016-05-24T14:00",
+  "endDate": "2016-05-24T15:00",
   "cancelled": false,
   "comment": "hej en kommentar",
-  "dateTimeRange": {
-    "start": "2016-05-24T14:00",
-    "end": "2016-05-24T15:00"
-  },
   "teachingLengthTeacher": 45,
-  "teachingLengthStudent": 60,
+  "teachingLengthGoup": 60,
   "rooms": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
@@ -38,11 +36,9 @@
   "studentExceptions": [
     {
       "participates": true,
-      "teachingLengthStudent": 40,
-      "dateTimeRange": {
-        "start": "2016-05-24T14:45",
-        "end": "2016-05-24T15:00"
-      },
+      "startTime": "2016-05-24T14:45",
+      "endTime": "2016-05-24T15:00",
+      "teachingLength": 40,
       "value": "87dda8fa-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Palle Girgensohn"
@@ -51,24 +47,20 @@
   "teacherExceptions": [
     {
       "participates": true,
-      "teachingLengthTeacher": 30,
-      "dateTimeRange": {
-        "start": "2016-05-24T14:45",
-        "end": "2016-05-24T15:00"
-      },
+      "teachingLength": 30,
+      "startTime": "2016-05-24T14:45",
+      "endTime": "2016-05-24T15:00",
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
-      "display": "Bosse Larsson"
+      "$ref": "https://example.com/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "BLA"
     }
   ],
   "groupExceptions": [
     {
       "participates": true,
-      "teachingLengthStudent": 30,
-      "dateTimeRange": {
-        "start": "2016-05-24T14:45",
-        "end": "2016-05-24T15:00"
-      },
+      "teachingLength": 30,
+      "startTime": "2016-05-24T14:45",
+      "endTime": "2016-05-24T15:00",
       "value": "87dda8fa-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Groups/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Bosse Larsson"
@@ -76,14 +68,13 @@
   ],
   "activity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
-    "display": "Matematik A"
+    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904646"
   },
   "meta": {
     "resourceType": "CalendarEvent",
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
     "version": "W/\"3694e05e9dff592\"",
-    "location": "https://example.com/v2/CalendarEvent/92834792-f08f-4109-8486-d5c6a331660a"
+    "location": "https://example.com/v2/CalendarEvents/92834792-f08f-4109-8486-d5c6a331660a"
   }
 }

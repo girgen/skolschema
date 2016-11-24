@@ -1,67 +1,63 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:activity:1.0"
+    "urn:scim:schemas:extension:sis:school:1.0:Activity"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "activityType": "Undervisning",
-  "calendarEventsRequired" : true,
+  "calendarEventsRequired": true,
+  "startDate": "2016-02-25",
+  "endDate": "2016-04-15",
   "minutesPlanned": 4000,
-  "dateRange": {
-    "start": "2016-02-25",
-    "end": "2016-04-15"
-  },
-  "studentGroupAssignments": [
+  "groups": [
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "https://example.com/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a331660a",
       "display": "MATMAT01 N3A",
-      "dateRange": {
-        "start": "2016-02-25",
-        "end": "2016-04-15"
-      }
+      "startDate": "2016-02-25",
+      "endDate": "2016-04-15"
     }
   ],
-  "studentAssignments": [
+  "students": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
       "display": "Barbara Jensen",
-      "dateRange": {
-        "start": "2016-02-25",
-        "end": "2016-04-15"
-      }
+      "startDate": "2016-02-25",
+      "endDate": "2016-04-15"
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
       "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
       "display": "Mandy Pepperidge",
-      "dateRange": {
-        "start": "2016-02-25",
-        "end": "2016-04-15"
-      }
+      "startDate": "2016-02-25",
+      "endDate": "2016-04-15"
     }
   ],
-  "teacherAssignments": [
+  "teachers": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "https://example.com/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Palle Girgensohn",
-      "dateRange": {
-        "start": "2016-02-25",
-        "end": "2016-04-15"
-      },
+      "startDate": "2016-02-25",
+      "endDate": "2016-04-15",
       "minutesPlanned": 3600
     }
   ],
-  "course": {
+  "topic": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
     "$ref": "https://example.com/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
-    "display": "Matematik A"
+    "display": "Matematik A",
+    "type": "Course"
   },
   "parentActivity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
-    "display": "Matematik"
+    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904647"
+  },
+  "owner": {
+    "value": "87dda8fa-7f76-453a-919d-413861904641",
+    "$ref": "https://example.com/v2/SchoolUnits/87dda8fa-7f76-453a-919d-413861904641",
+    "type": "SchoolUnit",
+    "display": "Rudbäcksskolan"
   },
   "meta": {
     "resourceType": "Activity",
