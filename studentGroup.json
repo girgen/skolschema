@@ -33,7 +33,9 @@
     ],
     "studentGroupType": "Undervisning",
     "schoolType": "GY",
-    "schoolYears": [2]
+    "schoolYears": [
+      2
+    ]
   },
   "meta": {
     "resourceType": "Group",
