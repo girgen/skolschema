@@ -37,7 +37,7 @@
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
       "$ref": "https://example.com/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
-      "display": "Palle Girgensohn",
+      "displayName": "Palle Girgensohn",
       "startDate": "2016-02-25",
       "endDate": "2016-04-15",
       "minutesPlanned": 3600
