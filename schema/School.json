@@ -8,14 +8,14 @@
         "name": "municipalityCode",
         "type": "string",
         "multiValued": false,
-        "description": "Kommunkod.",
+        "description": "Län och kommunkod för för den kommun där skolan är belägen.",
         "caseExact": true
       },
       {
         "name": "ownerType",
         "type": "string",
         "multiValued": false,
-        "description": "Type of 'huvudman'.",
+        "description": "Typ av huvudman.",
         "caseExact": true,
         "canonicalValues": [
           "Stat",
@@ -29,7 +29,7 @@
         "name": "ownerName",
         "type": "string",
         "multiValued": false,
-        "description": "Name of the huvudman."
+        "description": "Namn."
       }
     ],
     "meta": {

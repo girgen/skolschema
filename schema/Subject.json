@@ -9,27 +9,27 @@
         "type": "string",
         "multiValued": false,
         "required": true,
-        "description": "The subject code."
+        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
       },
       {
         "name": "official",
         "type": "boolean",
         "multiValued": false,
         "required": true,
-        "description": "Is this an official subject defined by Skolverket."
+        "description": "Attribut för att indikera om koden är en officiell kod från Skolverket eller annan myndighet."
       },
       {
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "The name of the subject in human-readable form.",
+        "description": "Ämnets namn exempelvis Matematik.",
         "required": true
       },
       {
         "name": "shortName",
         "type": "string",
         "multiValued": false,
-        "description": "The subject's short name.",
+        "description": "Förkortningar enligt Skolverket exempelvis MA.",
         "required": true
       }
     ],

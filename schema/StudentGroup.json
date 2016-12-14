@@ -8,7 +8,7 @@
         "name": "studentGroupType",
         "type": "string",
         "multiValued": false,
-        "description": "Type of student group.",
+        "description": "Grupptyp anger vad en grupp ska användas till. Ett värdeförråd för att indikera anger vilka grupptyper som finns.",
         "required": true,
         "caseExact": true,
         "mutability": "immutable",
@@ -23,7 +23,7 @@
         "name": "schoolType",
         "type": "string",
         "multiValued": false,
-        "description": "Type of school.",
+        "description": "Skolform(er).",
         "caseExact": true,
         "mutability": "immutable",
         "canonicalValues": [
@@ -45,19 +45,19 @@
         "name": "schoolYears",
         "type": "integer",
         "multiValued": true,
-        "description": "The student group's school years (årskurs)."
+        "description": "Värdet Årskurs anger det år efter skolstarten för vilket en student följer undervisningen."
       },
       {
         "name": "studentMemberships",
         "type": "complex",
         "multiValued": true,
-        "description": "The students in the group.",
+        "description": "Studentmedlemskap anger att en student är medlem i en grupp och vilken tidsperiod medlemskapet omfattar.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of the User.",
+            "description": "Identifierare för studentgruppen.",
             "mutability": "immutable"
           },
           {
@@ -67,27 +67,27 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "description": "URI för studentgruppen.",
             "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera studentgruppen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           }
         ]
       }

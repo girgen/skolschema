@@ -8,28 +8,28 @@
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "The name of the room in human-readable form.",
+        "description": "Namn på rum/lokal/plats.",
         "required": true
       },
       {
         "name": "seats",
         "type": "integer",
         "multiValued": false,
-        "description": "Number of seats in the room.",
+        "description": "Antal platser i lokalen.",
         "required": false
       },
       {
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "The group that is the owner of this room.",
+        "description": "Möjlighet att ange vilken Skola eller skolenhet rummet tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the owner Group.",
+            "description": "Identifierare för rummet.",
             "mutability": "immutable"
           },
           {
@@ -42,21 +42,21 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Group' resource.",
+            "description": "URI för rummet.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name or the group, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera ägaren av rummet i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "A label indicating the type of resource, e.g., 'SchoolUnit' or 'Group'.",
+            "description": "Anger resurstyp för rummet e.g. \"Group\"/\"SchoolUnit\"\"School\"/\"StudentGroup\".",
             "canonicalValues": [
               "Group",
               "SchoolUnit",

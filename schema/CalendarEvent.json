@@ -8,59 +8,59 @@
         "name": "cancelled",
         "type": "boolean",
         "multiValued": false,
-        "description": "True if the calendar event is cancelled. Default is false.",
+        "description": "Inställd används för att ange att en planerad kalenderhändelse inte ska äga rum till följd av en avbokning eller annan tillfällig avvikelse.",
         "required": true
       },
       {
         "name": "teachingLengthGroup",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the group's time is planned during the calendar event."
+        "description": "Undervisningstid i minuter för grupper."
       },
       {
         "name": "teachingLengthTeacher",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the teachers' time is planned during the calendar event."
+        "description": "Faktisk undervisningstid för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen."
       },
       {
         "name": "teachingLengthStudent",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the students' time is planned during the calendar event."
+        "description": "Faktisk undervisningstid för studenter. Tiden kan vara kortare eller längre än tiden för kalenderhändelsen till exempel då en rast ingår i tiden."
       },
       {
         "name": "startTime",
         "type": "dateTime",
         "multiValued": false,
-        "description": "Start datetime for this event.",
+        "description": "Kalenderhändelsens starttid med datum och tid (ISO8601 format tex \"2015-12-12\".",
         "required": true
       },
       {
         "name": "endTime",
         "type": "dateTime",
         "multiValued": false,
-        "description": "End datetime for this event.",
+        "description": "Kalenderhändelsens sluttid med datum och tid (ISO8601 format tex \"2015-12-12\").",
         "required": true
       },
       {
         "name": "comment",
         "type": "string",
         "multiValued": false,
-        "description": "Comment"
+        "description": "En text med kompletterande information."
       },
       {
         "name": "activity",
         "type": "complex",
         "multiValued": false,
-        "description": "The activity for this calendar event.",
+        "description": "Aktivitet för kalenderhändelsen.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the parent Activity.",
+            "description": "Identifierare för aktiviteten.",
             "mutability": "immutable"
           },
           {
@@ -70,14 +70,14 @@
               "Activity"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Activity' resource.",
+            "description": "URI för aktiviteten.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name of the activity's course or subject, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för aktivitetens kurs eller ämne, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
@@ -86,13 +86,13 @@
         "name": "studentGroupExceptions",
         "type": "complex",
         "multiValued": true,
-        "description": "Student group exceptions from the activity groups TBD.",
+        "description": "Anger avvikelser beträffande studentgruppens deltagande, tid och längd för ett enstaka kalendertillfälle.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the StudentGroup.",
+            "description": "Identifierare för studentgruppen som undantaget avser.",
             "mutability": "immutable"
           },
           {
@@ -102,40 +102,40 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Group' resource",
+            "description": "URI för studentgruppen som undantaget avser.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable student group name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för studentgruppen, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Defines if the exception is additive or excluding.",
+            "description": "Används för att ange om en grupp deltar på ett visst kalendertillfälle.",
             "required": true
           },
           {
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
+            "description": "Undervisningstid i minuter för gruppen."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event."
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")."
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event."
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")."
           }
         ]
       },
@@ -143,13 +143,13 @@
         "name": "teacherExceptions",
         "type": "complex",
         "multiValued": true,
-        "description": "Teacher exceptions from the activity groups TBD.",
+        "description": "Anger avvikelser beträffande anställds deltagande, tid och längd för ett enstaka kalendertillfälle.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Teacher.",
+            "description": "Identifierare för anställd som undantaget avser.",
             "mutability": "immutable"
           },
           {
@@ -159,39 +159,39 @@
               "Employment"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Employment' resource",
+            "description": "URI för för anställd som undantaget avser",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable user, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för anställd som undantaget avser, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Defines if the exception is additive or excluding."
+            "description": "Används för att ange om en lärare deltar på ett visst kalendertillfälle."
           },
           {
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
+            "description": "Undervisningstid i minuter för lärare."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event."
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")"
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event."
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")"
           }
         ]
       },
@@ -199,13 +199,13 @@
         "name": "studentExceptions",
         "type": "complex",
         "multiValued": true,
-        "description": "Student exceptions for this event. TBD.",
+        "description": "Anger avvikelser beträffande studentens deltagande, tid och längd för ett enstaka kalendertillfälle.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Student.",
+            "description": "Identifierare för vilken undantaget avser.",
             "mutability": "immutable"
           },
           {
@@ -215,39 +215,39 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource",
+            "description": "URI för vilken undantaget avser",
             "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable student group name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för student som undantaget avser, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Defines if the exception is additive or excluding."
+            "description": "Används för att ange om en student deltar på ett visst kalendertillfälle. "
           },
           {
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
+            "description": "Undervisningstid i minuter för studenter."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event."
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")"
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event."
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")"
           }
         ]
       },
@@ -255,13 +255,13 @@
         "name": "rooms",
         "type": "complex",
         "multiValued": true,
-        "description": "Rooms booked for this event.",
+        "description": "Rum bokade för kalendertillfället.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Room.",
+            "description": "Identifierare för rummet.",
             "mutability": "immutable"
           },
           {
@@ -271,14 +271,14 @@
               "Room"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Room' resource",
+            "description": "URI för rummet.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable room name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för rummet, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
@@ -287,13 +287,13 @@
         "name": "resources",
         "type": "complex",
         "multiValued": true,
-        "description": "Resources booked for this event.",
+        "description": "Resurser bokade för kalendertillfället.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Resource.",
+            "description": "Identifierare för resursen.",
             "mutability": "immutable"
           },
           {
@@ -303,14 +303,14 @@
               "Resources"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Resource' resource",
+            "description": "URI för resursen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable resource name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för resursen, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]

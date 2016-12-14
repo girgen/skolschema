@@ -8,26 +8,26 @@
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
         "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+        "description": "Slutdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
         "name": "parentGroup",
         "type": "complex",
         "multiValued": false,
-        "description": "The parent group in a group hierarchy.",
+        "description": "Möjlighet att koppla gruppen till en \"förälder\".",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the parent Group.",
+            "description": "Identifierare för gruppen.",
             "mutability": "immutable"
           },
           {
@@ -40,21 +40,21 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Group' resource.",
+            "description": "URI för gruppen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "A label indicating the type of resource, e.g., 'SchoolUnit' or 'Group'.",
+            "description": "Anger resurstyp för gruppen e.g. \"Group\"/\"SchoolUnit\"\"School\"/\"StudentGroup\".",
             "canonicalValues": [
               "Group",
               "SchoolUnit",

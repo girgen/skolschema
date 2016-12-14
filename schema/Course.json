@@ -9,34 +9,34 @@
         "type": "string",
         "multiValued": false,
         "required": true,
-        "description": "The course code."
+        "description": "Kursens kod. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a."
       },
       {
         "name": "official",
         "type": "boolean",
         "multiValued": false,
         "required": true,
-        "description": "Is this an official course defined by Skolverket."
+        "description": "Ett attribut för att ange om ett ämne eller kurs är officiell enligt Skolverket. Användare kan skapa andra ämnen för andra ändamål."
       },
       {
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "The name of the course in human-readable form.",
+        "description": "Kursens namn exempelvis Matematik 1a.",
         "required": true
       },
       {
         "name": "subjectShortName",
         "type": "string",
         "multiValued": false,
-        "description": "The subject for this course in its short name.",
+        "description": "Beteckning för det ämne kursen hör till, exempelvis MAT.",
         "required": true
       },
       {
         "name": "points",
         "type": "integer",
         "multiValued": false,
-        "description": "The number of points for this course.",
+        "description": "Antalet poäng för en specifik kurs. Exempelvis 100 poäng.",
         "required": false
       }
     ],

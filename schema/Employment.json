@@ -8,50 +8,50 @@
         "name": "isTeacher",
         "type": "boolean",
         "multiValued": false,
-        "description": "Does this employment represent a teacher.",
+        "description": "Indikerare om tjänsten är undervisande eller inte.",
         "required": true
       },
       {
         "name": "signature",
         "type": "string",
         "multiValued": false,
-        "description": "Signature for school schema presentation."
+        "description": "En signatur för anställningen exempelvis NJN, JOAN."
       },
       {
         "name": "employmentPercent",
         "type": "integer",
         "multiValued": false,
-        "description": "Employment as percentage of a full time employment."
+        "description": "Anställningens tjänstgöringsgrad i procent."
       },
       {
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this employment."
+        "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
         "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this employment."
+        "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
         "name": "hoursPerYear",
         "type": "integer",
         "multiValued": false,
-        "description": "Employment in working hours per year for this employment."
+        "description": "Antalet timmar anställningen omfattar."
       },
       {
         "name": "user",
         "type": "complex",
         "multiValued": false,
-        "description": "The employed user. This can be empty for vacant employments.",
+        "description": "Association till en person.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the User.",
+            "description": "Identifierare för personen.",
             "mutability": "immutable"
           },
           {
@@ -61,14 +61,14 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource",
+            "description": "URI för personen.",
             "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
@@ -77,13 +77,13 @@
         "name": "employedAt",
         "type": "complex",
         "multiValued": false,
-        "description": "The school or school unit where the user is employed user.",
+        "description": "Identifierare från skola/skolenhet som anställningen är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the School or SchoolUnit.",
+            "description": "Identifierare för skolan/skolenheten.",
             "mutability": "immutable"
           },
           {
@@ -94,14 +94,14 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource",
+            "description": "URI för skolan/skolenheten.",
             "mutability": "immutable"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "A label indicating the type of resource, e.g., 'School' or 'SchoolUnit'.",
+            "description": "Anger resurstyp som äger anställningen e.g. \"School\"/\"SchoolUnit\".",
             "canonicalValues": [
               "School",
               "SchoolUnit"
@@ -112,7 +112,7 @@
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera ägaren av anställningen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
