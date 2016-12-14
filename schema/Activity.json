@@ -2,13 +2,13 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Activity",
     "name": "Activity",
-    "description": "An activity, TBD.",
+    "description": "Sammanhållande element som ska schemaläggas.",
     "attributes": [
       {
         "name": "activityType",
         "type": "string",
         "multiValued": false,
-        "description": "The type.",
+        "description": "Beskriver vilken typ av aktivitet som avses.",
         "canonicalValues": [
           "Undervisning",
           "Elevaktivitet",
@@ -21,46 +21,46 @@
         "name": "calendarEventsRequired",
         "type": "boolean",
         "multiValued": false,
-        "description": "Does this actvivity require calendar events.",
+        "description": "Detta ska uttrycka huruvida aktiviteten ska vara underlag för generering av lektion eller inte.",
         "required": true
       },
       {
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity.",
+        "description": "Datum för när aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")",
         "required": true
       },
       {
         "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity.",
+        "description": "Datum för när aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
         "required": true
       },
       {
         "name": "minutesPlanned",
         "type": "integer",
         "multiValued": false,
-        "description": "TBD."
+        "description": "Den totalt planerade tiden i minuter."
       },
       {
         "name": "comment",
         "type": "string",
         "multiValued": false,
-        "description": "TBD"
+        "description": "En text med kompletterande information."
       },
       {
         "name": "groups",
         "type": "complex",
         "multiValued": true,
-        "description": "The student groups assigned to the activity.",
+        "description": "De grupper som är kopplade till aktiviteten.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the StudentGroup.",
+            "description": "Identifierare för studentgruppen.",
             "mutability": "immutable"
           },
           {
@@ -70,27 +70,27 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource",
+            "description": "URI för studentgruppen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable group name, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när gruppens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när gruppens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
         ]
       },
@@ -98,13 +98,13 @@
         "name": "teachers",
         "type": "complex",
         "multiValued": true,
-        "description": "The teachers asssigned to the activity.",
+        "description": "De lärare som är kopplade till aktiviteten.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Employment.",
+            "description": "Identifierare för lärarens anställning.",
             "mutability": "immutable"
           },
           {
@@ -114,33 +114,33 @@
               "Employment"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Employment' resource",
+            "description": "URI för lärarens anställning.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "The signature for the employment, primarily used for display purposes.  READ-ONLY.",
+            "description": "En signatur för anställningen exempelvis NJN, JOAN. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "minutesPlanned",
             "type": "integer",
             "multiValued": false,
-            "description": "The planned time span for this teacher, if it differs from the activity's."
+            "description": "Det antal minuter läraren är kopplad till aktiviteten."
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när lärarens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när lärarens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
         ]
       },
@@ -148,13 +148,13 @@
         "name": "students",
         "type": "complex",
         "multiValued": true,
-        "description": "Individual students asssigned to the activity.",
+        "description": "De studenter som är kopplade till aktiviteten.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the User.",
+            "description": "Identifierare för personen.",
             "mutability": "immutable"
           },
           {
@@ -164,27 +164,27 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource",
+            "description": "URI för personen.",
             "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "The name of the user, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
             "mutability": "immutable"
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när studentens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+            "description": "Datum för när studentens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
         ]
       },
@@ -192,13 +192,13 @@
         "name": "topic",
         "type": "complex",
         "multiValued": false,
-        "description": "The course of the subject, i.e. the topic for this activity.",
+        "description": "Det ämne eller den kurs som aktiviteten är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Course or Subject.",
+            "description": "Identifier för kursen eller ämnet.",
             "mutability": "immutable"
           },
           {
@@ -209,21 +209,21 @@
               "Subject"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Course' or 'Subject' resource",
+            "description": "URI för kursen eller ämnet.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "The name of the course or subject, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera kursen eller ämnet i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "The type of the corresponding 'Course' or 'Subject' resource",
+            "description": "Typen av resurs, om det är ett kurs eller ett ämne.",
             "canonicalValues": [
               "Course",
               "Subject"
@@ -236,13 +236,13 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "The owner of this activity. A school or school unit.",
+        "description": "Den skola eller skolenhet som aktiviteten är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the School or SchoolUnit.",
+            "description": "Identifierare för skolan eller skolenheten.",
             "mutability": "immutable"
           },
           {
@@ -253,21 +253,21 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource",
+            "description": "URI för skolan eller skolenheten.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "The name of the school's or school unit's group, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera skolan eller skolenheten i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "The type of the corresponding 'School' or 'SchoolUnit' resource",
+            "description": "Typen av resurs, om det är en skola eller en skolenhet.",
             "canonicalValues": [
               "School",
               "SchoolUnit"
@@ -280,14 +280,14 @@
         "name": "parentActivity",
         "type": "complex",
         "multiValued": false,
-        "description": "A parent activity.",
+        "description": "Möjlighet att koppla aktiviteten till en ursprunglig \"föräldraaktivitet\".",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the parent Activity.",
+            "description": "Identifierare för den ursprungliga aktiviteten.",
             "mutability": "immutable"
           },
           {
@@ -297,7 +297,7 @@
               "Activity"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Activity' resource.",
+            "description": "URI för den ursprungliga aktiviteten.",
             "mutability": "immutable"
           }
         ]
