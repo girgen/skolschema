@@ -8,28 +8,28 @@
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "The name of the resource in human-readable form.",
+        "description": "Namn på resursen.",
         "required": true
       },
       {
         "name": "description",
         "type": "string",
         "multiValued": false,
-        "description": "Descriptive information about the resource.",
+        "description": "Beskrivning av resursen.",
         "required": false
       },
       {
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "The group that is the owner of this resource.",
+        "description": "Möjlighet att ange vilken skola eller skolenhet resursen tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the owner Group.",
+            "description": "Identifierare för den grupp som äger resursen.",
             "mutability": "immutable"
           },
           {
@@ -42,21 +42,21 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Group' resource.",
+            "description": "URI för den grupp som äger resursen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name or the group, primarily used for display purposes.  READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera resursen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "A label indicating the type of resource, e.g., 'SchoolUnit' or 'Group'.",
+            "description": "Resurstypen för ägande grupp, om det är en skola eller en skolenhet.",
             "canonicalValues": [
               "Group",
               "SchoolUnit",

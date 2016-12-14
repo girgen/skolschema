@@ -267,7 +267,7 @@
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "Typen av resurs, om det är en skola eller en skolenhet.",
+            "description": "Resurstypen för ägande grupp, om det är en skola eller en skolenhet.",
             "canonicalValues": [
               "School",
               "SchoolUnit"
