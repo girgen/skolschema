@@ -1,14 +1,14 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
-    "name": "Extensions for a school unit",
-    "description": "TBD. A school unit *must* have a school group as parentGroup.",
+    "name": "SchoolUnit",
+    "description": "En specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod enligt Skolenhetsregistret.",
     "attributes": [
       {
         "name": "schoolUnitCode",
         "type": "string",
         "multiValued": false,
-        "description": "School unit code according to Skolverket.",
+        "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket.",
         "required": true,
         "caseExact": true
       },
@@ -16,7 +16,7 @@
         "name": "schoolTypes",
         "type": "string",
         "multiValued": true,
-        "description": "Type of school.",
+        "description": "Skolform, exempelvis GR, GY.",
         "required": true,
         "caseExact": true,
         "canonicalValues": [

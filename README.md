@@ -140,3 +140,8 @@ resource oc room kan de verligen ägas av vilken grupp som helst eller är det b
 
 vi använder "resource" det gör även scim. Förvirring?
 
+
+
+rektor är bortrefaktoriserat, men finns kvar i "SchoolUnit - Skolenhet
+Klassen SchoolUnit är en specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod och ansvarig rektor enligt Skolenhetsregistret. 
+"

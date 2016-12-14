@@ -2,32 +2,32 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:User",
     "name": "User",
-    "description": "User's specific attributes.",
+    "description": "En specialisering av User(SCIM) som innehåller extra attribut för en person.",
     "attributes": [
       {
         "name": "civicNo",
         "type": "string",
         "multiValued": false,
-        "description": "Personnummer (Social security number). The format is 201601011234 for Sweden, or equivalent for other countries.",
+        "description": "Personnummer i formatet är 201601011234 i Sverige, och motsvarande entydigt format för andra länder.",
         "uniqueness": "global"
       },
       {
         "name": "securityMarking",
         "type": "boolean",
         "multiValued": false,
-        "description": "Security marked person. Default is false."
+        "description": "Sekretessmarkering är en markering på personuppgifterna i folkbokföringsregistret som Skatteverket sätter. Ingen får lämna ut folkbokföringsuppgifter utan tillstånd och säkerhetskontroll."
       },
       {
         "name": "userRelations",
         "type": "complex",
         "multiValued": true,
-        "description": "Contact persons for the user",
+        "description": "Association till en annan person, t.ex. vårdnadshavare.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of a contact person for this User.",
+            "description": "Identifierare för den relaterade personen.",
             "mutability": "immutable"
           },
           {
@@ -37,14 +37,14 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "description": "URI för den relaterade personen.",
             "mutability": "immutable"
           },
           {
             "name": "relationType",
             "type": "string",
             "multiValued": false,
-            "description": "One of \"Guardian\" and \"Other\".",
+            "description": "Beskriver vilken typ av relation som avses.",
             "caseExact": true,
             "canonicalValues": [
               "Guardian",
@@ -55,7 +55,7 @@
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "The displayName of the User's contact person. OPTIONAL and READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera den relaterade personen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
@@ -64,13 +64,14 @@
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
-        "description": "Student enrolments",
+        "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår. 
+",
         "subAttributes": [
           {
             "name": "schoolUnitValue",
             "type": "string",
             "multiValued": false,
-            "description": "UUID identifier of a school unit group.",
+            "description": "Identifierare för skolenhetensgruppen.",
             "mutability": "immutable"
           },
           {
@@ -80,21 +81,21 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "TODO.",
+            "description": "URI för .",
             "mutability": "immutable"
           },
           {
             "name": "schoolUnitCode",
             "type": "string",
             "multiValued": false,
-            "description": "School unit code for the student's enrolments. READ-ONLY.",
+            "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "schoolType",
             "type": "string",
             "multiValued": false,
-            "description": "The school type within the school unit.",
+            "description": "Skolform, exempelvis GR, GY.",
             "caseExact": true,
             "canonicalValues": [
               "FS",
@@ -108,52 +109,49 @@
               "VUX",
               "SUV",
               "YH",
-              "FHS"
+              "FHS",
+              "HS",
+              "AU"
             ]
           },
           {
             "name": "programCode",
             "type": "string",
             "multiValued": false,
-            "description": "The program code for GY/GYSÄR students.",
+            "description": "Programkoden för GY/GYSÄR-studenter.",
             "caseExact": true
           },
           {
             "name": "schoolYear",
-            "type": "string",
+            "type": "integer",
             "multiValued": false,
-            "description": "The student's school year (årskurs), or F for pre-school.",
+            "description": "Värdet årskurs anger det år efter skolstarten för vilket en student följer undervisningen.",
             "caseExact": true,
             "canonicalValues": [
-              "F",
-              "0",
-              "1",
-              "2",
-              "3",
-              "4",
-              "5",
-              "6",
-              "7",
-              "8",
-              "9",
-              "10",
-              "11",
-              "12",
-              "13",
-              "14"
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
             ]
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this enrolment."
+            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\")."
           }
         ]
       }
