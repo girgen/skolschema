@@ -14,32 +14,35 @@
           "Elevaktivitet",
           "Läraraktivitet",
           "Övrigt"
-        ]
+        ],
+        "mutability": "immutable"
       },
       {
         "name": "calendarEventsRequired",
         "type": "boolean",
         "multiValued": false,
-        "description": "Does this actvivity require calendar events."
+        "description": "Does this actvivity require calendar events.",
+        "required": true
       },
       {
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this activity.",
+        "required": true
       },
       {
         "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity."
+        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this activity.",
+        "required": true
       },
       {
         "name": "minutesPlanned",
         "type": "integer",
         "multiValued": false,
-        "description": "TBD.",
-        "required": true
+        "description": "TBD."
       },
       {
         "name": "comment",
@@ -57,7 +60,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the StudentGroup."
+            "description": "The identifier of the StudentGroup.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -66,7 +70,8 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource"
+            "description": "The URI of the corresponding 'User' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -99,7 +104,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Employment."
+            "description": "The identifier of the Employment.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -108,7 +114,8 @@
               "Employment"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Employment' resource"
+            "description": "The URI of the corresponding 'Employment' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -147,7 +154,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the User."
+            "description": "The identifier of the User.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -156,14 +164,15 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource"
+            "description": "The URI of the corresponding 'User' resource",
+            "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
             "description": "The name of the user, primarily used for display purposes.  READ-ONLY.",
-            "mutability": "readOnly"
+            "mutability": "immutable"
           },
           {
             "name": "startDate",
@@ -189,7 +198,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Course or Subject."
+            "description": "The identifier of the Course or Subject.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -199,7 +209,8 @@
               "Subject"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Course' or 'Subject' resource"
+            "description": "The URI of the corresponding 'Course' or 'Subject' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -216,7 +227,8 @@
             "canonicalValues": [
               "Course",
               "Subject"
-            ]
+            ],
+            "mutability": "immutable"
           }
         ]
       },
@@ -230,7 +242,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the School or SchoolUnit."
+            "description": "The identifier of the School or SchoolUnit.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -240,7 +253,8 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource"
+            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -257,7 +271,8 @@
             "canonicalValues": [
               "School",
               "SchoolUnit"
-            ]
+            ],
+            "mutability": "immutable"
           }
         ]
       },

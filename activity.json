@@ -8,10 +8,11 @@
   "startDate": "2016-02-25",
   "endDate": "2016-04-15",
   "minutesPlanned": 4000,
+  "comment": "Tour guide training.",
   "groups": [
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "https://example.com/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a331660a",
       "display": "MATMAT01 N3A",
       "startDate": "2016-02-25",
       "endDate": "2016-04-15"
@@ -20,15 +21,15 @@
   "students": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
-      "display": "Barbara Jensen",
+      "$ref": "/v2/Users/2819c223-7f76-453a-919d-413861904646",
+      "displayName": "Barbara Jensen",
       "startDate": "2016-02-25",
       "endDate": "2016-04-15"
     },
     {
       "value": "902c246b-6245-4190-8e05-00816be7344a",
-      "$ref": "https://example.com/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
-      "display": "Mandy Pepperidge",
+      "$ref": "/v2/Users/902c246b-6245-4190-8e05-00816be7344a",
+      "displayName": "Mandy Pepperidge",
       "startDate": "2016-02-25",
       "endDate": "2016-04-15"
     }
@@ -36,8 +37,8 @@
   "teachers": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
-      "displayName": "Palle Girgensohn",
+      "$ref": "/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "PAL",
       "startDate": "2016-02-25",
       "endDate": "2016-04-15",
       "minutesPlanned": 3600
@@ -45,17 +46,17 @@
   ],
   "topic": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
     "display": "Matematik A",
     "type": "Course"
   },
   "parentActivity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904647"
+    "$ref": "/v2/Activities/87dda8fa-7f76-453a-919d-413861904647"
   },
   "owner": {
     "value": "87dda8fa-7f76-453a-919d-413861904641",
-    "$ref": "https://example.com/v2/SchoolUnits/87dda8fa-7f76-453a-919d-413861904641",
+    "$ref": "/v2/SchoolUnits/87dda8fa-7f76-453a-919d-413861904641",
     "type": "SchoolUnit",
     "display": "Rudbäcksskolan"
   },
@@ -64,6 +65,6 @@
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
     "version": "W/\"3694e05e9dff592\"",
-    "location": "https://example.com/v2/Activities/e9e30dba-f08f-4109-8486-d5c6a331660a"
+    "location": "/v2/Activities/e9e30dba-f08f-4109-8486-d5c6a331660a"
   }
 }

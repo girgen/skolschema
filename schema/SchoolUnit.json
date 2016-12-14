@@ -10,8 +10,7 @@
         "multiValued": false,
         "description": "School unit code according to Skolverket.",
         "required": true,
-        "caseExact": true,
-        "mutability": "readWrite"
+        "caseExact": true
       },
       {
         "name": "schoolTypes",
@@ -20,7 +19,6 @@
         "description": "Type of school.",
         "required": true,
         "caseExact": true,
-        "mutability": "readWrite",
         "canonicalValues": [
           "FS",
           "FSK",

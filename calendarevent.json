@@ -11,29 +11,29 @@
   "teachingLengthGoup": 60,
   "activity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Activities/87dda8fa-7f76-453a-919d-413861904646"
+    "$ref": "/v2/Activities/87dda8fa-7f76-453a-919d-413861904646"
   },
   "rooms": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Safiren"
     },
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Rooms/87dda8fa-7f76-453a-919d-413861904646",
       "display": "Pionen"
     }
   ],
   "resources": [
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
       "display": "projektor13"
     },
     {
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Resources/87dda8fa-7f76-453a-919d-413861904646",
       "display": "ipad2"
     }
   ],
@@ -44,8 +44,14 @@
       "endTime": "2016-05-24T15:00",
       "teachingLength": 40,
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
-      "display": "Palle Girgensohn"
+      "$ref": "/v2/Users/87dda8fa-7f76-453a-919d-413861904646",
+      "displayName": "Palle Girgensohn"
+    },
+    {
+      "participates": false,
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Users/87dda8fa-2422-453a-919d-413861904646",
+      "displayName": "Andy Person"
     }
   ],
   "teacherExceptions": [
@@ -55,19 +61,19 @@
       "startTime": "2016-05-24T14:45",
       "endTime": "2016-05-24T15:00",
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
+      "$ref": "/v2/Employments/87dda8fa-7f76-453a-919d-413861904646",
       "display": "BLA"
     }
   ],
-  "groupExceptions": [
+  "studentGroupExceptions": [
     {
       "participates": true,
       "teachingLength": 30,
       "startTime": "2016-05-24T14:45",
       "endTime": "2016-05-24T15:00",
       "value": "87dda8fa-7f76-453a-919d-413861904646",
-      "$ref": "https://example.com/v2/Groups/87dda8fa-7f76-453a-919d-413861904646",
-      "display": "Bosse Larsson"
+      "$ref": "/v2/StudentGroups/87dda8fa-7f76-453a-919d-413861904646",
+      "display": "Klass 3 A"
     }
   ],
   "meta": {
@@ -75,6 +81,6 @@
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
     "version": "W/\"3694e05e9dff592\"",
-    "location": "https://example.com/v2/CalendarEvents/92834792-f08f-4109-8486-d5c6a331660a"
+    "location": "/v2/CalendarEvents/92834792-f08f-4109-8486-d5c6a331660a"
   }
 }

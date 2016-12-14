@@ -8,25 +8,14 @@
         "name": "civicNo",
         "type": "string",
         "multiValued": false,
-        "description": "Swedish personnummer (Social security number). The format is 201601011234.",
+        "description": "Personnummer (Social security number). The format is 201601011234 for Sweden, or equivalent for other countries.",
         "uniqueness": "global"
-      },
-      {
-        "name": "gender",
-        "type": "string",
-        "multiValued": false,
-        "description": "Person's biological gender. This is expected to be the same as the gender noted by the civicNo.",
-        "caseExact": true,
-        "canonicalValues": [
-          "M",
-          "F"
-        ]
       },
       {
         "name": "securityMarking",
         "type": "boolean",
         "multiValued": false,
-        "description": "Security marked person"
+        "description": "Security marked person. Default is false."
       },
       {
         "name": "userRelations",
@@ -38,7 +27,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of a contact person for this User."
+            "description": "Identifier of a contact person for this User.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -47,13 +37,14 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User."
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "mutability": "immutable"
           },
           {
             "name": "relationType",
             "type": "string",
             "multiValued": false,
-            "description": "One of \"Guardian\"...[TODO].",
+            "description": "One of \"Guardian\" and \"Other\".",
             "caseExact": true,
             "canonicalValues": [
               "Guardian",
@@ -79,7 +70,8 @@
             "name": "schoolUnitValue",
             "type": "string",
             "multiValued": false,
-            "description": "UUID identifier of a school unit group."
+            "description": "UUID identifier of a school unit group.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -88,14 +80,14 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "TODO."
+            "description": "TODO.",
+            "mutability": "immutable"
           },
           {
             "name": "schoolUnitCode",
             "type": "string",
             "multiValued": false,
             "description": "School unit code for the student's enrolments. READ-ONLY.",
-            "required": true,
             "mutability": "readOnly"
           },
           {
@@ -103,8 +95,7 @@
             "type": "string",
             "multiValued": false,
             "description": "The school type within the school unit.",
-            "required": false,
-            "caseExact": false,
+            "caseExact": true,
             "canonicalValues": [
               "FS",
               "FSK",

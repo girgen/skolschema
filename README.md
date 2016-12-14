@@ -122,3 +122,21 @@ scims group.member[type="Group"] är samma sak som vår parentGroup. dokumentera
 
 
 studentexceptions -- hur förklara particitpates visavi de andra attributen?
+
+
+employment: startDate och endDate istället för employmentTime... (och de är strängar...)
+
+USer: securityMarking hellre än "protected"???
+
+schoolyears (plural)  JA!
+schoolTypes (plural)  "?"
+
+
+display vs displayName  är inkonsekvent. även i SCIM-RTF:erna
+
+CalendarEvent -> pilen till activity ska heta "activity"
+
+resource oc room kan de verligen ägas av vilken grupp som helst eller är det bara school och schoolunit?
+
+vi använder "resource" det gör även scim. Förvirring?
+

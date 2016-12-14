@@ -24,11 +24,8 @@
         "type": "string",
         "multiValued": false,
         "description": "Type of school.",
-        "required": false,
         "caseExact": true,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none",
+        "mutability": "immutable",
         "canonicalValues": [
           "FS",
           "FSK",
@@ -48,8 +45,7 @@
         "name": "schoolYears",
         "type": "integer",
         "multiValued": true,
-        "description": "The student group's school years (årskurs).",
-        "required": false
+        "description": "The student group's school years (årskurs)."
       },
       {
         "name": "studentMemberships",
@@ -61,7 +57,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier of the User."
+            "description": "Identifier of the User.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -70,7 +67,8 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI corresponding to a SCIM resource that is a contact person for this User."
+            "description": "The URI corresponding to a SCIM resource that is a contact person for this User.",
+            "mutability": "immutable"
           },
           {
             "name": "displayName",

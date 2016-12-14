@@ -9,28 +9,25 @@
         "type": "boolean",
         "multiValued": false,
         "description": "True if the calendar event is cancelled. Default is false.",
-        "required": false
+        "required": true
       },
       {
         "name": "teachingLengthGroup",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the group's time is planned during the calendar event.",
-        "required": false
+        "description": "How many minutes the group's time is planned during the calendar event."
       },
       {
         "name": "teachingLengthTeacher",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the teachers' time is planned during the calendar event.",
-        "required": false
+        "description": "How many minutes the teachers' time is planned during the calendar event."
       },
       {
         "name": "teachingLengthStudent",
         "type": "integer",
         "multiValued": false,
-        "description": "How many minutes the students' time is planned during the calendar event.",
-        "required": false
+        "description": "How many minutes the students' time is planned during the calendar event."
       },
       {
         "name": "startTime",
@@ -45,6 +42,12 @@
         "multiValued": false,
         "description": "End datetime for this event.",
         "required": true
+      },
+      {
+        "name": "comment",
+        "type": "string",
+        "multiValued": false,
+        "description": "Comment"
       },
       {
         "name": "activity",
@@ -74,18 +77,8 @@
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "A human-readable name of the activity, primarily used for display purposes.  READ-ONLY.",
+            "description": "A human-readable name of the activity's course or subject, primarily used for display purposes.  READ-ONLY.",
             "mutability": "readOnly"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "A label indicating the type of resource, e.g., 'Activity'.",
-            "canonicalValues": [
-              "Activity"
-            ],
-            "mutability": "immutable"
           }
         ]
       },
@@ -99,7 +92,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the StudentGroup."
+            "description": "The identifier of the StudentGroup.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -108,7 +102,8 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Group' resource"
+            "description": "The URI of the corresponding 'Group' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -128,22 +123,19 @@
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
-            "required": false
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event.",
-            "required": false
+            "description": "Start datetime for this exception. Default is the startTime of the event."
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event.",
-            "required": false
+            "description": "End datetime for this exception. Default is the endTime of the event."
           }
         ]
       },
@@ -157,7 +149,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Teacher."
+            "description": "The identifier of the Teacher.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -166,7 +159,8 @@
               "Employment"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Employment' resource"
+            "description": "The URI of the corresponding 'Employment' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -179,29 +173,25 @@
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Defines if the exception is additive or excluding.",
-            "required": true
+            "description": "Defines if the exception is additive or excluding."
           },
           {
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
-            "required": false
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event.",
-            "required": false
+            "description": "Start datetime for this exception. Default is the startTime of the event."
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event.",
-            "required": false
+            "description": "End datetime for this exception. Default is the endTime of the event."
           }
         ]
       },
@@ -215,7 +205,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Student."
+            "description": "The identifier of the Student.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -224,7 +215,8 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource"
+            "description": "The URI of the corresponding 'User' resource",
+            "mutability": "immutable"
           },
           {
             "name": "displayName",
@@ -237,29 +229,25 @@
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Defines if the exception is additive or excluding.",
-            "required": true
+            "description": "Defines if the exception is additive or excluding."
           },
           {
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
-            "required": false
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded."
           },
           {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Start datetime for this exception. Default is the startTime of the event.",
-            "required": false
+            "description": "Start datetime for this exception. Default is the startTime of the event."
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "End datetime for this exception. Default is the endTime of the event.",
-            "required": false
+            "description": "End datetime for this exception. Default is the endTime of the event."
           }
         ]
       },
@@ -273,7 +261,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Room."
+            "description": "The identifier of the Room.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -282,7 +271,8 @@
               "Room"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Room' resource"
+            "description": "The URI of the corresponding 'Room' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",
@@ -303,7 +293,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the Resource."
+            "description": "The identifier of the Resource.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -312,7 +303,8 @@
               "Resources"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'Resource' resource"
+            "description": "The URI of the corresponding 'Resource' resource",
+            "mutability": "immutable"
           },
           {
             "name": "display",

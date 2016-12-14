@@ -8,7 +8,8 @@
         "name": "isTeacher",
         "type": "boolean",
         "multiValued": false,
-        "description": "Does this employment represent a teacher."
+        "description": "Does this employment represent a teacher.",
+        "required": true
       },
       {
         "name": "signature",
@@ -26,34 +27,19 @@
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this employment.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
+        "description": "Start date (ISO8601 format, e.g. \"2016-10-15\") for this employment."
       },
       {
         "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this employment.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
+        "description": "End date (ISO8601 format, e.g. \"2016-10-15\") for this employment."
       },
       {
         "name": "hoursPerYear",
         "type": "integer",
         "multiValued": false,
-        "description": "Employment in working hours per year for this employment.",
-        "required": false,
-        "caseExact": false,
-        "mutability": "readWrite",
-        "returned": "default",
-        "uniqueness": "none"
+        "description": "Employment in working hours per year for this employment."
       },
       {
         "name": "user",
@@ -65,7 +51,8 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "The identifier of the User."
+            "description": "The identifier of the User.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
@@ -74,10 +61,55 @@
               "User"
             ],
             "multiValued": false,
-            "description": "The URI of the corresponding 'User' resource"
+            "description": "The URI of the corresponding 'User' resource",
+            "mutability": "immutable"
           },
           {
             "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "employedAt",
+        "type": "complex",
+        "multiValued": false,
+        "description": "The school or school unit where the user is employed user.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the School or SchoolUnit.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "School",
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'School' or 'SchoolUnit' resource",
+            "mutability": "immutable"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "A label indicating the type of resource, e.g., 'School' or 'SchoolUnit'.",
+            "canonicalValues": [
+              "School",
+              "SchoolUnit"
+            ],
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "A human-readable name, primarily used for display purposes.  READ-ONLY.",

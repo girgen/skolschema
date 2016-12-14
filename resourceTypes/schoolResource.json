@@ -32,18 +32,6 @@
       {
         "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
         "required": false
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:School",
-        "required": false
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
-        "required": false
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
-        "required": false
       }
     ],
     "meta": {
@@ -55,13 +43,99 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
+    "id": "School",
+    "name": "School",
+    "endpoint": "/Schools",
+    "description": "School",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
+        "required": true
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:School",
+        "required": true
+      }
+    ],
+    "meta": {
+      "location": "/v2/ResourceTypes/School",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "SchoolUnit",
+    "name": "SchoolUnit",
+    "endpoint": "/SchoolUnits",
+    "description": "SchoolUnit",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
+        "required": true
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
+        "required": true
+      }
+    ],
+    "meta": {
+      "location": "/v2/ResourceTypes/SchoolUnit",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "StudentGroup",
+    "name": "StudentGroup",
+    "endpoint": "/StudentGroups",
+    "description": "StudentGroup",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
+        "required": true
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
+        "required": true
+      }
+    ],
+    "meta": {
+      "location": "/v2/ResourceTypes/StudentGroup",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
     "id": "Activity",
     "name": "Activity",
     "endpoint": "/Activities",
-    "description": "School",
+    "description": "Activity",
     "schema": "urn:scim:schemas:extension:sis:school:1.0:Activity",
     "meta": {
       "location": "/v2/ResourceTypes/Activity",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "CalendarEvent",
+    "name": "CalendarEvent",
+    "endpoint": "/CalendarEvents",
+    "description": "CalendarEvent",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:CalendarEvent",
+    "meta": {
+      "location": "/v2/ResourceTypes/CalendarEvent",
       "resourceType": "ResourceType"
     }
   },
@@ -104,6 +178,34 @@
     "schema": "urn:scim:schemas:extension:sis:school:1.0:Subject",
     "meta": {
       "location": "/v2/ResourceTypes/Subject",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Room",
+    "name": "Room",
+    "endpoint": "/Rooms",
+    "description": "Room",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Room",
+    "meta": {
+      "location": "/v2/ResourceTypes/Room",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Resource",
+    "name": "Resource",
+    "endpoint": "/Resources",
+    "description": "Resource",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Resource",
+    "meta": {
+      "location": "/v2/ResourceTypes/Resource",
       "resourceType": "ResourceType"
     }
   }

@@ -9,7 +9,6 @@
         "type": "string",
         "multiValued": false,
         "description": "Kommunkod.",
-        "required": false,
         "caseExact": true
       },
       {
@@ -30,8 +29,7 @@
         "name": "ownerName",
         "type": "string",
         "multiValued": false,
-        "description": "Name of the huvudman.",
-        "caseExact": true
+        "description": "Name of the huvudman."
       }
     ],
     "meta": {

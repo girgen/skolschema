@@ -61,6 +61,7 @@
               "School",
               "StudentGroup"
             ],
+            "caseExact": true,
             "mutability": "immutable"
           }
         ]

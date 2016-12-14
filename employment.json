@@ -11,13 +11,13 @@
   "hoursPerYear": 1340,
   "employedAt": {
     "value": "e9ddadba-f08f-4109-8486-d5c6a331660a",
-    "$ref": "https://example.com/v2/SchoolUnit/e9e30dba-f08f-4109-8486-d5c6a3316602",
+    "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a3316602",
     "display": "SkolenhetA",
     "type": "SchoolUnit"
   },
   "user": {
     "value": "2819c223-7f76-453a-919d-413861904646",
-    "$ref": "https://example.com/v2/Users/2819c223-7f76-453a-919d-413861904646",
+    "$ref": "/v2/Users/2819c223-7f76-453a-919d-413861904646",
     "displayName": "Palle Girgensohn"
   },
   "meta": {
@@ -25,6 +25,6 @@
     "created": "2010-01-23T04:56:22Z",
     "lastModified": "2011-05-13T04:42:34Z",
     "version": "W/\"3694e05e9dff590\"",
-    "location": "https://example.com/v2/Employments/e9e30dba-f08f-4109-8486-d5c6a331660a"
+    "location": "/v2/Employments/e9e30dba-f08f-4109-8486-d5c6a331660a"
   }
 }
