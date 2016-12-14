@@ -1,0 +1,110 @@
+[
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "User",
+    "name": "User",
+    "endpoint": "/Users",
+    "description": "User Account",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:User",
+        "required": false
+      }
+    ],
+    "meta": {
+      "location": "/v2/ResourceTypes/User",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Group",
+    "name": "Group",
+    "endpoint": "/Groups",
+    "description": "Group",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
+        "required": false
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:School",
+        "required": false
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
+        "required": false
+      },
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
+        "required": false
+      }
+    ],
+    "meta": {
+      "location": "/v2/ResourceTypes/Group",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Activity",
+    "name": "Activity",
+    "endpoint": "/Activities",
+    "description": "School",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Activity",
+    "meta": {
+      "location": "/v2/ResourceTypes/Activity",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Course",
+    "name": "Course",
+    "endpoint": "/Courses",
+    "description": "Course",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Course",
+    "meta": {
+      "location": "/v2/ResourceTypes/Course",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Employment",
+    "name": "Employment",
+    "endpoint": "/Employments",
+    "description": "Employment",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Employment",
+    "meta": {
+      "location": "/v2/ResourceTypes/Employment",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Subject",
+    "name": "Subject",
+    "endpoint": "/Subjects",
+    "description": "Subject",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Subject",
+    "meta": {
+      "location": "/v2/ResourceTypes/Subject",
+      "resourceType": "ResourceType"
+    }
+  }
+]

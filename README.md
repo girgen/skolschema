@@ -119,3 +119,6 @@ calendarevent -> activity ska vara pil
 
 scims group.member[type="Group"] är samma sak som vår parentGroup. dokumentera det?
 
+
+
+studentexceptions -- hur förklara particitpates visavi de andra attributen?

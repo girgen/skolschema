@@ -1,0 +1,332 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:CalendarEvent",
+    "name": "CalendarEvent",
+    "description": "A calendar event, TBD.",
+    "attributes": [
+      {
+        "name": "cancelled",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "True if the calendar event is cancelled. Default is false.",
+        "required": false
+      },
+      {
+        "name": "teachingLengthGroup",
+        "type": "integer",
+        "multiValued": false,
+        "description": "How many minutes the group's time is planned during the calendar event.",
+        "required": false
+      },
+      {
+        "name": "teachingLengthTeacher",
+        "type": "integer",
+        "multiValued": false,
+        "description": "How many minutes the teachers' time is planned during the calendar event.",
+        "required": false
+      },
+      {
+        "name": "teachingLengthStudent",
+        "type": "integer",
+        "multiValued": false,
+        "description": "How many minutes the students' time is planned during the calendar event.",
+        "required": false
+      },
+      {
+        "name": "startTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "description": "Start datetime for this event.",
+        "required": true
+      },
+      {
+        "name": "endTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "description": "End datetime for this event.",
+        "required": true
+      },
+      {
+        "name": "activity",
+        "type": "complex",
+        "multiValued": false,
+        "description": "The activity for this calendar event.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the parent Activity.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Activity"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Activity' resource.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable name of the activity, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "A label indicating the type of resource, e.g., 'Activity'.",
+            "canonicalValues": [
+              "Activity"
+            ],
+            "mutability": "immutable"
+          }
+        ]
+      },
+      {
+        "name": "studentGroupExceptions",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Student group exceptions from the activity groups TBD.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the StudentGroup."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Group' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable student group name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "participates",
+            "type": "boolean",
+            "multiValued": false,
+            "description": "Defines if the exception is additive or excluding.",
+            "required": true
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
+            "required": false
+          },
+          {
+            "name": "startTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "Start datetime for this exception. Default is the startTime of the event.",
+            "required": false
+          },
+          {
+            "name": "endTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "End datetime for this exception. Default is the endTime of the event.",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "teacherExceptions",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Teacher exceptions from the activity groups TBD.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Teacher."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Employment"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Employment' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable user, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "participates",
+            "type": "boolean",
+            "multiValued": false,
+            "description": "Defines if the exception is additive or excluding.",
+            "required": true
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
+            "required": false
+          },
+          {
+            "name": "startTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "Start datetime for this exception. Default is the startTime of the event.",
+            "required": false
+          },
+          {
+            "name": "endTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "End datetime for this exception. Default is the endTime of the event.",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "studentExceptions",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Student exceptions for this event. TBD.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Student."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'User' resource"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable student group name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "participates",
+            "type": "boolean",
+            "multiValued": false,
+            "description": "Defines if the exception is additive or excluding.",
+            "required": true
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Override the event's teachingLength for this exception. Default is 0, i.e. the entire time is excluded.",
+            "required": false
+          },
+          {
+            "name": "startTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "Start datetime for this exception. Default is the startTime of the event.",
+            "required": false
+          },
+          {
+            "name": "endTime",
+            "type": "dateTime",
+            "multiValued": false,
+            "description": "End datetime for this exception. Default is the endTime of the event.",
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "rooms",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Rooms booked for this event.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Room."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Room"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Room' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable room name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "resources",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Resources booked for this event.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "The identifier of the Resource."
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Resources"
+            ],
+            "multiValued": false,
+            "description": "The URI of the corresponding 'Resource' resource"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "A human-readable resource name, primarily used for display purposes.  READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:CalendarEvent"
+    }
+  }
+]

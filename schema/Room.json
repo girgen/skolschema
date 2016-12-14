@@ -1,0 +1,27 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Room",
+    "name": "Room",
+    "description": "A room, TBD.",
+    "attributes": [
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "description": "The name of the room in human-readable form.",
+        "required": true
+      },
+      {
+        "name": "seats",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Number of seats in the room.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Room"
+    }
+  }
+]

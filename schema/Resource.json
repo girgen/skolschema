@@ -1,0 +1,27 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Resource",
+    "name": "Resource",
+    "description": "A resource, for example a projector.",
+    "attributes": [
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "description": "The name of the resource in human-readable form.",
+        "required": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "multiValued": false,
+        "description": "Descriptive information about the resource.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Resource"
+    }
+  }
+]
