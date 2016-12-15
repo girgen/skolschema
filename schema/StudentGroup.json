@@ -16,6 +16,7 @@
           "Undervisning",
           "Klass",
           "Mentor",
+          "Schema",
           "Övrigt"
         ]
       },
@@ -23,12 +24,13 @@
         "name": "schoolType",
         "type": "string",
         "multiValued": false,
-        "description": "Skolform(er).",
+        "description": "Skolform.",
         "caseExact": true,
         "mutability": "immutable",
         "canonicalValues": [
           "FS",
           "FSK",
+          "FTH",
           "GR",
           "GRS",
           "SP",
@@ -38,8 +40,11 @@
           "VUX",
           "SUV",
           "YH",
-          "FHS"
-        ]
+          "FHS",
+          "HS",
+          "AU"
+        ],
+        "required": true
       },
       {
         "name": "schoolYears",

@@ -8,7 +8,8 @@
         "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
+        "required": true
       },
       {
         "name": "endDate",

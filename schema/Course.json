@@ -22,15 +22,13 @@
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "Kursens namn exempelvis Matematik 1a.",
-        "required": true
+        "description": "Kursens namn exempelvis Matematik 1a."
       },
       {
         "name": "subjectShortName",
         "type": "string",
         "multiValued": false,
-        "description": "Beteckning för det ämne kursen hör till, exempelvis MAT.",
-        "required": true
+        "description": "Beteckning för det ämne kursen hör till, exempelvis MAT."
       },
       {
         "name": "points",

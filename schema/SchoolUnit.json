@@ -22,6 +22,7 @@
         "canonicalValues": [
           "FS",
           "FSK",
+          "FTH",
           "GR",
           "GRS",
           "SP",
@@ -31,7 +32,9 @@
           "VUX",
           "SUV",
           "YH",
-          "FHS"
+          "FHS",
+          "HS",
+          "AU"
         ]
       }
     ],

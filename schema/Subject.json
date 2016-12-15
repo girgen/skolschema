@@ -22,8 +22,7 @@
         "name": "name",
         "type": "string",
         "multiValued": false,
-        "description": "Ämnets namn exempelvis Matematik.",
-        "required": true
+        "description": "Ämnets namn exempelvis Matematik."
       },
       {
         "name": "shortName",

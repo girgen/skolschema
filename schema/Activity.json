@@ -11,7 +11,7 @@
         "description": "Beskriver vilken typ av aktivitet som avses.",
         "canonicalValues": [
           "Undervisning",
-          "Elevaktivitet",
+          "Studentaktivitet",
           "Läraraktivitet",
           "Övrigt"
         ],
@@ -77,7 +77,7 @@
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -243,7 +243,8 @@
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för skolan eller skolenheten.",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "$ref",
@@ -254,7 +255,8 @@
             ],
             "multiValued": false,
             "description": "URI för skolan eller skolenheten.",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "display",
@@ -274,12 +276,13 @@
             ],
             "mutability": "immutable"
           }
-        ]
+        ],
+        "required": true
       },
       {
         "name": "parentActivity",
         "type": "complex",
-        "multiValued": false,
+        "multiValued": true,
         "description": "Möjlighet att koppla aktiviteten till en ursprunglig \"föräldraaktivitet\".",
         "required": false,
         "subAttributes": [

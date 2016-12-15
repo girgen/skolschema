@@ -115,7 +115,8 @@
             "description": "Ett läsbart namn för att identifiera ägaren av anställningen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
-        ]
+        ],
+        "required": true
       }
     ],
     "meta": {

@@ -28,7 +28,8 @@
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för den relaterade personen.",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "$ref",
@@ -38,7 +39,8 @@
             ],
             "multiValued": false,
             "description": "URI för den relaterade personen.",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "relationType",
@@ -47,9 +49,10 @@
             "description": "Beskriver vilken typ av relation som avses.",
             "caseExact": true,
             "canonicalValues": [
-              "Guardian",
-              "Other"
-            ]
+              "Vårdnadshavare",
+              "Kontaktperson"
+            ],
+            "required": true
           },
           {
             "name": "displayName",
@@ -64,15 +67,15 @@
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
-        "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår. 
-",
+        "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
             "name": "schoolUnitValue",
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för skolenhetensgruppen.",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "$ref",
@@ -82,13 +85,14 @@
             ],
             "multiValued": false,
             "description": "URI för .",
-            "mutability": "immutable"
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "schoolUnitCode",
             "type": "string",
             "multiValued": false,
-            "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket. READ-ONLY.",
+            "description": "Läsbar skolenhetskod för att identifiera skolenheten i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -100,6 +104,7 @@
             "canonicalValues": [
               "FS",
               "FSK",
+              "FTH",
               "GR",
               "GRS",
               "SP",
@@ -112,7 +117,8 @@
               "FHS",
               "HS",
               "AU"
-            ]
+            ],
+            "required": true
           },
           {
             "name": "programCode",
@@ -145,13 +151,15 @@
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\")."
+            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\").",
+            "required": true
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\").",
+            "required": true
           }
         ]
       }

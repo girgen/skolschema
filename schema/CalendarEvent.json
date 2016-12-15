@@ -300,7 +300,7 @@
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Resources"
+              "Resource"
             ],
             "multiValued": false,
             "description": "URI för resursen.",
