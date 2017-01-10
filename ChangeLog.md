@@ -1,3 +1,0 @@
-- createdBySystem tas bort, eftersom det framgår av OAuthautentiseringen mellan systemet
-- teachingLengthStudent finns inte i CalendarEvent, så vi har tagit bort det ur StudentException.
-- course är bara en sträng, inte begränsat till något värdeförråd som relaterar till viss skolform
