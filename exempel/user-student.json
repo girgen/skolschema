@@ -23,8 +23,8 @@
   ],
   "groups": [
     {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "value": "e9e30dba-aaaa-4109-8486-d5c6a331660a",
+      "$ref": "/v2/Groups/e9e30dba-aaaa-4109-8486-d5c6a331660a",
       "display": "Klass 5A"
     },
     {
@@ -44,8 +44,8 @@
     "securityMarking": "false",
     "userRelations": [
       {
-        "value": "26118915-6090-4610-87e4-49d8ca9f808d",
-        "$ref": "../Users/26118915-6090-4610-87e4-49d8ca9f808d",
+        "value": "26118915-6090-4610-aaaa-49d8ca9f808d",
+        "$ref": "../Users/26118915-6090-4610-aaaa-49d8ca9f808d",
         "displayName": "John Smith",
         "relationType": "Vårdnadshavare"
       },
@@ -58,8 +58,8 @@
     ],
     "enrolments": [
       {
-        "schoolUnitValue" : "26118915-6090-4610-87e4-4f1234234224",
-        "$ref": "../SchoolUnits/26118915-6090-4610-87e4-4f1234234224",
+        "schoolUnitValue" : "26118915-bbbb-4610-87e4-4f1234234224",
+        "$ref": "../SchoolUnits/26118915-bbbb-4610-87e4-4f1234234224",
         "schoolUnitCode": "14122127283",
 
         "schoolYear": 1,

@@ -24,6 +24,12 @@
         "description": "Anställningens tjänstgöringsgrad i procent."
       },
       {
+        "name": "hoursPerYear",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Antalet timmar per år som anställningen omfattar."
+      },
+      {
         "name": "startDate",
         "type": "string",
         "multiValued": false,
@@ -34,12 +40,6 @@
         "type": "string",
         "multiValued": false,
         "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "hoursPerYear",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Antalet timmar anställningen omfattar."
       },
       {
         "name": "user",

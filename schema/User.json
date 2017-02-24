@@ -84,7 +84,7 @@
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "URI för .",
+            "description": "URI för skolenhetensgruppen.",
             "mutability": "immutable",
             "required": true
           },
