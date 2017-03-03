@@ -51,20 +51,6 @@
             "multiValued": false,
             "description": "Ett läsbart namn för att identifiera resursen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "Resurstypen för ägande grupp, om det är en skola eller en skolenhet.",
-            "canonicalValues": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
-            ],
-            "caseExact": true,
-            "mutability": "immutable"
           }
         ]
       }

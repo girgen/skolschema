@@ -5,19 +5,6 @@
     "description": "Sammanhållande element som ska schemaläggas.",
     "attributes": [
       {
-        "name": "activityType",
-        "type": "string",
-        "multiValued": false,
-        "description": "Beskriver vilken typ av aktivitet som avses.",
-        "canonicalValues": [
-          "Undervisning",
-          "Studentaktivitet",
-          "Läraraktivitet",
-          "Övrigt"
-        ],
-        "mutability": "immutable"
-      },
-      {
         "name": "calendarEventsRequired",
         "type": "boolean",
         "multiValued": false,
@@ -39,16 +26,29 @@
         "required": true
       },
       {
-        "name": "minutesPlanned",
-        "type": "integer",
+        "name": "activityType",
+        "type": "string",
         "multiValued": false,
-        "description": "Den totalt planerade tiden i minuter."
+        "description": "Beskriver vilken typ av aktivitet som avses.",
+        "canonicalValues": [
+          "Undervisning",
+          "Studentaktivitet",
+          "Läraraktivitet",
+          "Övrigt"
+        ],
+        "mutability": "immutable"
       },
       {
         "name": "comment",
         "type": "string",
         "multiValued": false,
         "description": "En text med kompletterande information."
+      },
+      {
+        "name": "minutesPlanned",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Den totalt planerade tiden i minuter."
       },
       {
         "name": "groups",

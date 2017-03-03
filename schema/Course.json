@@ -2,7 +2,7 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Course",
     "name": "Course",
-    "description": "A course, TBD.",
+    "description": "En kurs, exempelvis i gymnasiekolan.",
     "attributes": [
       {
         "name": "courseCode",

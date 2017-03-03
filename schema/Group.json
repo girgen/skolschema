@@ -2,7 +2,7 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Group",
     "name": "Group extensions for SIS school groups",
-    "description": "TBD.",
+    "description": "En specialisering av Group(SCIM) som innehåller extra attribut för en grupp.",
     "attributes": [
       {
         "name": "startDate",

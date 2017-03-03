@@ -2,14 +2,14 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Subject",
     "name": "Subject",
-    "description": "A subject, TBD.",
+    "description": "Ett skolämne.",
     "attributes": [
       {
-        "name": "subjectCode",
+        "name": "shortName",
         "type": "string",
         "multiValued": false,
-        "required": true,
-        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
+        "description": "Förkortningar enligt Skolverket exempelvis MA.",
+        "required": true
       },
       {
         "name": "official",
@@ -25,11 +25,11 @@
         "description": "Ämnets namn exempelvis Matematik."
       },
       {
-        "name": "shortName",
+        "name": "subjectCode",
         "type": "string",
         "multiValued": false,
-        "description": "Förkortningar enligt Skolverket exempelvis MA.",
-        "required": true
+        "required": false,
+        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
       }
     ],
     "meta": {

@@ -13,6 +13,13 @@
         "required": true
       },
       {
+        "name": "ownerName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namnet på skolans huvudman.",
+        "required": true
+      },
+      {
         "name": "ownerType",
         "type": "string",
         "multiValued": false,
@@ -25,13 +32,6 @@
           "Enskild",
           "Utlandsskola"
         ],
-        "required": true
-      },
-      {
-        "name": "ownerName",
-        "type": "string",
-        "multiValued": false,
-        "description": "Namnet på skolans huvudman.",
         "required": true
       }
     ],

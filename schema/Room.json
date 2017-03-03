@@ -2,7 +2,7 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Room",
     "name": "Room",
-    "description": "A room, TBD.",
+    "description": "Ett rum eller en plats som kan bokas i ett skolschema.",
     "attributes": [
       {
         "name": "name",
@@ -29,7 +29,7 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för rummet.",
+            "description": "Identifierare för skolan/skolenheten.",
             "mutability": "immutable"
           },
           {
@@ -42,29 +42,15 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "URI för rummet.",
+            "description": "URI för skolan/skolenheten.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera ägaren av rummet i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera ägaren av rummet (skolan/skolenheten) i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "Anger resurstyp för rummet e.g. \"Group\"/\"SchoolUnit\"\"School\"/\"StudentGroup\".",
-            "canonicalValues": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
-            ],
-            "caseExact": true,
-            "mutability": "immutable"
           }
         ]
       }

@@ -121,11 +121,18 @@
             "required": true
           },
           {
-            "name": "programCode",
+            "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Programkoden för GY/GYSÄR-studenter.",
-            "caseExact": true
+            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\").",
+            "required": true
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\").",
+            "required": true
           },
           {
             "name": "schoolYear",
@@ -148,18 +155,11 @@
             ]
           },
           {
-            "name": "startDate",
+            "name": "programCode",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\").",
-            "required": true
-          },
-          {
-            "name": "endDate",
-            "type": "string",
-            "multiValued": false,
-            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\").",
-            "required": true
+            "description": "Programkoden för GY/GYSÄR-studenter.",
+            "caseExact": true
           }
         ]
       }

@@ -2,8 +2,22 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:CalendarEvent",
     "name": "CalendarEvent",
-    "description": "A calendar event, TBD.",
+    "description": "Används för att beskriva en kalenderhändelse, såsom ett lektionstillfälle eller en bokning",
     "attributes": [
+      {
+        "name": "startTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "description": "Kalenderhändelsens starttid med datum och tid (ISO8601 format tex \"2015-12-12T10:00:00\".",
+        "required": true
+      },
+      {
+        "name": "endTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "description": "Kalenderhändelsens sluttid med datum och tid (ISO8601 format tex \"2015-12-12T11:00:00\").",
+        "required": true
+      },
       {
         "name": "cancelled",
         "type": "boolean",
@@ -12,16 +26,10 @@
         "required": true
       },
       {
-        "name": "teachingLengthGroup",
-        "type": "integer",
+        "name": "comment",
+        "type": "string",
         "multiValued": false,
-        "description": "Undervisningstid i minuter för grupper."
-      },
-      {
-        "name": "teachingLengthTeacher",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Faktisk undervisningstid för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen."
+        "description": "En text med kompletterande information."
       },
       {
         "name": "teachingLengthStudent",
@@ -30,24 +38,10 @@
         "description": "Faktisk undervisningstid för studenter. Tiden kan vara kortare eller längre än tiden för kalenderhändelsen till exempel då en rast ingår i tiden."
       },
       {
-        "name": "startTime",
-        "type": "dateTime",
+        "name": "teachingLengthTeacher",
+        "type": "integer",
         "multiValued": false,
-        "description": "Kalenderhändelsens starttid med datum och tid (ISO8601 format tex \"2015-12-12\".",
-        "required": true
-      },
-      {
-        "name": "endTime",
-        "type": "dateTime",
-        "multiValued": false,
-        "description": "Kalenderhändelsens sluttid med datum och tid (ISO8601 format tex \"2015-12-12\").",
-        "required": true
-      },
-      {
-        "name": "comment",
-        "type": "string",
-        "multiValued": false,
-        "description": "En text med kompletterande information."
+        "description": "Faktisk undervisningstid för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen."
       },
       {
         "name": "activity",
@@ -120,22 +114,22 @@
             "required": true
           },
           {
-            "name": "teachingLength",
-            "type": "integer",
-            "multiValued": false,
-            "description": "Undervisningstid i minuter för gruppen."
-          },
-          {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")."
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12T10:30:00\")."
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")."
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12T11:00:00\")."
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Undervisningstid i minuter för gruppen."
           }
         ]
       },
@@ -176,22 +170,22 @@
             "description": "Används för att ange om en lärare deltar på ett visst kalendertillfälle."
           },
           {
-            "name": "teachingLength",
-            "type": "integer",
-            "multiValued": false,
-            "description": "Undervisningstid i minuter för lärare."
-          },
-          {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")"
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12T10:30:00\")"
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")"
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12T11:00:00\")"
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Undervisningstid i minuter för lärare."
           }
         ]
       },
@@ -232,22 +226,22 @@
             "description": "Används för att ange om en student deltar på ett visst kalendertillfälle. "
           },
           {
-            "name": "teachingLength",
-            "type": "integer",
-            "multiValued": false,
-            "description": "Undervisningstid i minuter för studenter."
-          },
-          {
             "name": "startTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12\")"
+            "description": "Starttid för undantaget (ISO8601 format tex \"2015-12-12T10:30:00\")"
           },
           {
             "name": "endTime",
             "type": "dateTime",
             "multiValued": false,
-            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12\")"
+            "description": "Sluttid för undantaget (ISO8601 format tex \"2015-12-12T11:00:00\")"
+          },
+          {
+            "name": "teachingLength",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Undervisningstid i minuter för studenter."
           }
         ]
       },
