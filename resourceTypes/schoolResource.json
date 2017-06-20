@@ -43,23 +43,13 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
-    "id": "School",
-    "name": "School",
-    "endpoint": "/Schools",
-    "description": "School",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
-        "required": true
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:School",
-        "required": true
-      }
-    ],
+    "id": "TimetableUnit",
+    "name": "TimetableUnit",
+    "endpoint": "/TimetableUnits",
+    "description": "TimetableUnit",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:TimetableUnit",
     "meta": {
-      "location": "/v2/ResourceTypes/School",
+      "location": "/v2/ResourceTypes/TimetableUnit",
       "resourceType": "ResourceType"
     }
   },
