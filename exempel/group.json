@@ -7,12 +7,7 @@
   "displayName": "Tour Guides",
   "urn:scim:schemas:extension:sis:school:1.0:Group": {
     "startDate": "2015-01-01",
-    "endDate": "2015-12-31",
-    "parentGroup": {
-      "value": "2819c223-7f76-453a-919d-413861904646",
-      "$ref": "/v2/Schools/2819c223-7f76-453a-919d-413861904646",
-      "display": "Rudbäcksskolan",
-      "type": "School"
+    "endDate": "2015-12-31"
     }
   },
   "members": [

@@ -8,8 +8,7 @@
   "owner": {
     "value": "2819c223-7f76-453a-919d-413861904646",
     "$ref": "/v2/Schools/2819c223-7f76-453a-919d-413861904646",
-    "display": "Rudbäcksskolan",
-    "type": "School"
+    "display": "Rudbäcksskolan"
   },
   "meta": {
     "resourceType": "Room",

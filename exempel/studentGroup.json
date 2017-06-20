@@ -9,11 +9,10 @@
   "urn:scim:schemas:extension:sis:school:1.0:Group": {
     "startDate": "2015-01-01",
     "endDate": "2015-12-31",
-    "parentGroup": {
+    "owner": {
       "value": "2819c223-7f76-453a-919d-413861904646",
-      "$ref": "/v2/School/2819c223-7f76-453a-919d-413861904646",
-      "display": "Lillbäcksgymnasiet",
-      "type": "School"
+      "$ref": "/v2/TimetableUnit/2819c223-7f76-453a-919d-413861904646",
+      "display": "Lillbäcksgymnasiet"
     }
   },
   "urn:scim:schemas:extension:sis:school:1.0:StudentGroup": {
