@@ -22,24 +22,21 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken Skola eller skolenhet rummet tillhör.",
+        "description": "Möjlighet att ange vilken schemaenhet rummet tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för skolan/skolenheten.",
+            "description": "Identifierare för schemaenheten.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
+              "TimetableUnit"
             ],
             "multiValued": false,
             "description": "URI för skolan/skolenheten.",

@@ -22,27 +22,24 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken skola eller skolenhet resursen tillhör.",
+        "description": "Möjlighet att ange vilken schemaenhet resursen tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för den grupp som äger resursen.",
+            "description": "Identifierare för den schemaenhet som äger resursen.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
+              "TimetableUnit"
             ],
             "multiValued": false,
-            "description": "URI för den grupp som äger resursen.",
+            "description": "URI för schemaenheten.",
             "mutability": "immutable"
           },
           {

@@ -5,17 +5,24 @@
     "description": "En persons tjänst.",
     "attributes": [
       {
-        "name": "isTeacher",
-        "type": "boolean",
+        "name": "employmentRole",
+        "type": "string",
         "multiValued": false,
-        "description": "Indikerare om tjänsten är undervisande eller inte.",
+        "description": "Syfte med tjänsten, den roll tjänsen avser, till exempel lärare eller rektor.",
+        "caseExact": true,
+        "mutability": "immutable",
+        "canonicalValues": [
+          "TODO",
+          "Lärare",
+          "Rektor"
+        ],
         "required": true
       },
       {
         "name": "signature",
         "type": "string",
         "multiValued": false,
-        "description": "En signatur för anställningen exempelvis NJN, JOAN."
+        "description": "En signatur för anställningen exempelvis NJN, JOAN. Syftet är att använda signaturen i presentation i skolschemat."
       },
       {
         "name": "employmentPercent",
@@ -77,33 +84,31 @@
         "name": "employedAt",
         "type": "complex",
         "multiValued": false,
-        "description": "Identifierare från skola/skolenhet som anställningen är knuten till.",
+        "description": "Identifierare från skolenhet som anställningen är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för skolan/skolenheten.",
+            "description": "Identifierare för skolenheten.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "School",
               "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "URI för skolan/skolenheten.",
+            "description": "URI för skolenheten.",
             "mutability": "immutable"
           },
           {
             "name": "type",
             "type": "string",
             "multiValued": false,
-            "description": "Anger resurstyp som äger anställningen e.g. \"School\"/\"SchoolUnit\".",
+            "description": "TODO: Behövs inte om vi inte lägger till huvudman... Anger resurstyp som äger anställningen, nu bara /\"SchoolUnit\".",
             "canonicalValues": [
-              "School",
               "SchoolUnit"
             ],
             "mutability": "immutable"

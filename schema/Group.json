@@ -16,56 +16,6 @@
         "type": "string",
         "multiValued": false,
         "description": "Slutdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "parentGroup",
-        "type": "complex",
-        "multiValued": false,
-        "description": "Möjlighet att koppla gruppen till en \"förälder\".",
-        "required": false,
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för gruppen.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
-            ],
-            "multiValued": false,
-            "description": "URI för gruppen.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
-            "mutability": "readOnly"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "Anger resurstyp för gruppen e.g. \"Group\"/\"SchoolUnit\"\"School\"/\"StudentGroup\".",
-            "canonicalValues": [
-              "Group",
-              "SchoolUnit",
-              "School",
-              "StudentGroup"
-            ],
-            "caseExact": true,
-            "mutability": "immutable"
-          }
-        ]
       }
     ],
     "meta": {

@@ -236,13 +236,13 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Den skola eller skolenhet som aktiviteten är knuten till.",
+        "description": "Den schemaenhet som aktiviteten är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för skolan eller skolenheten.",
+            "description": "Identifierare för Schemaenheten.",
             "mutability": "immutable",
             "required": true
           },
@@ -250,11 +250,10 @@
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "School",
-              "SchoolUnit"
+              "TimetableUnit"
             ],
             "multiValued": false,
-            "description": "URI för skolan eller skolenheten.",
+            "description": "URI för schemaenheten.",
             "mutability": "immutable",
             "required": true
           },
@@ -262,19 +261,8 @@
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera skolan eller skolenheten i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera schemaenheten. READ-ONLY.",
             "mutability": "readOnly"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "Resurstypen för ägande grupp, om det är en skola eller en skolenhet.",
-            "canonicalValues": [
-              "School",
-              "SchoolUnit"
-            ],
-            "mutability": "immutable"
           }
         ],
         "required": true

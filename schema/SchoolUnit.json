@@ -2,8 +2,15 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
     "name": "SchoolUnit",
-    "description": "En specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod enligt Skolenhetsregistret.",
+    "description": "En Skolenhet med skolenhetskod enligt Skolenhetsregistret.",
     "attributes": [
+      {
+        "name": "displayName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namn på skolenheten.",
+        "required": true
+      },
       {
         "name": "schoolUnitCode",
         "type": "string",
@@ -36,6 +43,36 @@
           "HS",
           "AU"
         ]
+      },
+      {
+        "name": "municipalityCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Län och kommunkod för för den kommun där skolan är belägen.",
+        "caseExact": true,
+        "required": true
+      },
+      {
+        "name": "responsibilityBody",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namnet på skolans huvudman.",
+        "required": true
+      },
+      {
+        "name": "responsibilityBodyType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Typ av huvudman.",
+        "caseExact": true,
+        "canonicalValues": [
+          "Stat",
+          "Kommun",
+          "Landsting",
+          "Enskild",
+          "Utlandsskola"
+        ],
+        "required": true
       }
     ],
     "meta": {

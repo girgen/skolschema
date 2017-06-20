@@ -1,0 +1,20 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:TimetableUnit",
+    "name": "TimetableUnit",
+    "description": "En samling av en eller flera skolenheter som delar resurser, byggnader. Byggnad eller byggnader som omfattar en eller flera skolenheter.",
+    "attributes": [
+      {
+        "name": "displayName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namn på samlingen.",
+        "required": true
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:TimetableUnit"
+    }
+  }
+]

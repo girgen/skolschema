@@ -2,7 +2,7 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
     "name": "Student group",
-    "description": "TODO",
+    "description": "An extension of the SIS User group consisting of students.",
     "attributes": [
       {
         "name": "studentGroupType",
@@ -47,12 +47,6 @@
         "required": true
       },
       {
-        "name": "schoolYears",
-        "type": "integer",
-        "multiValued": true,
-        "description": "Värdet Årskurs anger det år efter skolstarten för vilket en student följer undervisningen."
-      },
-      {
         "name": "studentMemberships",
         "type": "complex",
         "multiValued": true,
@@ -93,6 +87,39 @@
             "type": "string",
             "multiValued": false,
             "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+          }
+        ]
+      },
+      {
+        "name": "owner",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Möjlighet att ange vilken schemaenhet rummet tillhör.",
+        "required": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för schemaenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "TimetableUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för skolan/skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera ägaren av rummet (skolan/skolenheten) i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       }
