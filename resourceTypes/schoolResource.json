@@ -43,13 +43,13 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
-    "id": "TimetableUnit",
-    "name": "TimetableUnit",
-    "endpoint": "/TimetableUnits",
-    "description": "TimetableUnit",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:TimetableUnit",
+    "id": "SchoolUnitGroup",
+    "name": "SchoolUnitGroup",
+    "endpoint": "/SchoolUnitGroups",
+    "description": "SchoolUnitGroup",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnitGroup",
     "meta": {
-      "location": "/v2/ResourceTypes/TimetableUnit",
+      "location": "/v2/ResourceTypes/SchoolUnitGroup",
       "resourceType": "ResourceType"
     }
   },
@@ -61,17 +61,7 @@
     "name": "SchoolUnit",
     "endpoint": "/SchoolUnits",
     "description": "SchoolUnit",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
-        "required": true
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
-        "required": true
-      }
-    ],
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnit",
     "meta": {
       "location": "/v2/ResourceTypes/SchoolUnit",
       "resourceType": "ResourceType"
@@ -85,17 +75,7 @@
     "name": "StudentGroup",
     "endpoint": "/StudentGroups",
     "description": "StudentGroup",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
-        "required": true
-      },
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
-        "required": true
-      }
-    ],
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:StudentGroup",
     "meta": {
       "location": "/v2/ResourceTypes/StudentGroup",
       "resourceType": "ResourceType"

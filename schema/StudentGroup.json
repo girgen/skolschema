@@ -5,6 +5,19 @@
     "description": "An extension of the SIS User group consisting of students.",
     "attributes": [
       {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
+        "required": true
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+      },
+      {
         "name": "studentGroupType",
         "type": "string",
         "multiValued": false,
