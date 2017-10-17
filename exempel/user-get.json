@@ -22,26 +22,27 @@
       "type": "home"
     }
   ],
-  "studentMemberships": [
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Klass 5A"
-    },
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "/v2/Groups/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Pedagogik för Mellanstadiet"
-    },
-    {
-      "value": "fc348aa8-3835-40eb-a20b-c726e15c55b5",
-      "$ref": "/v2/Groups/fc348aa8-3835-40eb-a20b-c726e15c55b5",
-      "display": "Elevrådet"
-    }
-  ],
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "securityMarking": "false",
+    "studentMemberships": [
+      {
+        "value": "965cc531-d077-421b-b476-25d1d62f6587",
+        "$ref": "/v2/StudentGroups/965cc531-d077-421b-b476-25d1d62f6587",
+        "display": "Klass 5A"
+      },
+      {
+        "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+        "$ref": "/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+        "display": "Pedagogik för Mellanstadiet"
+      },
+      {
+        "value": "3586af87-e9c0-4017-b069-fa9eebe774fa",
+        "$ref": "/v2/StudentGroups/3586af87-e9c0-4017-b069-fa9eebe774fa",
+        "startDate": "2015-09-30",
+        "display": "Elevrådet"
+      }
+    ]
   },
   "meta": {
     "resourceType": "User",
