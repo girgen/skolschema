@@ -3,6 +3,7 @@
     "urn:scim:schemas:extension:sis:school:1.0:Resource"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "name": "proj13",
   "description": "projektor 13, Kenwood 2000",
   "owner": {

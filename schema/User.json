@@ -70,7 +70,7 @@
         "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
-            "name": "value",
+            "name": "schoolUnitValue",
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för skolenheten där eleven är inskriven.",

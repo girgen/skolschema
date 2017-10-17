@@ -3,6 +3,7 @@
     "urn:scim:schemas:extension:sis:school:1.0:Employment"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "isTeacher": true,
   "signature": "PAK",
   "employmentPercent": 100,
@@ -10,9 +11,9 @@
   "endDate": "2013-06-30",
   "hoursPerYear": 1340,
   "employedAt": {
-    "value": "e9ddadba-f08f-4109-8486-d5c6a331660a",
+    "value": "e9e30dba-f08f-4109-8486-d5c6a3316602",
     "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a3316602",
-    "display": "SkolenhetA",
+    "display": "Dalängsskolan A",
     "type": "SchoolUnit"
   },
   "user": {

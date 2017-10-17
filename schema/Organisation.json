@@ -1,0 +1,20 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Organisation",
+    "name": "Organisation",
+    "description": "En skolhuvudman eller annan slags organisatorisk enhet.",
+    "attributes": [
+      {
+        "name": "displayName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namn på organisationen.",
+        "required": true
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Organisation"
+    }
+  }
+]

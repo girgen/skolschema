@@ -1,7 +1,5 @@
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "urn:scim:schemas:extension:sis:school:1.0:Group",
     "urn:scim:schemas:extension:sis:school:1.0:StudentGroup"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",

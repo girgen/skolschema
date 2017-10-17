@@ -3,6 +3,7 @@
     "urn:scim:schemas:extension:sis:school:1.0:CalendarEvent"
   ],
   "id": "92834792-f08f-4109-8486-d5c6a331660a",
+  "externalId": "92834792-f08f-4109-8486-d5c6a331660a",
   "startTime": "2016-05-24T14:00",
   "endTime": "2016-05-24T15:00",
   "cancelled": false,

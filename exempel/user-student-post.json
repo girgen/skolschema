@@ -21,17 +21,6 @@
       "type": "home"
     }
   ],
-  "groups": [
-    {
-      "value": "e9e30dba-aaaa-4109-8486-d5c6a331660a"
-    },
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a"
-    },
-    {
-      "value": "fc348aa8-3835-40eb-a20b-c726e15c55b5"
-    }
-  ],
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "gender": "M",
