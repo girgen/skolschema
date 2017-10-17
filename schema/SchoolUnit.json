@@ -2,7 +2,7 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
     "name": "SchoolUnit",
-    "description": "En Skolenhet med skolenhetskod enligt Skolenhetsregistret.",
+    "description": "En Skolenhet, i förekommande fall med skolenhetskod enligt Skolenhetsregistret.",
     "attributes": [
       {
         "name": "displayName",
@@ -12,18 +12,10 @@
         "required": true
       },
       {
-        "name": "schoolUnitCode",
-        "type": "string",
-        "multiValued": false,
-        "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket.",
-        "required": true,
-        "caseExact": true
-      },
-      {
         "name": "schoolTypes",
         "type": "string",
         "multiValued": true,
-        "description": "Skolform, exempelvis GR, GY.",
+        "description": "Skolformer, exempelvis GR, GY.",
         "required": true,
         "caseExact": true,
         "canonicalValues": [
@@ -45,34 +37,30 @@
         ]
       },
       {
+        "name": "schoolUnitCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket. Används för de skolformer där skolverket bestämmer en skolenhetskod för varje enhet.",
+        "caseExact": true
+      },
+      {
         "name": "municipalityCode",
         "type": "string",
         "multiValued": false,
-        "description": "Län och kommunkod för för den kommun där skolan är belägen.",
-        "caseExact": true,
-        "required": true
+        "description": "Län och kommunkod för den kommun där skolan är belägen.",
+        "caseExact": true
       },
       {
-        "name": "responsibilityBody",
+        "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Namnet på skolans huvudman.",
-        "required": true
+        "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
-        "name": "responsibilityBodyType",
+        "name": "endDate",
         "type": "string",
         "multiValued": false,
-        "description": "Typ av huvudman.",
-        "caseExact": true,
-        "canonicalValues": [
-          "Stat",
-          "Kommun",
-          "Landsting",
-          "Enskild",
-          "Utlandsskola"
-        ],
-        "required": true
+        "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
       }
     ],
     "meta": {

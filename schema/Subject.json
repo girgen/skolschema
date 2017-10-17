@@ -5,11 +5,11 @@
     "description": "Ett skolämne.",
     "attributes": [
       {
-        "name": "shortName",
+        "name": "subjectCode",
         "type": "string",
         "multiValued": false,
-        "description": "Förkortningar enligt Skolverket exempelvis MA.",
-        "required": true
+        "required": false,
+        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
       },
       {
         "name": "official",
@@ -19,17 +19,18 @@
         "description": "Attribut för att indikera om koden är en officiell kod från Skolverket eller annan myndighet."
       },
       {
-        "name": "name",
+        "name": "displayName",
         "type": "string",
         "multiValued": false,
-        "description": "Ämnets namn exempelvis Matematik."
+        "description": "Ämnets namn exempelvis Matematik.",
+        "required": true
       },
       {
-        "name": "subjectCode",
+        "name": "shortName",
         "type": "string",
         "multiValued": false,
-        "required": false,
-        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
+        "description": "Förkortningar enligt Skolverket exempelvis MA.",
+        "required": true
       }
     ],
     "meta": {

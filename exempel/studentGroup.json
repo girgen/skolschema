@@ -5,17 +5,16 @@
     "urn:scim:schemas:extension:sis:school:1.0:StudentGroup"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "displayName": "N3A Kurser",
-  "urn:scim:schemas:extension:sis:school:1.0:Group": {
+  "urn:scim:schemas:extension:sis:school:1.0:StudentGroup": {
     "startDate": "2015-01-01",
     "endDate": "2015-12-31",
     "owner": {
       "value": "2819c223-7f76-453a-919d-413861904646",
-      "$ref": "/v2/TimetableUnit/2819c223-7f76-453a-919d-413861904646",
+      "$ref": "/v2/SchoolUnit/2819c223-7f76-453a-919d-413861904646",
       "display": "Lillbäcksgymnasiet"
-    }
-  },
-  "urn:scim:schemas:extension:sis:school:1.0:StudentGroup": {
+    },
     "studentMemberships": [
       {
         "value": "2819c223-7f76-453a-919d-413861904646",

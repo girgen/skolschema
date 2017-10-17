@@ -22,8 +22,7 @@
         "name": "cancelled",
         "type": "boolean",
         "multiValued": false,
-        "description": "Inställd används för att ange att en planerad kalenderhändelse inte ska äga rum till följd av en avbokning eller annan tillfällig avvikelse.",
-        "required": true
+        "description": "Inställd används för att ange att en planerad kalenderhändelse inte ska äga rum till följd av en avbokning eller annan tillfällig avvikelse. Förvalt värde är false."
       },
       {
         "name": "comment",
@@ -35,13 +34,13 @@
         "name": "teachingLengthStudent",
         "type": "integer",
         "multiValued": false,
-        "description": "Faktisk undervisningstid för studenter. Tiden kan vara kortare eller längre än tiden för kalenderhändelsen till exempel då en rast ingår i tiden."
+        "description": "Faktisk undervisningstid, i minuter, för studenter. Tiden kan vara kortare eller längre än tiden för kalenderhändelsen till exempel då en rast ingår i tiden."
       },
       {
         "name": "teachingLengthTeacher",
         "type": "integer",
         "multiValued": false,
-        "description": "Faktisk undervisningstid för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen."
+        "description": "Faktisk undervisningstid, i minuter, för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen."
       },
       {
         "name": "activity",
@@ -129,7 +128,7 @@
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Undervisningstid i minuter för gruppen."
+            "description": "Undervisningstid i minuter för gruppen. Om den ej anges så gäller det som är angivet i, i första hand, CalendarEvent, och annars i Activity."
           }
         ]
       },
@@ -185,7 +184,7 @@
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Undervisningstid i minuter för lärare."
+            "description": "Undervisningstid i minuter för läraren. Om den ej anges så gäller det som är angivet i, i första hand, CalendarEvent, och annars i Activity."
           }
         ]
       },
@@ -241,7 +240,7 @@
             "name": "teachingLength",
             "type": "integer",
             "multiValued": false,
-            "description": "Undervisningstid i minuter för studenter."
+            "description": "Undervisningstid i minuter för studenten. Om den ej anges så gäller det som är angivet i, i första hand, CalendarEvent, och annars i Activity."
           }
         ]
       },

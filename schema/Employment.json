@@ -12,9 +12,11 @@
         "caseExact": true,
         "mutability": "immutable",
         "canonicalValues": [
-          "TODO",
+          "Rektor",
           "Lärare",
-          "Rektor"
+          "Förskollärare",
+          "Övrig pedagogisk personal",
+          "Annan personal"
         ],
         "required": true
       },
@@ -34,6 +36,7 @@
         "name": "startDate",
         "type": "string",
         "multiValued": false,
+        "required": true,
         "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
@@ -101,16 +104,6 @@
             ],
             "multiValued": false,
             "description": "URI för skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "multiValued": false,
-            "description": "TODO: Behövs inte om vi inte lägger till huvudman... Anger resurstyp som äger anställningen, nu bara /\"SchoolUnit\".",
-            "canonicalValues": [
-              "SchoolUnit"
-            ],
             "mutability": "immutable"
           },
           {

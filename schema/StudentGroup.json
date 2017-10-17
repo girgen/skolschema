@@ -107,8 +107,7 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken schemaenhet rummet tillhör.",
-        "required": false,
+        "description": "Möjlighet att ange vilken skolenhet rummet tillhör.",
         "subAttributes": [
           {
             "name": "value",
@@ -121,7 +120,7 @@
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "TimetableUnit"
+              "SchoolUnit"
             ],
             "multiValued": false,
             "description": "URI för skolan/skolenheten.",

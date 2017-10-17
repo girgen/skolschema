@@ -23,19 +23,13 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
-    "id": "Group",
-    "name": "Group",
-    "endpoint": "/Groups",
-    "description": "Group",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:Group",
-        "required": false
-      }
-    ],
+    "id": "Organisation",
+    "name": "Organisation",
+    "endpoint": "/Organisations",
+    "description": "Organisations",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:Organisations",
     "meta": {
-      "location": "/v2/ResourceTypes/Group",
+      "location": "/v2/ResourceTypes/Organisations",
       "resourceType": "ResourceType"
     }
   },

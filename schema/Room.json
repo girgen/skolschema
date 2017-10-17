@@ -5,7 +5,7 @@
     "description": "Ett rum eller en plats som kan bokas i ett skolschema.",
     "attributes": [
       {
-        "name": "name",
+        "name": "displayName",
         "type": "string",
         "multiValued": false,
         "description": "Namn på rum/lokal/plats.",
@@ -22,14 +22,14 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken schemaenhet rummet tillhör.",
+        "description": "Möjlighet att ange vilken skola/skolenhetsgrupp rummet tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för schemaenheten.",
+            "description": "Identifierare för skolan/skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {
@@ -39,7 +39,7 @@
               "TimetableUnit"
             ],
             "multiValued": false,
-            "description": "URI för skolan/skolenheten.",
+            "description": "URI för skolan/skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {

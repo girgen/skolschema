@@ -2,10 +2,10 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Resource",
     "name": "Resource",
-    "description": "A resource, for example a projector.",
+    "description": "En resurs, till exempel en projektor.",
     "attributes": [
       {
-        "name": "name",
+        "name": "displayName",
         "type": "string",
         "multiValued": false,
         "description": "Namn på resursen.",
@@ -22,24 +22,24 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken schemaenhet resursen tillhör.",
+        "description": "Möjlighet att ange vilken skola/skolenhetsgrupp resursen tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för den schemaenhet som äger resursen.",
+            "description": "Identifierare för den skola/skolenhetsgrupp som äger resursen.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "TimetableUnit"
+              "SchoolUnitGroup"
             ],
             "multiValued": false,
-            "description": "URI för schemaenheten.",
+            "description": "URI för skolan/skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {

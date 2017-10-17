@@ -3,6 +3,7 @@
     "urn:scim:schemas:extension:sis:school:1.0:Subject"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "subjectCode": "GRGRMAT01",
   "official": true,
   "name": "Matematik",
