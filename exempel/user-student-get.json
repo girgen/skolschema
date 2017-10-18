@@ -41,7 +41,6 @@
   ],
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
-    "gender": "M",
     "securityMarking": "false",
     "userRelations": [
       {
