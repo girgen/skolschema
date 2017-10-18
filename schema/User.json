@@ -64,13 +64,59 @@
         ]
       },
       {
+        "name": "studentGroups",
+        "type": "complex",
+        "multiValued": true,
+        "description": "En students medlemsskap i studentgrupper. Visar vilka grupper en student är medlem i. Dessa visas vid läsning som redundant information, och är READ-ONLY",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för studentgruppen där eleven är medlem. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "URI för studentgruppen där eleven är medlem. Används primärt för visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Namnet på studentgruppen. Används primärt för visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "mutability": "readOnly",
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\"). READ-ONLY."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "mutability": "readOnly",
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\"). READ-ONLY."
+          }
+        ]
+      },
+      {
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
         "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
-            "name": "schoolUnitValue",
+            "name": "value",
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för skolenheten där eleven är inskriven.",

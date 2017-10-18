@@ -37,7 +37,7 @@
     ],
     "enrolments": [
       {
-        "schoolUnitValue" : "26118915-bbbb-4610-87e4-4f1234234224",
+        "value" : "26118915-bbbb-4610-87e4-4f1234234224",
         "schoolYear": 1,
         "startDate": "2014-08-20",
         "endDate": "2015-06-14",
@@ -45,7 +45,7 @@
         "programCode": "NA"
       },
       {
-        "schoolUnitValue" : "26118915-6090-4610-87e4-4f1234234224",
+        "value" : "26118915-6090-4610-87e4-4f1234234224",
         "schoolType": "GY",
         "programCode": "NA",
         "schoolYear": 2,
