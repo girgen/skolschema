@@ -22,14 +22,14 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken skola/skolenhetsgrupp resursen tillhör.",
+        "description": "Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för den skola/skolenhetsgrupp som äger resursen.",
+            "description": "Identifierare för den skolenhetsgrupp som äger resursen.",
             "mutability": "immutable"
           },
           {
@@ -39,14 +39,14 @@
               "SchoolUnitGroup"
             ],
             "multiValued": false,
-            "description": "URI för skolan/skolenhetsgruppen.",
+            "description": "URI för skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera resursen i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera skolenhetsgruppen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]

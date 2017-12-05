@@ -22,14 +22,14 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken skola/skolenhetsgrupp rummet tillhör.",
+        "description": "Möjlighet att ange vilken skolenhetsgrupp rummet tillhör.",
         "required": false,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för skolan/skolenhetsgruppen.",
+            "description": "Identifierare för skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {
@@ -39,7 +39,7 @@
               "TimetableUnit"
             ],
             "multiValued": false,
-            "description": "URI för skolan/skolenhetsgruppen.",
+            "description": "URI för skolenhetsgruppen.",
             "mutability": "immutable"
           },
           {
