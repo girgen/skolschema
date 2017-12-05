@@ -10,6 +10,38 @@
         "multiValued": false,
         "description": "Namn på samlingen.",
         "required": true
+      },
+      {
+        "name": "schoolUnits",
+        "type": "complex",
+        "multiValued": true,
+        "description": "En lista på skolenhetsgruppens ingående skolenheter. Dessa visas vid läsning som redundant information, och är READ-ONLY",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten som ingår i skolenhetsgruppen. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "URI för skolenheten som ingår i skolenhetsgruppen. Används primärt för visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Namnet på skolenheten. Används primärt för visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
       }
     ],
     "meta": {

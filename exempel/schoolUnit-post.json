@@ -3,7 +3,7 @@
     "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit"
   ],
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "displayName": "Rudbäcksskolan",
+  "displayName": "Rudbäcksskolan 1",
   "schoolUnitCode": "148077126",
   "schoolTypes": [
     "GR",
@@ -12,5 +12,8 @@
   "municipalityCode": "1480",
   "responsibleBody": "Göteborgs stad",
   "responsibleBodyType": "Kommun",
-  "startDate": "1970-01-01"
+  "startDate": "1970-01-01",
+  "schoolUnitGroup": {
+    "value": "f9e30dba-f08f-4109-8486-d5c6a331660a"
+  }
 }
