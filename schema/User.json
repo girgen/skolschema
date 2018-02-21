@@ -164,6 +164,7 @@
               "HS",
               "AU"
             ],
+            "mutability": "immutable",
             "required": true
           },
           {
@@ -186,6 +187,7 @@
             "multiValued": false,
             "description": "Värdet årskurs anger det år efter skolstarten för vilket en student följer undervisningen.",
             "caseExact": true,
+            "mutability": "immutable",
             "canonicalValues": [
               0,
               1,
@@ -205,6 +207,7 @@
             "type": "string",
             "multiValued": false,
             "description": "Programkoden för GY/GYSÄR-studenter.",
+            "mutability": "immutable",
             "caseExact": true
           }
         ]
