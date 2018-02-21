@@ -9,7 +9,7 @@
         "type": "string",
         "multiValued": false,
         "required": false,
-        "description": "En kod för kursen som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
+        "description": "En kod för ämnet som används bland annat i lärarlegitimation till exempel. GRGRMAT01."
       },
       {
         "name": "official",
