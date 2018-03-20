@@ -163,4 +163,11 @@ i curriculumReference:  "coursePlanCode": "", minns inte vad sjutton det är?
 
 curriculumReference: gör ett "fullständigt exempel"
 
+---
+2018-03-20
 
+organisation är underspecificerat.
+
+enrolment för GY oklar. schoolYear har värdeförråd 0-10.
+
+curriculum, värdeförråd? hur koda annars?

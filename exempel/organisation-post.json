@@ -1,0 +1,12 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:Organisation"
+  ],
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "displayName": "Askim-Frölunda-Högsbo",
+  "parentOrganisation": {
+    "value": "f9e30dba-f08f-4109-8486-d5c6a331660a",
+    "$ref": "/v2/Organisations/f9e30dba-f08f-4109-8486-d5c6a331660a",
+    "display": "Göteborgs stad"
+  }
+}

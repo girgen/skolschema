@@ -1,6 +1,6 @@
 [
   {
-    "id": "urn:scim:schemas:extension:sis:school:1.0:User",
+    "id": "urn:scim:schemas:extension:sis:school:2.0:User",
     "name": "User",
     "description": "En specialisering av User(SCIM) som innehåller extra attribut för en person.",
     "attributes": [

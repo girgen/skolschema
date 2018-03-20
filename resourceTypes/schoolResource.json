@@ -10,7 +10,7 @@
     "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
     "schemaExtensions": [
       {
-        "schema": "urn:scim:schemas:extension:sis:school:1.0:User",
+        "schema": "urn:scim:schemas:extension:sis:school:2.0:User",
         "required": false
       }
     ],
