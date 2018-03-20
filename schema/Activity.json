@@ -27,6 +27,7 @@
           "Undervisning",
           "Studentaktivitet",
           "Läraraktivitet",
+          "Mentorskap",
           "Övrigt"
         ],
         "description": "Beskriver vilken typ av aktivitet som avses.",

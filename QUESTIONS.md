@@ -145,3 +145,22 @@ vi använder "resource" det gör även scim. Förvirring?
 rektor är bortrefaktoriserat, men finns kvar i "SchoolUnit - Skolenhet
 Klassen SchoolUnit är en specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod och ansvarig rektor enligt Skolenhetsregistret. 
 
+
+
+---
+2018-02-22
+
+DELETE bör dokumenteras bättre. Ska användas för avregistrering, avliden mm. rätten att bli bortglömd också via DELETE.
+
+ÄNDRING: mentorsskap blir en activityType istället för att ha en mentorsgrupp
+
+--- fel i gamla exemplen:   "employmentRole": "Lärare",
+
+Värdeförråd/kodregel för curriculum "LGR11"...
+
+
+i curriculumReference:  "coursePlanCode": "", minns inte vad sjutton det är?
+
+curriculumReference: gör ett "fullständigt exempel"
+
+

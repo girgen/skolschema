@@ -1,0 +1,21 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:CurriculumReferenceInstance"
+  ],
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "startDate": "2017-08-15",
+  "endDate": "2018-06-20",
+  "schoolType": "GY",
+  "subjectCode": "MOD",
+  "subjectName": "Moderna språk",
+  "courseCode": "MODFRA01",
+  "courseName": "Moderna språk 1, franska",
+  "languageCode": "FRA",
+  "curriculum": "GY2011",
+  "curriculumRevision": "2017",
+  "official": true,
+  "schoolUnit": {
+    "value": "87dda8fa-7f76-453a-919d-413861904641",
+    "$ref": "/v2/SchoolUnits/87dda8fa-7f76-453a-919d-413861904641"
+  }
+}

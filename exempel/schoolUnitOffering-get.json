@@ -1,0 +1,38 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:SchoolUnitOffering"
+  ],
+  "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "schoolUnits": [
+    {
+      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "display": "Rudbäcksskolan 1"
+    },
+    {
+      "value": "4566c223-7f76-453a-919d-413861904646",
+      "$ref": "/v2/SchoolUnits/4566c223-7f76-453a-919d-413861904646",
+      "display": "Rudbäcksskolan 2"
+    }
+  ],
+  "curriculumReferenceInstances": [
+    {
+      "value": "aae30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/CurriculumReferenceInstances/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "OBS": "HELA OBJEKTET INLINE. TODO!!!"
+    },
+    {
+      "value": "aa66c223-7f76-453a-919d-413861904646",
+      "$ref": "/v2/CurriculumReferenceInstances/4566c223-7f76-453a-919d-413861904646",
+      "OBJS": "HELA OBJEKTET INLINE. TODO!!!"
+    }
+  ],
+  "meta": {
+    "resourceType": "SchoolUnitOffering",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "/v2/SchoolUnitOfferings/f9e30dba-f08f-4109-8486-d5c6a331660a"
+  }
+}
