@@ -11,6 +11,10 @@
     "familyName": "Girgensohn",
     "givenName": "Palle"
   },
+  "eduPersonPrincipalName": [
+    "girgen@pingpong.net",
+    "girgen@pingpong.se"
+  ],
   "emails": [
     {
       "value": "girgen@example.com",

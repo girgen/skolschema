@@ -10,6 +10,29 @@
         "multiValued": false,
         "description": "Namn på organisationen.",
         "required": true
+      },
+      {
+        "description": "Möjlighet att koppla organisationen i flera nivåer.",
+        "multiValued": false,
+        "name": "parentOrganisation",
+        "subAttributes": [
+          {
+            "description": "Identifierare för den överliggande organisationen.",
+            "multiValued": false,
+            "name": "value",
+            "type": "string"
+          },
+          {
+            "description": "URI för den överliggande organisationen.",
+            "multiValued": false,
+            "name": "$ref",
+            "referenceTypes": [
+              "Organisation"
+            ],
+            "type": "reference"
+          }
+        ],
+        "type": "complex"
       }
     ],
     "meta": {
