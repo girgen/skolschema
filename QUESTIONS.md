@@ -171,3 +171,26 @@ organisation är underspecificerat.
 enrolment för GY oklar. schoolYear har värdeförråd 0-10.
 
 curriculum, värdeförråd? hur koda annars?
+
+CurriculumReferenceInstance knepigt namn, kanske "kurs"?
+
+lessonAttendanceLength olyckligt namn, bättre med det vi hade tidigare: attendanceLength.
+
+ vi ändrade attendanceLength till ...Minutes.
+
+aggreatedAttendance: behöver vi ta hänsyn till offiella aktiviteter? bara en aktivitet, korrekt? offeredSum är redundant? vad händer om de inte summerar?
+
+grantedTimestamp / reportedTimestamp
+code_GradeCorrection?
+
+
+värdeförråd för betyg? inte för alla, men i texten? SVAR: Framför dokumentera i allt i texten. (Kolla YH.) avsaknad av betyg ska också beskrivas ("3")
+notering (titel o innehåll) för betyg, underliga?
+remark vs notes?
+
+-------
+
+Till nästa gång:
+
+Engelska för enstaka kurser
+
