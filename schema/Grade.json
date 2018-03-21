@@ -1,0 +1,190 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:Grade",
+    "name": "Grade",
+    "description": "Avser ett registrerat betyg för en elev i ett ämne eller en kurs. Denna innehåller också alltid ett inbäddat curriculumReference.",
+    "attributes": [
+      {
+        "name": "gradeValue",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Anger vilket betyg eleven har tilldelats."
+      },
+      {
+        "name": "correctionType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Ändringstyp för betyget, om det är ändrat.",
+        "caseExact": true,
+        "mutability": "immutable",
+        "canonicalValues": [
+          "Ändring",
+          "Rättelse"
+        ]
+      },
+      {
+        "name": "finalGrade",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Anger om det registrerade betyget är ett slutbetyg för ämnet eller kursen."
+      },
+      {
+        "name": "converted",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Anger om betyget är omvandlat. Förvalt värde är \"false\"."
+      },
+      {
+        "name": "trial",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Anger om betyget satts vid en prövning. Förvalt värde är \"false\"."
+      },
+      {
+        "name": "extended",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Angiven anledning till frånvaro. Förvalt värde är \"false\"."
+      },
+      {
+        "name": "diplomaProjectTitle",
+        "type": "string",
+        "multiValued": false,
+        "description": "Titel på gymnasiearbete. Måste finnas för ett gymnasiearbete."
+      },
+      {
+        "name": "diplomaProjectDescription",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beskrivning av gymnasiearbete. Måste finnas för ett gymnasiearbete."
+      },
+      {
+        "name": "diplomaProjectTitleEngish",
+        "type": "string",
+        "multiValued": false,
+        "description": "Eventuell engelsk titel på gymnasiearbete."
+      },
+      {
+        "name": "diplomaProjectDescriptionEnglish",
+        "type": "string",
+        "multiValued": false,
+        "description": "Eventuell engelsk beskrivning av gymnasiearbete."
+      },
+      {
+        "name": "adaptedStudyPlan",
+        "type": "string",
+        "multiValued": false,
+        "description": "Om en specialinriktad ämnesplan (GY) eller anpassad studiegång (GR) har använts för kursen så beskrivs här på vilket sätt studiegången anpassats."
+      },
+      {
+        "name": "remark",
+        "type": "string",
+        "multiValued": false,
+        "description": "Andra anmärkningar för betygsraden."
+      },
+      {
+        "name": "student",
+        "description": "Referens till eleven.",
+        "multiValued": false,
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "description": "Identifierare för eleven.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "type": "string"
+          },
+          {
+            "name": "$ref",
+            "description": "URI för eleven.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ],
+            "type": "reference"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ],
+        "type": "complex"
+      },
+      {
+        "name": "gradingTeacher",
+        "description": "Referens till den lärare som satt betyget.",
+        "multiValued": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "description": "Identifierare för den lärare som satt betyget.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "type": "string"
+          },
+          {
+            "name": "$ref",
+            "description": "URI för den lärare som satt betyget.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ],
+            "type": "reference"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera den lärare som satt betyget. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ],
+        "type": "complex"
+      },
+      {
+        "name": "registeredBy",
+        "description": "Referens till den person som registrerat betygsraden.",
+        "multiValued": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "description": "Identifierare för den person som registrerat betygsraden.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "type": "string"
+          },
+          {
+            "name": "$ref",
+            "description": "URI för rapporterande personen.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ],
+            "type": "reference"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera den person som registrerat betygsraden. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ],
+        "type": "complex"
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Grade"
+    }
+  }
+]

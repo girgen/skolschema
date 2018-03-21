@@ -51,6 +51,20 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
+    "id": "SchoolUnitOffering",
+    "name": "SchoolUnitOffering",
+    "endpoint": "/SchoolUnitOfferings",
+    "description": "SchoolUnitOffering",
+    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnitOffering",
+    "meta": {
+      "location": "/v2/ResourceTypes/SchoolUnitOffering",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
     "id": "SchoolUnit",
     "name": "SchoolUnit",
     "endpoint": "/SchoolUnits",
@@ -196,6 +210,12 @@
     "endpoint": "/Grade",
     "description": "Grade",
     "schema": "urn:scim:schemas:extension:sis:school:2.0:Grade",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference",
+        "required": true
+      }
+    ],
     "meta": {
       "location": "/v2/ResourceTypes/Grade",
       "resourceType": "ResourceType"
@@ -233,13 +253,19 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
-    "id": "CurriculumReferenceInstance",
-    "name": "CurriculumReferenceInstance",
-    "endpoint": "/CurriculumReferenceInstance",
-    "description": "CurriculumReferenceInstance",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReferenceInstance",
+    "id": "Syllabus",
+    "name": "Syllabus",
+    "endpoint": "/Syllabus",
+    "description": "Syllabus",
+    "schema": "urn:scim:schemas:extension:sis:school:2.0:Syllabus",
+    "schemaExtensions": [
+      {
+        "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference",
+        "required": true
+      }
+    ],
     "meta": {
-      "location": "/v2/ResourceTypes/CurriculumReferenceInstance",
+      "location": "/v2/ResourceTypes/Syllabus",
       "resourceType": "ResourceType"
     }
   }

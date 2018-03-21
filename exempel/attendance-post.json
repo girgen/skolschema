@@ -1,0 +1,20 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:Attendance"
+  ],
+  "isReported": true,
+  "attendanceMinutes": 60,
+  "validAbsenceMinutes": 20,
+  "invalidAbsenceMinutes": 0,
+  "otherAttendanceMinutes": 0,
+  "absenceReason": "ledig",
+  "calendarEvent": {
+    "value": "92834792-f08f-4109-8486-d5c6a331660a"
+  },
+  "student": {
+    "value": "2819c223-7f76-453a-919d-ffaaffaaffaa"
+  },
+  "reporter": {
+    "value": "fabeabea-1234-4432-aade-413861904646"
+  }
+}

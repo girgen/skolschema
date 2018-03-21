@@ -1,7 +1,7 @@
 [
   {
-    "id": "urn:scim:schemas:extension:sis:school:1.0:Employment",
-    "name": "Employment",
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Duty",
+    "name": "Duty",
     "description": "En persons tjänst.",
     "attributes": [
       {
@@ -27,7 +27,7 @@
         "description": "En signatur för anställningen exempelvis NJN, JOAN. Syftet är att använda signaturen i presentation i skolschemat."
       },
       {
-        "name": "employmentPercent",
+        "name": "dutyPercent",
         "type": "integer",
         "multiValued": false,
         "description": "Anställningens tjänstgöringsgrad i procent."
@@ -119,7 +119,7 @@
     ],
     "meta": {
       "resourceType": "Schema",
-      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Employment"
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Duty"
     }
   }
 ]

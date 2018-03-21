@@ -4,6 +4,7 @@
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "displayName": "Turgajdning",
   "activityType": "Undervisning",
   "calendarEventsRequired": true,
   "startDate": "2016-02-25",
@@ -47,9 +48,9 @@
   ],
   "topic": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
-    "$ref": "/v2/Courses/87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "/v2/Syllabi/87dda8fa-7f76-453a-919d-413861904646",
     "display": "Matematik A",
-    "type": "Course"
+    "type": "Syllabus"
   },
   "parentActivity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",

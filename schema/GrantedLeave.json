@@ -1,0 +1,99 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:GrantedLeave",
+    "name": "GrantedLeave",
+    "description": "Godkänd ledighet för en elev.",
+    "attributes": [
+      {
+        "name": "startTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "required": true,
+        "description": "Starttid för ledigheten."
+      },
+      {
+        "name": "endTime",
+        "type": "dateTime",
+        "multiValued": false,
+        "required": true,
+        "description": "Sluttid för ledigheten."
+      },
+      {
+        "name": "grantedTimestamp",
+        "type": "dateTime",
+        "multiValued": false,
+        "required": true,
+        "description": "Tidstämpel för när bestlutet fattades att godkänna ledigheten."
+      },
+      {
+        "name": "student",
+        "description": "Referens till eleven.",
+        "multiValued": false,
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "description": "Identifierare för eleven.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "type": "string"
+          },
+          {
+            "name": "$ref",
+            "description": "URI för eleven.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ],
+            "type": "reference"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera studenten. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ],
+        "type": "complex"
+      },
+      {
+        "name": "grantedBy",
+        "description": "Referens till den person som godkänt ledigheten.",
+        "multiValued": false,
+        "subAttributes": [
+          {
+            "name": "value",
+            "description": "Identifierare för den person som godkänt ledigheten.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "type": "string"
+          },
+          {
+            "name": "$ref",
+            "description": "URI för den person som godkänt ledigheten.",
+            "multiValued": false,
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ],
+            "type": "reference"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera den person som godkänt ledigheten. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ],
+        "type": "complex"
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Attendance"
+    }
+  }
+]

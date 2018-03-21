@@ -15,7 +15,7 @@
         "name": "eduPersonPrincipalName",
         "type": "string",
         "multiValued": true,
-        "description": "Den identifierare som ska användas för att identifiera användaren i skilda e-tjänster. Identifieraren ska vara en spårbar, persistent och globalt unik sträng. Den ska bestå av en lokalt unik användaridentifierare, ett ’@’ och en domän. En domän är ofta, men inte nödvändigtvis, samma som organisationens internet-domännamn. Detta attribut kompletterar det inbyggda userName-attributet och ska användas om flera användaridentifierar behövs för en användare.",
+        "description": "Den identifierare som ska användas för att identifiera användaren i skilda e-tjänster. Identifieraren ska vara en spårbar, persistent och globalt unik sträng. Den ska bestå̊ av en lokalt unik användaridentifierare, ett ’@’ och en domän. En domän är ofta, men inte nödvändigtvis, samma som organisationens internet-domännamn. Detta attribut kompletterar det inbyggda userName-attributet och ska användas om flera användaridentifierare behövs för en användare.",
         "uniqueness": "global"
       },
       {

@@ -58,11 +58,30 @@
         "description": "Kursens namn, exempelvis Matematik A."
       },
       {
-        "name": "schoolYear",
+        "name": "startSchoolYear",
         "type": "integer",
         "multiValued": false,
-        "description": "Årskurs som aktiviteten läses inom.",
-        "caseExact": true,
+        "description": "Start för årskursintervall för undervisningens innehåll.",
+        "mutability": "immutable",
+        "canonicalValues": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "name": "endSchoolYear",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Slut för årskursintervall för undervisningens innehåll.",
         "mutability": "immutable",
         "canonicalValues": [
           0,
@@ -100,17 +119,10 @@
         "required": false
       },
       {
-        "name": "specialisationCourseContent",
+        "name": "specialisationSyllabusContent",
         "type": "string",
         "multiValued": false,
         "description": "Beskrivning av ett specialiseringskurs innehåll på gymnasiet.",
-        "required": false
-      },
-      {
-        "name": "coursePlanCode",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Kod för kursplan för modersmålsundervisning på gymnasiet.",
         "required": false
       },
       {
@@ -123,7 +135,7 @@
     ],
     "meta": {
       "resourceType": "Schema",
-      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Course"
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:CurriculumReference"
     }
   }
 ]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:Syllabus",
+    "name": "Syllabus",
+    "description": "En kurs eller ett ämne enligt en kursplan. Denna innehåller alltid ett inbäddat curriculumReference.",
+    "attributes": [],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Syllabus"
+    }
+  }
+]

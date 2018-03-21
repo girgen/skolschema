@@ -1,0 +1,29 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:Grade"
+  ],
+  "gradeValue": "A",
+  "correctionType": "Ändring",
+  "finalGrade": true,
+  "converted": false,
+  "trial": false,
+  "extended": false,
+  "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference": {
+    "schoolType": "GR",
+    "subjectCode": "MA",
+    "subjectName": "Matematik",
+    "year": 9,
+    "curriculum": "LGR11",
+    "curriculumRevision": "2017",
+    "official": true
+  },
+  "student": {
+    "value": "2819c223-7f76-453a-919d-ffaaffaaffaa"
+  },
+  "gradingTeacher": {
+    "value": "fabeabea-1234-4432-aade-413861904646"
+  },
+  "registeredBy": {
+    "value": "fabeabea-1234-4432-aade-413861904646"
+  }
+}
