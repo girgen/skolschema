@@ -49,80 +49,80 @@
       },
       {
         "name": "calendarEvent",
-        "description": "Referens till en kalenderhändelse.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Referens till en kalenderhändelse.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för kalenderhändelsen.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för kalenderhändelsen.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för kalenderhändelsen.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "CalendarEvent"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för kalenderhändelsen.",
+            "mutability": "immutable"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
         "name": "student",
-        "description": "Referens till eleven.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Referens till eleven.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för eleven.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för eleven.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "User"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för eleven.",
+            "mutability": "immutable"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
         "name": "reporter",
-        "description": "Referens till den person som rapporterat kalenderhändelsen.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Referens till den person som rapporterat kalenderhändelsen.",
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för den rapporterande personen.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för den rapporterande personen.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för rapporterande personen.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "User"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för rapporterande personen.",
+            "mutability": "immutable"
           }
-        ],
-        "type": "complex"
+        ]
       }
     ],
     "meta": {
