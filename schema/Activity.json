@@ -1,5 +1,8 @@
 [
   {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Activity",
+    "name": "Activity",
+    "description": "Sammanhållande element som ska schemaläggas.",
     "attributes": [
       {
         "name": "displayName",
@@ -10,27 +13,30 @@
       },
       {
         "name": "calendarEventsRequired",
-        "description": "Detta ska uttrycka huruvida aktiviteten ska vara underlag för generering av lektion eller inte.",
+        "type": "boolean",
         "multiValued": false,
-        "required": true,
-        "type": "boolean"
+        "description": "Detta ska uttrycka huruvida aktiviteten ska vara underlag för generering av lektion eller inte.",
+        "required": true
       },
       {
         "name": "startDate",
-        "description": "Datum för när aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")",
+        "type": "string",
         "multiValued": false,
-        "required": true,
-        "type": "string"
+        "description": "Datum för när aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")",
+        "required": true
       },
       {
         "name": "endDate",
-        "description": "Datum för när aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
+        "type": "string",
         "multiValued": false,
-        "required": true,
-        "type": "string"
+        "description": "Datum för när aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
+        "required": true
       },
       {
         "name": "activityType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beskriver vilken typ av aktivitet som avses.",
         "canonicalValues": [
           "Undervisning",
           "Studentaktivitet",
@@ -38,252 +44,246 @@
           "Mentorskap",
           "Övrigt"
         ],
-        "description": "Beskriver vilken typ av aktivitet som avses.",
-        "multiValued": false,
-        "mutability": "immutable",
-        "type": "string"
+        "mutability": "immutable"
       },
       {
         "name": "comment",
-        "description": "En text med kompletterande information.",
+        "type": "string",
         "multiValued": false,
-        "type": "string"
+        "description": "En text med kompletterande information."
       },
       {
         "name": "minutesPlanned",
-        "description": "Den totalt planerade tiden i minuter.",
+        "type": "integer",
         "multiValued": false,
-        "type": "integer"
+        "description": "Den totalt planerade tiden i minuter."
       },
       {
         "name": "groups",
-        "description": "De grupper som är kopplade till aktiviteten.",
+        "type": "complex",
         "multiValued": true,
+        "description": "De grupper som är kopplade till aktiviteten.",
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för studentgruppen.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för studentgruppen.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för studentgruppen.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "StudentGroup"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för studentgruppen.",
+            "mutability": "immutable"
           },
           {
             "name": "display",
-            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "readOnly",
-            "type": "string"
+            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           },
           {
             "name": "startDate",
-            "description": "Datum för när gruppens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\").",
+            "type": "string",
             "multiValued": false,
-            "type": "string"
+            "description": "Datum för när gruppens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
-            "description": "Datum för när gruppens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
+            "type": "string",
             "multiValued": false,
-            "type": "string"
+            "description": "Datum för när gruppens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
-        "description": "De lärare som är kopplade till aktiviteten.",
-        "multiValued": true,
         "name": "teachers",
+        "type": "complex",
+        "multiValued": true,
+        "description": "De lärare som är kopplade till aktiviteten.",
         "subAttributes": [
           {
-            "description": "Identifierare för lärarens anställning.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för lärarens anställning.",
+            "mutability": "immutable"
           },
           {
-            "description": "URI för lärarens anställning.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
             "referenceTypes": [
               "Employment"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för lärarens anställning.",
+            "mutability": "immutable"
           },
           {
-            "description": "En signatur för anställningen exempelvis NJN, JOAN. READ-ONLY.",
-            "multiValued": false,
-            "mutability": "readOnly",
             "name": "display",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "En signatur för anställningen exempelvis NJN, JOAN. READ-ONLY.",
+            "mutability": "readOnly"
           },
           {
-            "description": "Det antal minuter läraren är kopplad till aktiviteten.",
-            "multiValued": false,
             "name": "minutesPlanned",
-            "type": "integer"
+            "type": "integer",
+            "multiValued": false,
+            "description": "Det antal minuter läraren är kopplad till aktiviteten."
           },
           {
-            "description": "Datum för när lärarens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\").",
-            "multiValued": false,
             "name": "startDate",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Datum för när lärarens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"20s16-10-15\")."
           },
           {
-            "description": "Datum för när lärarens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
-            "multiValued": false,
             "name": "endDate",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Datum för när lärarens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
-        "description": "De studenter som är kopplade till aktiviteten.",
-        "multiValued": true,
         "name": "students",
+        "type": "complex",
+        "multiValued": true,
+        "description": "De studenter som är kopplade till aktiviteten.",
         "subAttributes": [
           {
-            "description": "Identifierare för personen.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för personen.",
+            "mutability": "immutable"
           },
           {
-            "description": "URI för personen.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
             "referenceTypes": [
               "User"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för personen.",
+            "mutability": "immutable"
           },
           {
-            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "displayName",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.",
+            "mutability": "immutable"
           },
           {
-            "description": "Datum för när studentens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\").",
-            "multiValued": false,
             "name": "startDate",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Datum för när studentens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
-            "description": "Datum för när studentens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\").",
-            "multiValued": false,
             "name": "endDate",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Datum för när studentens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
         "name": "course",
-        "description": "Det ämne eller den kurs som aktiviteten är knuten till.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Det ämne eller den kurs som aktiviteten är knuten till.",
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifier för kursen eller ämnet.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifier för kursen eller ämnet.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för kursen eller ämnet.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "Syllabus"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för kursen eller ämnet.",
+            "mutability": "immutable"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
-        "description": "Den Skolenhet som aktiviteten är knuten till.",
-        "multiValued": false,
         "name": "owner",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Den skolenhet som aktiviteten är knuten till.",
         "subAttributes": [
           {
-            "description": "Identifierare för skolenheten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "required": true,
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable",
+            "required": true
           },
           {
-            "description": "URI för schemaenheten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
             "referenceTypes": [
               "SchoolUnit"
             ],
-            "required": true,
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för schemaenheten.",
+            "mutability": "immutable",
+            "required": true
           },
           {
-            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
-            "multiValued": false,
-            "mutability": "readOnly",
             "name": "display",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
+            "mutability": "readOnly"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
-        "description": "Möjlighet att koppla aktiviteten till en ursprunglig \"föräldraaktivitet\".",
-        "multiValued": true,
         "name": "parentActivity",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Möjlighet att koppla aktiviteten till en ursprunglig \"föräldraaktivitet\".",
         "subAttributes": [
           {
-            "description": "Identifierare för den ursprungliga aktiviteten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för den ursprungliga aktiviteten.",
+            "mutability": "immutable"
           },
           {
-            "description": "URI för den ursprungliga aktiviteten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
             "referenceTypes": [
               "Activity"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för den ursprungliga aktiviteten.",
+            "mutability": "immutable"
           }
-        ],
-        "type": "complex"
+        ]
       }
     ],
-    "description": "Sammanhållande element som ska schemaläggas.",
-    "id": "urn:scim:schemas:extension:sis:school:1.0:Activity",
     "meta": {
       "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Activity",
       "resourceType": "Schema"
-    },
-    "name": "Activity"
+    }
   }
 ]
