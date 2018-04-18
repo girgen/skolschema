@@ -62,13 +62,13 @@
         "name": "studentMemberships",
         "type": "complex",
         "multiValued": true,
-        "description": "Studentmedlemskap anger att en student är medlem i en grupp och vilken tidsperiod medlemskapet omfattar.",
+        "description": "Elevers medlemskap anger att elever är medlemmar i gruppen och vilken tidsperiod medlemskapet omfattar.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för studentgruppen.",
+            "description": "Identifierare för eleven.",
             "mutability": "immutable"
           },
           {
@@ -78,27 +78,27 @@
               "User"
             ],
             "multiValued": false,
-            "description": "URI för studentgruppen.",
+            "description": "URI för eleven.",
             "mutability": "immutable"
           },
           {
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera studentgruppen i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Startdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Startdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           }
         ]
       },
