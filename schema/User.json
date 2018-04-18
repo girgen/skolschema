@@ -74,13 +74,13 @@
         "name": "studentGroups",
         "type": "complex",
         "multiValued": true,
-        "description": "En students medlemsskap i studentgrupper. Visar vilka grupper en student är medlem i. Dessa visas vid läsning som redundant information, och är READ-ONLY",
+        "description": "En elevs medlemsskap i elevgrupper. Visar vilka grupper en elev är medlem i. Dessa visas vid läsning som redundant information, och är READ-ONLY",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för studentgruppen där eleven är medlem. READ-ONLY.",
+            "description": "Identifierare för elevgruppen där eleven är medlem. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -90,14 +90,14 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "URI för studentgruppen där eleven är medlem. Används primärt för visningssyfte. READ-ONLY.",
+            "description": "URI för elevgruppen där eleven är medlem. Används primärt för visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Namnet på studentgruppen. Används primärt för visningssyfte. READ-ONLY.",
+            "description": "Namnet på elevgruppen. Används primärt för visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -120,7 +120,7 @@
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
-        "description": "En students inskrivningar på skolor under en tidsperiod, tex ett läsår.",
+        "description": "En elev/barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
             "name": "value",
@@ -192,7 +192,7 @@
             "name": "schoolYear",
             "type": "integer",
             "multiValued": false,
-            "description": "Värdet årskurs anger det år efter skolstarten för vilket en student följer undervisningen.",
+            "description": "Värdet årskurs anger det år efter skolstarten för vilket en elev följer undervisningen.",
             "caseExact": true,
             "mutability": "immutable",
             "canonicalValues": [
@@ -213,7 +213,7 @@
             "name": "programCode",
             "type": "string",
             "multiValued": false,
-            "description": "Programkoden för GY/GYSÄR-studenter.",
+            "description": "Programkoden för GY/GYSÄR-elever.",
             "mutability": "immutable",
             "caseExact": true
           }
