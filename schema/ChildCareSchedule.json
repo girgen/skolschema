@@ -1,0 +1,151 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:ChildCareSchedule",
+    "name": "ChildCareSchedule",
+    "description": "Beskriver schemat för barnets omsorgstider på förskola eller fritidshem.",
+    "attributes": [
+      {
+        "name": "temporary",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Anger om detta är ett undantag som gäller istället för normalschemat, oftast under en begränsad tid.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Startdatum för schemat (ISO8601 format, e.g. \"2016-10-15\").",
+        "required": true
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Sluttdatum för schemat (ISO8601 format, e.g. \"2016-10-15\")."
+      },
+      {
+        "name": "request",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Beskriver om detta är en begäran som ännu ej är godkänd. Förvalt är false."
+      },
+      {
+        "name": "scheduleEntries",
+        "type": "complex",
+        "multiValued": true,
+        "description": "",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "weekOffset",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Anger vecka för alternerande schema, exempelvis 0, 1, eller 2 beroende på hur många olika veckor som är specificerade i schemat.",
+            "required": true
+          },
+          {
+            "name": "dayOfWeek",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Anger dag i veckan då starttiden infinner sig.",
+            "canonicalValues": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "required": true
+          },
+          {
+            "name": "startTime",
+            "type": "string",
+            "multiValued": false,
+            "description": "Starttid på dagen för schemat (ISO8601 format, e.g. \"08:30\").",
+            "required": true
+          },
+          {
+            "name": "endTime",
+            "type": "string",
+            "multiValued": false,
+            "description": "Sluttid på dagen för schemat (ISO8601 format, e.g. \"17:00\").",
+            "required": true
+          }
+        ]
+      },
+      {
+        "name": "child",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Barnet som schemat avser.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "URI för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "schoolUnit",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Förskoleenheten som schemat avser.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera förskoleenheten som schemat avser i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:ChildCareSchedule"
+    }
+  }
+]

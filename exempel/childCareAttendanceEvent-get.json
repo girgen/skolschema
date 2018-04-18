@@ -1,0 +1,25 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:ChildCareAttendanceEvent"
+  ],
+  "id": "243c55c7-4f7c-4161-b05b-ac4fa502ff6d",
+  "timeOfEvent": "2017-07-31T08:01:00+02",
+  "eventType": "in",
+  "child": {
+    "value": "87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "/v2/User/87dda8fa-7f76-453a-919d-413861904646",
+    "display": "Palle Girgensohn"
+  },
+  "schoolUnit": {
+    "value": "2819c223-7f76-453a-919d-ffaaffaaffaa",
+    "$ref": "/v2/SchoolUnit/2819c223-7f76-453a-919d-ffaaffaaffaa",
+    "display": "Förskolan blomman"
+  },
+  "meta": {
+    "resourceType": "ChildCareAttendanceEvent",
+    "created": "2017-07-31T08:01:00+01",
+    "lastModified": "2017-07-31T08:01:00+01",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "/v2/ChildCareAttendanceEvents/243c55c7-4f7c-4161-b05b-ac4fa502ff6d"
+  }
+}

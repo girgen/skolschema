@@ -1,0 +1,57 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:ChildCareSchedule"
+  ],
+  "id": "949f9ec8-371a-4e9b-8271-ecebb1eda176",
+  "startDate": "2017-07-31",
+  "endDate": "2018-06-30",
+  "scheduleEntries": [
+    {
+      "weekOffset": 0,
+      "dayOfWeek": 1,
+      "start": "08:00",
+      "end": "16:00"
+    },
+    {
+      "weekOffset": 0,
+      "dayOfWeek": 2,
+      "start": "08:00",
+      "end": "16:00"
+    },
+    {
+      "weekOffset": 0,
+      "dayOfWeek": 3,
+      "start": "08:00",
+      "end": "16:00"
+    },
+    {
+      "weekOffset": 0,
+      "dayOfWeek": 4,
+      "start": "08:00",
+      "end": "16:00"
+    },
+    {
+      "weekOffset": 0,
+      "dayOfWeek": 5,
+      "start": "08:00",
+      "end": "13:00"
+    }
+  ],
+  "child": {
+    "value": "87dda8fa-7f76-453a-919d-413861904646",
+    "$ref": "/v2/User/87dda8fa-7f76-453a-919d-413861904646",
+    "display": "Palle Girgensohn"
+  },
+  "schoolUnit": {
+    "value": "2819c223-7f76-453a-919d-ffaaffaaffaa",
+    "$ref": "/v2/SchoolUnit/2819c223-7f76-453a-919d-ffaaffaaffaa",
+    "display": "Förskolan blomman"
+  },
+  "meta": {
+    "resourceType": "ChildCareSchedule",
+    "created": "2017-07-23T04:56:22Z",
+    "lastModified": "2017-07-30T04:42:34Z",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "/v2/ChildCareSchedules/949f9ec8-371a-4e9b-8271-ecebb1eda176"
+  }
+}

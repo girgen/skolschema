@@ -1,0 +1,97 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:ChildCareAttendanceEvent",
+    "name": "ChildCareAttendanceEvent",
+    "description": "Beskriver en in- eller utcheckning av ett barn i barnomsorg (förskola eller fritidshem).",
+    "attributes": [
+      {
+        "name": "timeOfEvent",
+        "type": "dateTime",
+        "multiValued": false,
+        "description": "Anger tidpunkten då in- eller utckeckningen ägde rum.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "eventType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beskriver om det är en in- eller utcheckning som avses.",
+        "required": true,
+        "canonicalValues": [
+          "in",
+          "ut"
+        ]
+      },
+      {
+        "name": "child",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Barnet som schemat avser.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "User"
+            ],
+            "multiValued": false,
+            "description": "URI för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "schoolUnit",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Förskoleenheten som schemat avser.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera förskoleenheten som schemat avser i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:ChildCareAttendanceEvent"
+    }
+  }
+]
