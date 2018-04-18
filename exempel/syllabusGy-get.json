@@ -1,20 +1,17 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:2.0:CurriculumReferenceInstance",
-    "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference"
+    "urn:scim:schemas:extension:sis:school:2.0:Syllabus"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference": {
-    "schoolType": "GY",
-    "subjectCode": "MA",
-    "subjectName": "Matematik",
-    "courseCode": "MATMAT01c",
-    "courseName": "Matematik C",
-    "curriculum": "GY2011",
-    "curriculumRevision": "2017",
-    "official": true
-  },
+  "schoolType": "GY",
+  "subjectCode": "MA",
+  "subjectName": "Matematik",
+  "courseCode": "MATMAT01c",
+  "courseName": "Matematik C",
+  "curriculum": "GY2011",
+  "curriculumRevision": "2017",
+  "official": true,
   "meta": {
     "resourceType": "CurriculumReferenceInstance",
     "created": "2010-01-23T04:56:22Z",

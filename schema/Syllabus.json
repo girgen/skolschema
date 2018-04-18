@@ -3,7 +3,141 @@
     "id": "urn:scim:schemas:extension:sis:school:2.0:Syllabus",
     "name": "Syllabus",
     "description": "En kurs eller ett ämne enligt en kursplan. Denna innehåller alltid ett inbäddat curriculumReference.",
-    "attributes": [],
+    "attributes": [
+      {
+        "name": "schoolType",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Skolform där kursen eller ämnet ges. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a.",
+        "caseExact": true,
+        "canonicalValues": [
+          "FS",
+          "FSK",
+          "FTH",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS",
+          "HS",
+          "AU"
+        ],
+        "mutability": "immutable"
+      },
+      {
+        "name": "subjectCode",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Ämneskod enligt Skolverket, om det är ett officellt ämne eller en officiell kurs, eller annars efter eget val.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "subjectName",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Ämnets namn, exempelvis Matematik."
+      },
+      {
+        "name": "courseCode",
+        "type": "string",
+        "multiValued": false,
+        "required": false,
+        "description": "Kurskod enligt Skolverket, om det är en officiell kurs, eller annars efter eget val.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "courseName",
+        "type": "string",
+        "multiValued": false,
+        "required": false,
+        "description": "Kursens namn, exempelvis Matematik A."
+      },
+      {
+        "name": "startSchoolYear",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Start för årskursintervall för undervisningens innehåll.",
+        "mutability": "immutable",
+        "canonicalValues": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "name": "endSchoolYear",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Slut för årskursintervall för undervisningens innehåll.",
+        "mutability": "immutable",
+        "canonicalValues": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "name": "points",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Antalet poäng för en specifik kurs. Exempelvis 100 poäng.",
+        "required": false
+      },
+      {
+        "name": "curriculum",
+        "type": "string",
+        "multiValued": false,
+        "description": "Referens till Skolverkets läroplan om det är en officiell kurs eller ett officiellt ämne, annars valfritt. Exempelvis GY2011, LGR11.",
+        "required": false,
+        "mutability": "immutable"
+      },
+      {
+        "name": "curriculumRevision",
+        "type": "string",
+        "multiValued": false,
+        "description": "Referens revision av Skolverkets läroplan om det är en officiell kurs eller ett officiellt ämne.",
+        "required": false,
+        "mutability": "immutable"
+      },
+      {
+        "name": "specialisationSyllabusContent",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beskrivning av ett specialiseringskurs innehåll på gymnasiet.",
+        "required": false
+      },
+      {
+        "name": "official",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Attribut för att indikera om koden är en officiell kod från Skolverket eller annan myndighet."
+      }
+    ],
     "meta": {
       "resourceType": "Schema",
       "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Syllabus"

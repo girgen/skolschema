@@ -2,23 +2,22 @@
   "schemas": [
     "urn:scim:schemas:extension:sis:school:2.0:Grade"
   ],
+  "schoolType": "GY",
+  "subjectCode": "GYARNA",
+  "subjectName": "Gymnasiearbete",
+  "courseCode": "GYARNA",
+  "courseName": "Gymnasiearbete",
   "gradeValue": "E",
   "correctionType": "Ändring",
   "finalGrade": true,
-  "diplomaProjectTitle": "Hästskitens inverkan på gråsparvens benstomme.",
-  "diplomaProjectDescription": "Gråsparvar påverkas av sin närmiljö. Kalkhalten i hästars avföring styrker benstommar hos fåglarna.",
-  "trial": false,
-  "extended": false,
-  "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference": {
-    "schoolType": "GY",
-    "subjectCode": "GYARNA",
-    "subjectName": "Gymnasiearbete",
-    "courseCode": "GYARNA",
-    "courseName": "Gymnasiearbete",
-    "curriculum": "GY2011",
-    "curriculumRevision": "2017",
-    "official": true
+  "diplomaProject": {
+    "title": "Hästskitens inverkan på gråsparvens benstomme.",
+    "description": "Gråsparvar påverkas av sin närmiljö. Kalkhalten i hästars avföring styrker benstommar hos fåglarna."
   },
+  "trial": false,
+  "curriculum": "GY2011",
+  "curriculumRevision": "2017",
+  "official": true,
   "student": {
     "value": "2819c223-7f76-453a-919d-ffaaffaaffaa"
   },

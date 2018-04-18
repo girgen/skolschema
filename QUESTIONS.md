@@ -194,3 +194,13 @@ Till nästa gång:
 
 Engelska för enstaka kurser
 
+
+---
+
+code_SchoolYear 0, 1, 2 .. 10.
+
+semester vs final grade?
+
+språkkoder för betyg?
+
+

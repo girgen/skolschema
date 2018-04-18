@@ -2,8 +2,66 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:2.0:Grade",
     "name": "Grade",
-    "description": "Avser ett registrerat betyg för en elev i ett ämne eller en kurs. Denna innehåller också alltid ett inbäddat curriculumReference.",
+    "description": "Avser ett registrerat betyg för en elev i ett ämne eller en kurs.",
     "attributes": [
+      {
+        "name": "schoolType",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Skolform där kursen eller ämnet ges. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a.",
+        "caseExact": true,
+        "canonicalValues": [
+          "FS",
+          "FSK",
+          "FTH",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS",
+          "HS",
+          "AU"
+        ],
+        "mutability": "immutable"
+      },
+      {
+        "name": "subjectCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Ämneskod enligt Skolverket, om det är ett officellt ämne eller en officiell kurs, eller annars efter eget val.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "subjectName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Ämnets namn, exempelvis Matematik."
+      },
+      {
+        "name": "courseCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kurskod enligt Skolverket, om det är en officiell kurs, eller annars efter eget val.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "courseName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kursens namn, exempelvis Matematik A."
+      },
+      {
+        "name": "points",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Antalet poäng för en specifik kurs. Exempelvis 100 poäng. Detta värde krävs för gymnasiekurser."
+      },
       {
         "name": "gradeValue",
         "type": "string",
@@ -43,34 +101,38 @@
         "description": "Anger om betyget satts vid en prövning. Förvalt värde är \"false\"."
       },
       {
-        "name": "extended",
-        "type": "boolean",
-        "multiValued": false,
-        "description": "Angiven anledning till frånvaro. Förvalt värde är \"false\"."
-      },
-      {
-        "name": "diplomaProjectTitle",
-        "type": "string",
-        "multiValued": false,
-        "description": "Titel på gymnasiearbete. Måste finnas för ett gymnasiearbete."
-      },
-      {
-        "name": "diplomaProjectDescription",
-        "type": "string",
-        "multiValued": false,
-        "description": "Beskrivning av gymnasiearbete. Måste finnas för ett gymnasiearbete."
-      },
-      {
-        "name": "diplomaProjectTitleEngish",
-        "type": "string",
-        "multiValued": false,
-        "description": "Eventuell engelsk titel på gymnasiearbete."
-      },
-      {
-        "name": "diplomaProjectDescriptionEnglish",
-        "type": "string",
-        "multiValued": false,
-        "description": "Eventuell engelsk beskrivning av gymnasiearbete."
+        "name": "diplomaProject",
+        "type": "complex",
+        "multiValued": "false",
+        "description": "Information om gymnasiearbete. Måste finnas för ett gymnasiearbete.",
+        "subAttributes": [
+          {
+            "name": "title",
+            "type": "string",
+            "multiValued": false,
+            "description": "Titel på gymnasiearbete.",
+            "required": true
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "multiValued": false,
+            "description": "Beskrivning av gymnasiearbete.",
+            "required": true
+          },
+          {
+            "name": "titleEngish",
+            "type": "string",
+            "multiValued": false,
+            "description": "Eventuell engelsk titel på gymnasiearbete."
+          },
+          {
+            "name": "descriptionEnglish",
+            "type": "string",
+            "multiValued": false,
+            "description": "Eventuell engelsk beskrivning av gymnasiearbete."
+          }
+        ]
       },
       {
         "name": "adaptedStudyPlan",
@@ -85,27 +147,60 @@
         "description": "Andra anmärkningar för betygsraden."
       },
       {
-        "name": "student",
-        "description": "Referens till eleven.",
+        "name": "schoolYear",
+        "type": "integer",
         "multiValued": false,
+        "description": "Värdet årskurs anger det år efter skolstarten för vilket betyget gäller.",
+        "mutability": "immutable",
+        "canonicalValues": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "name": "semester",
+        "type": "string",
+        "multiValued": false,
+        "description": "Om betyget avser höst- eller vårtermin.",
+        "mutability": "immutable",
+        "caseExact": "true",
+        "canonicalValues": [
+          "HT",
+          "VT"
+        ]
+      },
+      {
+        "name": "student",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Referens till eleven.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för eleven.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för eleven.",
+            "type": "reference",
             "multiValued": false,
+            "description": "URI för eleven.",
             "mutability": "immutable",
             "referenceTypes": [
               "User"
-            ],
-            "type": "reference"
+            ]
           },
           {
             "name": "displayName",
@@ -114,30 +209,30 @@
             "description": "Ett läsbart namn för att identifiera eleven. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
         "name": "gradingTeacher",
-        "description": "Referens till den lärare som satt betyget.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Referens till den lärare som satt betyget.",
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för den lärare som satt betyget.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för den lärare som satt betyget.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för den lärare som satt betyget.",
+            "type": "reference",
             "multiValued": false,
+            "description": "URI för den lärare som satt betyget.",
             "mutability": "immutable",
             "referenceTypes": [
               "User"
-            ],
-            "type": "reference"
+            ]
           },
           {
             "name": "displayName",
@@ -146,30 +241,30 @@
             "description": "Ett läsbart namn för att identifiera den lärare som satt betyget. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
-        ],
-        "type": "complex"
+        ]
       },
       {
         "name": "registeredBy",
-        "description": "Referens till den person som registrerat betygsraden.",
+        "type": "complex",
         "multiValued": false,
+        "description": "Referens till den person som registrerat betygsraden.",
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för den person som registrerat betygsraden.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för den person som registrerat betygsraden.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för rapporterande personen.",
+            "type": "reference",
             "multiValued": false,
+            "description": "URI för rapporterande personen.",
             "mutability": "immutable",
             "referenceTypes": [
               "User"
-            ],
-            "type": "reference"
+            ]
           },
           {
             "name": "displayName",
@@ -178,8 +273,21 @@
             "description": "Ett läsbart namn för att identifiera den person som registrerat betygsraden. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
-        ],
-        "type": "complex"
+        ]
+      },
+      {
+        "name": "curriculum",
+        "type": "string",
+        "multiValued": false,
+        "description": "Referens till Skolverkets läroplan om det är en officiell kurs eller ett officiellt ämne, annars valfritt. Exempelvis GY2011, LGR11.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "specialisationSyllabusContent",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beskrivning av ett specialiseringskurs innehåll på gymnasiet.",
+        "required": false
       }
     ],
     "meta": {
