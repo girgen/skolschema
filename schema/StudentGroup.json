@@ -29,6 +29,7 @@
           "Undervisning",
           "Klass",
           "Schema",
+          "Avdelning",
           "Övrigt"
         ]
       },
@@ -98,7 +99,7 @@
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Slutdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           }
         ]
       },
@@ -106,7 +107,7 @@
         "name": "owner",
         "type": "complex",
         "multiValued": false,
-        "description": "Möjlighet att ange vilken skolenhet rummet tillhör.",
+        "description": "Möjlighet att ange vilken skolenhet gruppen tillhör.",
         "subAttributes": [
           {
             "name": "value",
@@ -129,7 +130,7 @@
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera ägaren av rummet (skolan/skolenheten) i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera ägaren av gruppen (skolenheten) i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]

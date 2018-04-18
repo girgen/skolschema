@@ -42,7 +42,7 @@
           "Elevaktivitet",
           "Läraraktivitet",
           "Mentorskap",
-          "Avdelning",
+          "Omsorg",
           "Övrigt"
         ],
         "mutability": "immutable"

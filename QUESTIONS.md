@@ -203,4 +203,8 @@ semester vs final grade?
 
 språkkoder för betyg?
 
+aktivitets endDate bör kunna vara öppet. kanske inte? om förskolan ska in där kan det vara rimilgt...?
 
+behöver vi beskriva vilken avdelning personal i förskolan jobbar med? vi tror att det inte behövs eftersom personalen flyttar mellan avdelningar efter behov.
+
+"Omsorg" för aktivitetsgrupp (jfr mentorskap). används mentorskap på förskolan?
