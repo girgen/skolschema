@@ -1,8 +1,8 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
-    "name": "Student group",
-    "description": "An extension of the SIS User group consisting of students.",
+    "name": "StudentGroup",
+    "description": "En utökning av användargruppen bestående av elever, för att kunna återanvänd grupperingen i olika aktiviteter.",
     "attributes": [
       {
         "name": "startDate",

@@ -56,7 +56,7 @@
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera studenten. I visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera eleven. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ],

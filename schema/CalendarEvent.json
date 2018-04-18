@@ -79,13 +79,13 @@
         "name": "studentGroupExceptions",
         "type": "complex",
         "multiValued": true,
-        "description": "Anger avvikelser beträffande studentgruppens deltagande, tid och längd för ett enstaka kalendertillfälle.",
+        "description": "Anger avvikelser beträffande elevgruppens deltagande, tid och längd för ett enstaka kalendertillfälle.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för studentgruppen som undantaget avser.",
+            "description": "Identifierare för elevgruppen som undantaget avser.",
             "mutability": "immutable"
           },
           {
@@ -95,14 +95,14 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "URI för studentgruppen som undantaget avser.",
+            "description": "URI för elevgruppen som undantaget avser.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för studentgruppen, att använda i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för elevgruppen, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
@@ -215,14 +215,14 @@
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för student som undantaget avser, att använda i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för elev som undantaget avser, att använda i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "participates",
             "type": "boolean",
             "multiValued": false,
-            "description": "Används för att ange om en student deltar på ett visst kalendertillfälle. "
+            "description": "Används för att ange om en elev deltar på ett visst kalendertillfälle. "
           },
           {
             "name": "startTime",

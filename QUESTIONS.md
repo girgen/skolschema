@@ -42,7 +42,7 @@ Kommun
      Skola 1 Sär
         anställning asdfsadf
 
-Lärarroll på grupp? Klasslärare? 
+Lärarroll på grupp? Klasslärare?
 
 
 för grupper med olika typer, hur spärrar vi  olika typers attribut?
@@ -80,7 +80,7 @@ student har vi problem med: årskurs program skolform är alla tidbundna. var ä
 student kopplas till activity både direkt och via studentassignment, varför? vad tillförs i studentassignment som gör att det behöver vara ett relationsobjekt?
 
 
-Varför skola: 
+Varför skola:
 - schemaläggning avser just lokaler, dvs skola...
 - lärare som jobbar på ett gymnasium med flera enheter så bestäms fördelningen i tjänstefördelningen, om alls. så var är läraren anställd?
 - grupper som gäller flera skolenheter? egentligen tillhör *enbart* personer en enhet. grupperna tillhör ingen enhet, och bara utfallet av vilka elever som till slut fanns i gruppen ligger till grund för rapporteringen.
@@ -97,7 +97,7 @@ Pilarna från StudentAssignment och StudentException ska till User.
 
 canonicalvalues på årskurs i enrolment och studengroup?
 
-vi har hoppat fram och tillbaka med om studentgrupper behöver ha en lista med ämnen eller kurser som de är ämnade för. alltså om en studengrupp är skapade för att ha matematik, ska det listas, eller måste schemaprogrammet/schemaläggaren gissa det från namnet?
+vi har hoppat fram och tillbaka med om elevgrupper behöver ha en lista med ämnen eller kurser som de är ämnade för. alltså om en studengrupp är skapade för att ha matematik, ska det listas, eller måste schemaprogrammet/schemaläggaren gissa det från namnet?
 
 
 
@@ -143,7 +143,7 @@ vi använder "resource" det gör även scim. Förvirring?
 
 
 rektor är bortrefaktoriserat, men finns kvar i "SchoolUnit - Skolenhet
-Klassen SchoolUnit är en specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod och ansvarig rektor enligt Skolenhetsregistret. 
+Klassen SchoolUnit är en specialisering av Grupp som används för att beskriva en Skolenhet med skolenhetskod och ansvarig rektor enligt Skolenhetsregistret.
 
 
 

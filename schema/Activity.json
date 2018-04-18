@@ -39,9 +39,10 @@
         "description": "Beskriver vilken typ av aktivitet som avses.",
         "canonicalValues": [
           "Undervisning",
-          "Studentaktivitet",
+          "Elevaktivitet",
           "Läraraktivitet",
           "Mentorskap",
+          "Avdelning",
           "Övrigt"
         ],
         "mutability": "immutable"
@@ -68,7 +69,7 @@
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för studentgruppen.",
+            "description": "Identifierare för elevgruppen.",
             "mutability": "immutable"
           },
           {
@@ -78,7 +79,7 @@
               "StudentGroup"
             ],
             "multiValued": false,
-            "description": "URI för studentgruppen.",
+            "description": "URI för elevgruppen.",
             "mutability": "immutable"
           },
           {
@@ -156,7 +157,7 @@
         "name": "students",
         "type": "complex",
         "multiValued": true,
-        "description": "De studenter som är kopplade till aktiviteten.",
+        "description": "De elever som är kopplade till aktiviteten.",
         "subAttributes": [
           {
             "name": "value",
@@ -186,13 +187,13 @@
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Datum för när studentens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
+            "description": "Datum för när elevens deltagande i aktiviteten startar (ISO8601 format, t.ex. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "Datum för när studentens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
+            "description": "Datum för när elevens deltagande i aktiviteten slutar (ISO8601 format, t.ex. \"2016-10-15\")."
           }
         ]
       },
