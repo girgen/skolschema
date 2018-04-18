@@ -46,13 +46,13 @@
         "name": "reportedSum",
         "type": "integer",
         "multiValued": false,
-        "description": "Summan av den rapporterade tiden för kalenderhändelser."
+        "description": "Summan av den rapporterade tiden för elevens kalenderhändelser."
       },
       {
         "name": "offeredSum",
         "type": "integer",
         "multiValued": false,
-        "description": "Summerad av den erbjudna tiden minuter för elevens kalenderhändelser."
+        "description": "Summan av den erbjudna tiden minuter för elevens kalenderhändelser."
       },
       {
         "name": "activity",
@@ -76,6 +76,13 @@
               "Activity"
             ],
             "type": "reference"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera aktiviteten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ],
         "type": "complex"
@@ -88,20 +95,27 @@
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för eleven.",
+            "type": "string",
             "multiValued": false,
-            "mutability": "immutable",
-            "type": "string"
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
           },
           {
             "name": "$ref",
-            "description": "URI för eleven.",
-            "multiValued": false,
-            "mutability": "immutable",
+            "type": "reference",
             "referenceTypes": [
               "User"
             ],
-            "type": "reference"
+            "multiValued": false,
+            "description": "URI för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ],
         "type": "complex"

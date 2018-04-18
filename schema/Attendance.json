@@ -96,6 +96,13 @@
             "multiValued": false,
             "description": "URI för eleven.",
             "mutability": "immutable"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       },
@@ -121,6 +128,13 @@
             "multiValued": false,
             "description": "URI för rapporterande personen.",
             "mutability": "immutable"
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera den rapporterande personen i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       }

@@ -1,8 +1,8 @@
 [
   {
-    "id": "urn:scim:schemas:extension:sis:school:2.0:GrantedLeave",
-    "name": "GrantedLeave",
-    "description": "Godkänd ledighet för en elev.",
+    "id": "urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence",
+    "name": "LeaveOfAbsence",
+    "description": "Föranmäld frånvaro för en elev",
     "attributes": [
       {
         "name": "startTime",
@@ -19,11 +19,15 @@
         "description": "Sluttid för ledigheten."
       },
       {
-        "name": "grantedTimestamp",
-        "type": "dateTime",
+        "name": "absenceType",
+        "type": "string",
         "multiValued": false,
-        "required": true,
-        "description": "Tidstämpel för när bestlutet fattades att godkänna ledigheten."
+        "description": "Anger om det rör beviljad ledighet eller frånvaro anmäld av vårdnadshavare.",
+        "canonicalValues": [
+          "Ledighet",
+          "Anmälan"
+        ],
+        "required": true
       },
       {
         "name": "student",
@@ -93,7 +97,7 @@
     ],
     "meta": {
       "resourceType": "Schema",
-      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Attendance"
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence"
     }
   }
 ]
