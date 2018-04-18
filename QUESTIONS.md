@@ -208,3 +208,9 @@ aktivitets endDate bör kunna vara öppet. kanske inte? om förskolan ska in dä
 behöver vi beskriva vilken avdelning personal i förskolan jobbar med? vi tror att det inte behövs eftersom personalen flyttar mellan avdelningar efter behov.
 
 "Omsorg" för aktivitetsgrupp (jfr mentorskap). används mentorskap på förskolan?
+
+Avdelning på studentGroup, OK?
+
+Modellen kring närvaro på förskolan bör synkas med flera.
+
+LeaveOfAbsence, behövs request/boolean eller motsvarande om det är godkänt eller önskat.
