@@ -1,0 +1,27 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence"
+  ],
+  "id": "9994ca56-d52d-4815-9cf8-b8a93e46771f",
+  "externalId": "9994ca56-d52d-4815-9cf8-b8a93e46771f",
+  "startTime": "2018-03-25T09:00:00",
+  "endTime": "2018-04-01T17:00:00",
+  "grantedTimestamp": "2018-04-01T17:00:00",
+  "student": {
+    "value": "2819c223-7f76-453a-919d-413861904646",
+    "$ref": "/v2/User/2819c223-7f76-453a-919d-413861904646",
+    "displayName": "Palle Girgensohn"
+  },
+  "grantedBy": {
+    "value": "fabeabea-1234-4432-aade-413861904646",
+    "$ref": "/v2/User/fabeabea-1234-4432-aade-413861904646",
+    "displayName": "Johnny Jonasson"
+  },
+  "meta": {
+    "resourceType": "LeaveOfAbsence",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "/v2/LeaveOfAbsences/9994ca56-d52d-4815-9cf8-b8a93e46771f"
+  }
+}

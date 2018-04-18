@@ -1,6 +1,6 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:2.0:GrantedLeave"
+    "urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence"
   ],
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "startTime": "2018-03-25T09:00:00",
@@ -9,11 +9,11 @@
   "student": {
     "value": "2819c223-7f76-453a-919d-413861904646",
     "$ref": "/v2/User/2819c223-7f76-453a-919d-413861904646",
-    "display": "Palle Girgensohn"
+    "displayName": "Palle Girgensohn"
   },
   "grantedBy": {
     "value": "fabeabea-1234-4432-aade-413861904646",
     "$ref": "/v2/User/fabeabea-1234-4432-aade-413861904646",
-    "display": "Johnny Jonasson"
+    "displayName": "Johnny Jonasson"
   }
 }

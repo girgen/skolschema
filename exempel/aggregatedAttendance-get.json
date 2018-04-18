@@ -1,0 +1,27 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:2.0:AggregatedAttendance"
+  ],
+  "id": "4ec85b11-2313-4397-b28d-b65faa666c0c",
+  "startDate": "2018-08-22",
+  "endDate": "2018-12-30",
+  "attendanceSum": 5060,
+  "validAbsenceSum": 320,
+  "invalidAbsenceSum": 310,
+  "otherAttendanceSum": 0,
+  "reportedSum": 3040,
+  "offeredSum": 5690,
+  "activity": {
+    "value": "e9e30dba-f08f-4109-8486-d5c6a331660a"
+  },
+  "student": {
+    "value": "2819c223-7f76-453a-919d-413861904646"
+  },
+  "meta": {
+    "resourceType": "AggregatedAttendance",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff592\"",
+    "location": "/v2/AggregatedAttendances/4ec85b11-2313-4397-b28d-b65faa666c0c"
+  }
+}
