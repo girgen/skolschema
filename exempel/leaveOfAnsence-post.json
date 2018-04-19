@@ -2,7 +2,7 @@
   "schemas": [
     "urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence"
   ],
-  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "9994ca56-d52d-4815-9cf8-b8a93e46771f",
   "startTime": "2018-03-25T09:00:00",
   "endTime": "2018-04-01T17:00:00",
   "grantedTimestamp": "2018-04-01T17:00:00",
