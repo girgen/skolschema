@@ -25,13 +25,20 @@
         "description": "Sluttdatum för schemat (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
+        "name": "numberOfWeeks",
+        "type": "integer",
+        "required": true,
+        "multiValued": false,
+        "description": "Hur många veckor schemat gäller för innan det \"börjar om\"."
+      },
+      {
         "name": "request",
         "type": "boolean",
         "multiValued": false,
         "description": "Beskriver om detta är en begäran som ännu ej är godkänd. Förvalt är false."
       },
       {
-        "name": "scheduleEntries",
+        "name": "scheduleDays",
         "type": "complex",
         "multiValued": true,
         "description": "",
@@ -48,15 +55,15 @@
             "name": "dayOfWeek",
             "type": "integer",
             "multiValued": false,
-            "description": "Anger dag i veckan då starttiden infinner sig.",
+            "description": "Anger dag i veckan då starttiden infinner sig. Måndag = 0.",
             "canonicalValues": [
+              0,
               1,
               2,
               3,
               4,
               5,
-              6,
-              7
+              6
             ],
             "required": true
           },
@@ -77,27 +84,27 @@
         ]
       },
       {
-        "name": "child",
+        "name": "enrolment",
         "type": "complex",
         "multiValued": false,
-        "description": "Barnet som schemat avser.",
+        "description": "Inskrivningen (barnet+skolenheten) som schemat avser.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för eleven.",
+            "description": "Identifierare för elevens inskrivning.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "User"
+              "Enrolment"
             ],
             "multiValued": false,
-            "description": "URI för eleven.",
+            "description": "URI för elevens inskrivning.",
             "mutability": "immutable"
           },
           {
@@ -105,39 +112,6 @@
             "type": "string",
             "multiValued": false,
             "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
-            "mutability": "readOnly"
-          }
-        ]
-      },
-      {
-        "name": "schoolUnit",
-        "type": "complex",
-        "multiValued": false,
-        "description": "Förskoleenheten som schemat avser.",
-        "required": true,
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "SchoolUnit"
-            ],
-            "multiValued": false,
-            "description": "URI för skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera förskoleenheten som schemat avser i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]

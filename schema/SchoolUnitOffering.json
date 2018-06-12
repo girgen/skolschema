@@ -10,28 +10,28 @@
         "name": "schoolUnit",
         "subAttributes": [
           {
-            "description": "Identifierare för skolenheten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable"
           },
           {
-            "description": "URI för skolenheten.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för skolenheten.",
+            "mutability": "immutable",
             "referenceTypes": [
               "SchoolUnit"
-            ],
-            "type": "reference"
+            ]
           },
           {
-            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
-            "multiValued": false,
-            "mutability": "readOnly",
             "name": "display",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       },
@@ -41,21 +41,28 @@
         "name": "courses",
         "subAttributes": [
           {
-            "description": "Identifierare för en kurs som ges av skolan.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "value",
-            "type": "string"
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för en kurs som ges av skolan.",
+            "mutability": "immutable"
           },
           {
-            "description": "URI för en kurs som ges av skola.",
-            "multiValued": false,
-            "mutability": "immutable",
             "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för en kurs som ges av skola.",
+            "mutability": "immutable",
             "referenceTypes": [
               "Syllabus"
-            ],
-            "type": "reference"
+            ]
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera kursen. READ-ONLY.",
+            "mutability": "readOnly"
           },
           {
             "name": "startDate",
@@ -68,6 +75,56 @@
             "type": "string",
             "multiValued": false,
             "description": "Slutdatum för när undervisningen börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att kursen ges aktivt just nu och det finns inga beslut att avsluta erbjudandet. Ett angivet datum innebär att kursen inte ges vid skolan efter det datumet. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera kursen. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "description": "Program som ges av skolan.",
+        "multiValued": true,
+        "name": "programmes",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för ett program som ges av skolan.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för ett program som ges av skolan.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "Programme"
+            ]
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera programmet. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Startdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att det är odefinierat när kursen började ges vid skolan. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Slutdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att kursen ges aktivt just nu och det finns inga beslut att avsluta erbjudandet. Ett angivet datum innebär att kursen inte ges vid skolan efter det datumet. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
           }
         ]
       }

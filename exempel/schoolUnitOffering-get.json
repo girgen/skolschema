@@ -16,16 +16,16 @@
       "display": "Rudbäcksskolan 2"
     }
   ],
-  "curriculumReferenceInstances": [
+  "syllabi": [
     {
       "value": "aae30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "/v2/CurriculumReferenceInstances/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/Syllabi/e9e30dba-f08f-4109-8486-d5c6a331660a",
       "OBS": "HELA OBJEKTET INLINE. TODO!!!"
     },
     {
       "value": "aa66c223-7f76-453a-919d-413861904646",
-      "$ref": "/v2/CurriculumReferenceInstances/4566c223-7f76-453a-919d-413861904646",
-      "OBJS": "HELA OBJEKTET INLINE. TODO!!!"
+      "$ref": "/v2/Syllabi/4566c223-7f76-453a-919d-413861904646",
+      "OBS": "HELA OBJEKTET INLINE. TODO!!!"
     }
   ],
   "meta": {

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:Programme",
+    "name": "Programme",
+    "description": "Ett program av kurser.",
+    "attributes": [
+      {
+        "name": "code",
+        "type": "string",
+        "multiValued": false,
+        "required": false,
+        "description": "Programmets programkod. För gymnasieskolans program måste denna finnas och vara enligt Skolverket.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Programmets namn i klartext."
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "multiValued": false,
+        "required": false,
+        "description": "Type av program.",
+        "mutability": "immutable",
+        "OBS:": "OKLART???"
+      },
+      {
+        "name": "schoolType",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Skolform där kursen eller ämnet ges. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a.",
+        "caseExact": true,
+        "canonicalValues": [
+          "FS",
+          "FSK",
+          "FTH",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS",
+          "HS",
+          "AU"
+        ],
+        "mutability": "immutable"
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Startdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att det är odefinierat när kursen började ges vid skolan. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att kursen ges aktivt just nu och det finns inga beslut att avsluta erbjudandet. Ett angivet datum innebär att kursen inte ges vid skolan efter det datumet. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
+      },
+      {
+        "name": "programmeContent",
+        "type": "complex",
+        "description": "Kurser som ges inom programmet.",
+        "multiValued": true,
+        "subAttributes": [
+          {
+            "name": "$ref",
+            "type": "reference",
+            "multiValued": true,
+            "description": "Lista av ingående kurser som gäller för den specificerade typen.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "Syllabus"
+            ]
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "Typ för gruppering av kurser.",
+            "required": true,
+            "mutability": "immutable",
+            "caseExact": true,
+            "canonicalValues": [
+              "Obligatoriska",
+              "Programgemensamma",
+              "Inriktning",
+              "Programfördjupning",
+              "Gymnasiearbete",
+              "Valbara"
+            ]
+          },
+          {
+            "name": "orientationCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för en inriktning inom vilken kursen ges.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "orientationName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för en inriktning inom vilken kursen ges.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "points",
+            "type": "string",
+            "multiValued": false,
+            "description": "Poäng för kursen i förekommande fall.",
+            "mutability": "immutable"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:2.0:Programme"
+    }
+  }
+]
