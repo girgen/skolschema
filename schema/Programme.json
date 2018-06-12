@@ -8,7 +8,6 @@
         "name": "code",
         "type": "string",
         "multiValued": false,
-        "required": false,
         "description": "Programmets programkod. För gymnasieskolans program måste denna finnas och vara enligt Skolverket.",
         "mutability": "immutable"
       },
@@ -23,8 +22,7 @@
         "name": "type",
         "type": "string",
         "multiValued": false,
-        "required": false,
-        "description": "Type av program.",
+        "description": "Typ av program.",
         "mutability": "immutable",
         "OBS:": "OKLART???"
       },
@@ -115,7 +113,7 @@
           },
           {
             "name": "points",
-            "type": "string",
+            "type": "integer",
             "multiValued": false,
             "description": "Poäng för kursen i förekommande fall.",
             "mutability": "immutable"
