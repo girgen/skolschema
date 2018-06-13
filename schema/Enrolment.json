@@ -1,0 +1,195 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:2.0:Enrolment",
+    "name": "Enrolment",
+    "description": "En inskrivning av en användare relaterat mot en enhet.",
+    "attributes": [
+      {
+        "description": "Användare som inskrivningen är knuten till.",
+        "type": "complex",
+        "multiValued": false,
+        "name": "user",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för användaren.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": ["User"],
+            "multiValued": false,
+            "description": "URI för användaren.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Användarens namn i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "description": "Skolenheten där eleven är inskriven.",
+        "type": "complex",
+        "multiValued": false,
+        "name": "enrolledAt",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description":
+              "Identifierare för skolenheten där eleven är inskriven.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": ["SchoolUnit"],
+            "multiValued": false,
+            "description": "URI för skolenheten.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description":
+              "Läsbart namn för skolenheten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "schoolUnitCode",
+            "type": "string",
+            "multiValued": false,
+            "description":
+              "Läsbar skolenhetskod för att identifiera skolenheten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "schoolType",
+        "type": "string",
+        "multiValued": false,
+        "description": "Skolform, exempelvis GR, GY.",
+        "caseExact": true,
+        "canonicalValues": [
+          "FS",
+          "FSK",
+          "FTH",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS",
+          "HS",
+          "AU"
+        ],
+        "mutability": "immutable",
+        "required": true
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\").",
+        "required": true
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\").",
+        "required": true
+      },
+      {
+        "name": "schoolYear",
+        "type": "integer",
+        "multiValued": false,
+        "description":
+          "Värdet årskurs anger det år efter skolstarten för vilket en elev följer undervisningen.",
+        "caseExact": true,
+        "mutability": "immutable",
+        "canonicalValues": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      },
+      {
+        "name": "educationCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Elevens kompletta studievägskod i förekommande falll. Enligt definition av skolverket",
+        "mutability": "immutable",
+        "caseExact": true
+      },
+      {
+        "description":
+          "Programm eller motsvarande vilen beskriver inskrivens studieinnehåll.",
+        "type": "complex",
+        "multiValued": false,
+        "name": "programme",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description":
+              "Identifierare för inskrivningens relaterade program.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": ["Programme"],
+            "multiValued": false,
+            "description": "URI för programmet.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description":
+              "Läsbart namn för programmet i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "programmeCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kod för inskrivningens program i förekommande fall.",
+        "mutability": "immutable",
+        "required": false
+      },
+      {
+        "name": "programmeOrientationCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kod för inskrivningens inriktning i förekommande fall.",
+        "mutability": "immutable",
+        "required": false
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location":
+        "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Enrolment"
+    }
+  }
+]

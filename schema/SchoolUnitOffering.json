@@ -7,7 +7,7 @@
       {
         "description": "Skolenheten vars utbud ska beskrivas.",
         "multiValued": false,
-        "name": "schoolUnit",
+        "name": "offeredAt",
         "subAttributes": [
           {
             "name": "value",
@@ -38,7 +38,7 @@
       {
         "description": "Kurser som ges av skolan.",
         "multiValued": true,
-        "name": "courses",
+        "name": "offeredSyllabus",
         "subAttributes": [
           {
             "name": "value",
