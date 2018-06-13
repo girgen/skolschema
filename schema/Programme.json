@@ -5,13 +5,6 @@
     "description": "Ett program av kurser.",
     "attributes": [
       {
-        "name": "code",
-        "type": "string",
-        "multiValued": false,
-        "description": "Programmets programkod. För gymnasieskolans program måste denna finnas och vara enligt Skolverket.",
-        "mutability": "immutable"
-      },
-      {
         "name": "name",
         "type": "string",
         "multiValued": false,
@@ -24,7 +17,12 @@
         "multiValued": false,
         "description": "Typ av program.",
         "mutability": "immutable",
-        "OBS:": "OKLART???"
+        "caseExact": true,
+        "canonicalValues": [
+          "Yrkesprogram",
+          "Högskoleförberedande",
+          "Intruduktionsprogram"
+        ]
       },
       {
         "name": "schoolType",
@@ -53,33 +51,18 @@
         "mutability": "immutable"
       },
       {
-        "name": "startDate",
+        "name": "code",
         "type": "string",
         "multiValued": false,
-        "description": "Startdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att det är odefinierat när kursen började ges vid skolan. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
+        "description": "Programmets programkod. För gymnasieskolans program måste denna finnas och vara enligt Skolverket.",
+        "mutability": "immutable"
       },
       {
-        "name": "endDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Slutdatum för när programmet börjar erbjudas vid skolan, i förekommande fall. Kan utelämnas vilket innebär att kursen ges aktivt just nu och det finns inga beslut att avsluta erbjudandet. Ett angivet datum innebär att kursen inte ges vid skolan efter det datumet. Anges i ISO8601 format, exempelvis \"2016-10-15\"."
-      },
-      {
-        "name": "programmeContent",
+        "name": "content",
         "type": "complex",
         "description": "Kurser som ges inom programmet.",
         "multiValued": true,
         "subAttributes": [
-          {
-            "name": "$ref",
-            "type": "reference",
-            "multiValued": true,
-            "description": "Lista av ingående kurser som gäller för den specificerade typen.",
-            "mutability": "immutable",
-            "referenceTypes": [
-              "Syllabus"
-            ]
-          },
           {
             "name": "type",
             "type": "string",
@@ -115,8 +98,17 @@
             "name": "points",
             "type": "integer",
             "multiValued": false,
-            "description": "Poäng för kursen i förekommande fall.",
-            "mutability": "immutable"
+            "description": "Poäng för innehållstypen i förekommande fall."
+          },
+          {
+            "name": "content",
+            "type": "reference",
+            "multiValued": true,
+            "description": "Lista av ingående kurser som gäller för den specificerade typen.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "Syllabus"
+            ]
           }
         ]
       }

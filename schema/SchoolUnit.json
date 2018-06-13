@@ -5,65 +5,40 @@
     "description": "En Skolenhet, i förekommande fall med skolenhetskod enligt Skolenhetsregistret.",
     "attributes": [
       {
-        "name": "displayName",
-        "type": "string",
+        "name": "organisation",
+        "type": "complex",
         "multiValued": false,
-        "description": "Namn på skolenheten.",
-        "required": true
-      },
-      {
-        "name": "schoolTypes",
-        "type": "string",
-        "multiValued": true,
-        "description": "Skolformer, exempelvis GR, GY.",
+        "description": "Organisationstillhörighet.",
         "required": true,
-        "caseExact": true,
-        "canonicalValues": [
-          "FS",
-          "FSK",
-          "FTH",
-          "GR",
-          "GRS",
-          "SP",
-          "SAM",
-          "GY",
-          "GYS",
-          "VUX",
-          "SUV",
-          "YH",
-          "FHS",
-          "HS",
-          "AU"
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för organisationselementet.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "Organiation"
+            ],
+            "multiValued": false,
+            "description": "URI för organisationselementet.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för organisationselementet i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
         ]
       },
       {
-        "name": "schoolUnitCode",
-        "type": "string",
-        "multiValued": false,
-        "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket. Används för de skolformer där skolverket bestämmer en skolenhetskod för varje enhet.",
-        "caseExact": true
-      },
-      {
-        "name": "municipalityCode",
-        "type": "string",
-        "multiValued": false,
-        "description": "Län och kommunkod för den kommun där skolan är belägen.",
-        "caseExact": true
-      },
-      {
-        "name": "startDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "endDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "SchoolUnitGroup",
+        "name": "schoolUnitGroup",
         "type": "complex",
         "multiValued": false,
         "description": "Möjlighet att ange vilken skolenhetsgrupp som skolenheten tillhör.",
@@ -94,6 +69,64 @@
             "mutability": "readOnly"
           }
         ]
+      },
+      {
+        "name": "displayName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Namn för skolenheten.",
+        "required": true
+      },
+      {
+        "name": "schoolUnitCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Skolenhetskod. Identifierare för skolenheten enligt Skolverket. Används för de skolformer där skolverket bestämmer en skolenhetskod för varje enhet.",
+        "caseExact": true
+      },
+      {
+        "name": "schoolTypes",
+        "type": "string",
+        "multiValued": true,
+        "description": "Skolformer, exempelvis GR, GY.",
+        "required": true,
+        "caseExact": true,
+        "canonicalValues": [
+          "FS",
+          "FSK",
+          "FTH",
+          "GR",
+          "GRS",
+          "SP",
+          "SAM",
+          "GY",
+          "GYS",
+          "VUX",
+          "SUV",
+          "YH",
+          "FHS",
+          "HS",
+          "AU"
+        ]
+      },
+      {
+        "name": "municipalityCode",
+        "type": "string",
+        "multiValued": false,
+        "description": "Län och kommunkod för den kommun där skolan är belägen.",
+        "caseExact": true
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Startdatum för skolenhetens giltighetstid, från och med (ISO8601 format, e.g. \"2016-10-15\")."
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum för skolenhetens giltighetstid, till och med (ISO8601 format, e.g. \"2016-10-15\")."
       }
     ],
     "meta": {

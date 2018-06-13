@@ -2,60 +2,46 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:Duty",
     "name": "Duty",
-    "description": "En persons tjänst.",
+    "description": "Beskriver en persons tjänst. En tjänst kan sakna relation till en person, dvs vara vakant",
     "attributes": [
       {
-        "name": "employmentRole",
-        "type": "string",
+        "name": "dutydAt",
+        "type": "complex",
         "multiValued": false,
-        "description": "Syfte med tjänsten, den roll tjänsen avser, till exempel lärare eller rektor.",
-        "caseExact": true,
-        "mutability": "immutable",
-        "canonicalValues": [
-          "Rektor",
-          "Lärare",
-          "Förskollärare",
-          "Övrig pedagogisk personal",
-          "Annan personal"
+        "description": "Identifierare från skolenhet som tjänsten är knuten till.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för skolenheten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
         ],
         "required": true
-      },
-      {
-        "name": "signature",
-        "type": "string",
-        "multiValued": false,
-        "description": "En signatur för anställningen exempelvis NJN, JOAN. Syftet är att använda signaturen i presentation i skolschemat."
-      },
-      {
-        "name": "dutyPercent",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Anställningens tjänstgöringsgrad i procent."
-      },
-      {
-        "name": "startDate",
-        "type": "string",
-        "multiValued": false,
-        "required": true,
-        "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "endDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "hoursPerYear",
-        "type": "integer",
-        "multiValued": false,
-        "description": "Antalet timmar per år som anställningen omfattar."
       },
       {
         "name": "user",
         "type": "complex",
         "multiValued": false,
-        "description": "Association till en person.",
+        "description": "Relation till en person.",
         "subAttributes": [
           {
             "name": "value",
@@ -84,37 +70,107 @@
         ]
       },
       {
-        "name": "employedAt",
-        "type": "complex",
+        "name": "dutyRole",
+        "type": "string",
         "multiValued": false,
-        "description": "Identifierare från skolenhet som anställningen är knuten till.",
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "SchoolUnit"
-            ],
-            "multiValued": false,
-            "description": "URI för skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera ägaren av anställningen i visningssyfte. READ-ONLY.",
-            "mutability": "readOnly"
-          }
+        "description": "Syfte med tjänsten, den roll tjänsen avser, till exempel lärare eller rektor.",
+        "caseExact": true,
+        "mutability": "immutable",
+        "canonicalValues": [
+          "Rektor",
+          "Lärare",
+          "Förskollärare",
+          "Övrig pedagogisk personal",
+          "Förskolechef",
+          "Annan personal"
         ],
         "required": true
+      },
+      {
+        "name": "signature",
+        "type": "string",
+        "multiValued": false,
+        "description": "En signatur för tjänstgöringen exempelvis NJN, JOAN."
+      },
+      {
+        "name": "dutyPercent",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Tjänstgöringsgrad i procent."
+      },
+      {
+        "name": "hoursPerYear",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Antalet timmar tjänstgöringen omfattar under ett år."
+      },
+      {
+        "name": "startDate",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
+      },
+      {
+        "name": "authorisationRoles",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Behörighetsroller för den aktuella tjänstgöringen, kan kopplas mot elevgrupper, anges inga gupper gäller behörigheten för tjänstgöringens skolenhet.",
+        "subAttributes": [
+          {
+            "name": "group",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för elevgrupp."
+          },
+          {
+            "name": "$groupRef",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "URI för elevgruppen.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "authorisatioRole",
+            "type": "string",
+            "multiValued": false,
+            "description": "Anger vilken roll behörigheten gäller.",
+            "caseExact": true,
+            "mutability": "immutable",
+            "canonicalValues": [
+              "Mentor",
+              "Förskollärare",
+              "Barnskötare",
+              "Fritidspedagog",
+              "Specialpedagog",
+              "Elevhälsopersonal",
+              "Pedagogisk ledare"
+            ],
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "required": true,
+            "description": "Startdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Slutdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
+          }
+        ]
       }
     ],
     "meta": {
