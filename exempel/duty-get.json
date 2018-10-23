@@ -5,22 +5,38 @@
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "employmentRole": "Lärare",
-  "signature": "PAK",
+  "signature": "PWG",
   "dutyPercent": 100,
-  "startDate": "1970-01-23",
+  "startDate": "1993-12-04",
   "endDate": "2013-06-30",
-  "hoursPerYear": 1340,
-  "schoolUnit": {
+  "hoursPerYear": 1800,
+  "dutyAt": {
     "value": "e9e30dba-f08f-4109-8486-d5c6a3316602",
     "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a3316602",
-    "display": "Dalängsskolan A",
-    "type": "SchoolUnit"
+    "display": "Dalängsskolan A"
   },
   "user": {
     "value": "2819c223-7f76-453a-919d-413861904646",
     "$ref": "/v2/Users/2819c223-7f76-453a-919d-413861904646",
     "displayName": "Palle Girgensohn"
   },
+  "dutyRole": "Lärare",
+  "authorisationRoles": [
+    {
+      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "display": "N3A Kurser",
+      "authorisationRole": "Mentor",
+      "startDate": "2015-08-15",
+      "endDate": "2019-06-15"
+    },
+    {
+      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+      "$ref": "/v2/StudentGroups/e9e30dba-f08f-4109-8486-d5c6a3316123",
+      "display": "MATMAT01 N3A",
+      "authorisationRole": "Specialpedagog"
+    }
+  ],
   "meta": {
     "resourceType": "Duty",
     "created": "2010-01-23T04:56:22Z",
