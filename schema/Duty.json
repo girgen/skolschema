@@ -5,7 +5,7 @@
     "description": "Beskriver en persons tjänst. En tjänst kan sakna relation till en person, dvs vara vakant",
     "attributes": [
       {
-        "name": "dutydAt",
+        "name": "dutyAt",
         "type": "complex",
         "multiValued": false,
         "description": "Identifierare från skolenhet som tjänsten är knuten till.",
