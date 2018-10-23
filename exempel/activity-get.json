@@ -46,11 +46,10 @@
       "minutesPlanned": 3600
     }
   ],
-  "topic": {
+  "syllabus": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",
     "$ref": "/v2/Syllabi/87dda8fa-7f76-453a-919d-413861904646",
-    "display": "Matematik A",
-    "type": "Syllabus"
+    "display": "Matematik A"
   },
   "parentActivity": {
     "value": "87dda8fa-7f76-453a-919d-413861904646",

@@ -198,16 +198,16 @@
         ]
       },
       {
-        "name": "course",
+        "name": "syllabus",
         "type": "complex",
         "multiValued": false,
-        "description": "Det ämne eller den kurs som aktiviteten är knuten till.",
+        "description": "Det kurs- eller ämnesplan som aktiviteten är knuten till.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifier för kursen eller ämnet.",
+            "description": "Identifierare för kurs- eller ämnesplanen.",
             "mutability": "immutable"
           },
           {
@@ -217,7 +217,7 @@
               "Syllabus"
             ],
             "multiValued": false,
-            "description": "URI för kursen eller ämnet.",
+            "description": "URI för kurs- eller ämnesplanen.",
             "mutability": "immutable"
           }
         ]
