@@ -210,12 +210,32 @@
             ]
           },
           {
-            "name": "programCode",
+            "name": "educationCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "Elevens kompletta studievägskod i förekommande fall, enligt definition av skolverket.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "programme",
+            "type": "string",
+            "multiValued": false,
+            "description": "Referens till programobjektets ID (UUID).",
+            "mutability": "immutable"
+          },
+          {
+            "name": "programmeCode",
             "type": "string",
             "multiValued": false,
             "description": "Programkoden för GY/GYSÄR-elever.",
-            "mutability": "immutable",
-            "caseExact": true
+            "mutability": "immutable"
+          },
+          {
+            "name": "programmeOrientationCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "Programinriktningskoden för GY/GYSÄR-elever.",
+            "mutability": "immutable"
           }
         ]
       }
