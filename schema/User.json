@@ -120,25 +120,102 @@
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
-        "description": "En elev/barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår. READ-ONLY",
+        "description": "En elev/barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för inskrivningen. READ-ONLY",
-            "mutability": "readOnly"
+            "description": "Identifierare för skolenheten där eleven är inskriven.",
+            "mutability": "immutable",
+            "required": true
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Enrolment"
+              "SchoolUnit"
             ],
             "multiValued": false,
-            "description": "URI för inskrivningen. READ-ONLY",
-            "mutability": "readOnly",
+            "description": "URI för skolenhetensgruppen.",
+            "mutability": "immutable",
             "required": true
+          },
+          {
+            "name": "schoolUnitCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "Läsbar skolenhetskod för att identifiera skolenheten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "schoolType",
+            "type": "string",
+            "multiValued": false,
+            "description": "Skolform, exempelvis GR, GY.",
+            "caseExact": true,
+            "canonicalValues": [
+              "FS",
+              "FSK",
+              "FTH",
+              "GR",
+              "GRS",
+              "SP",
+              "SAM",
+              "GY",
+              "GYS",
+              "VUX",
+              "SUV",
+              "YH",
+              "FHS",
+              "HS",
+              "AU"
+            ],
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Startdatum (ISO8601 format, t.ex. \"2016-10-15\").",
+            "required": true
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Slutdatum (ISO8601 format, e.g. \"2016-10-15\").",
+            "required": true
+          },
+          {
+            "name": "schoolYear",
+            "type": "integer",
+            "multiValued": false,
+            "description": "Värdet årskurs anger det år efter skolstarten för vilket en elev följer undervisningen.",
+            "caseExact": true,
+            "mutability": "immutable",
+            "canonicalValues": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          {
+            "name": "programCode",
+            "type": "string",
+            "multiValued": false,
+            "description": "Programkoden för GY/GYSÄR-elever.",
+            "mutability": "immutable",
+            "caseExact": true
           }
         ]
       }
