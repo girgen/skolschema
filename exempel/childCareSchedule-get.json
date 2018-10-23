@@ -42,10 +42,10 @@
     "$ref": "/v2/User/87dda8fa-7f76-453a-919d-413861904646",
     "display": "Palle Girgensohn"
   },
-  "schoolUnit": {
+  "group": {
     "value": "2819c223-7f76-453a-919d-ffaaffaaffaa",
-    "$ref": "/v2/SchoolUnit/2819c223-7f76-453a-919d-ffaaffaaffaa",
-    "display": "Förskolan blomman"
+    "$ref": "/v2/StudentGroup/2819c223-7f76-453a-919d-ffaaffaaffaa",
+    "display": "Avdelning blomman"
   },
   "meta": {
     "resourceType": "ChildCareSchedule",
