@@ -84,34 +84,67 @@
         ]
       },
       {
-        "name": "enrolment",
+        "name": "child",
         "type": "complex",
         "multiValued": false,
-        "description": "Inskrivningen (barnet+skolenheten) som schemat avser.",
+        "description": "Barnet som schemat avser.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för elevens inskrivning.",
+            "description": "Identifierare för barnet.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "Enrolment"
+              "User"
             ],
             "multiValued": false,
-            "description": "URI för elevens inskrivning.",
+            "description": "URI för barnet.",
             "mutability": "immutable"
           },
           {
-            "name": "displayName",
+            "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "group",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Den avdelning eller grupp på förskoleenheten som schemat avser.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för gruppen.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "URI för gruppen.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera gruppen på förskoleenheten som schemat avser. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]

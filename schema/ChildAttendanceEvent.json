@@ -47,7 +47,7 @@
             "mutability": "immutable"
           },
           {
-            "name": "displayName",
+            "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "Ett läsbart namn för att identifiera eleven i visningssyfte. READ-ONLY.",
@@ -56,34 +56,34 @@
         ]
       },
       {
-        "name": "schoolUnit",
+        "name": "group",
         "type": "complex",
         "multiValued": false,
-        "description": "Förskoleenheten som schemat avser.",
+        "description": "Den avdelning eller grupp på förskoleenheten som närvaron.",
         "required": true,
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för skolenheten.",
+            "description": "Identifierare för gruppen.",
             "mutability": "immutable"
           },
           {
             "name": "$ref",
             "type": "reference",
             "referenceTypes": [
-              "SchoolUnit"
+              "StudentGroup"
             ],
             "multiValued": false,
-            "description": "URI för skolenheten.",
+            "description": "URI för gruppen.",
             "mutability": "immutable"
           },
           {
             "name": "display",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera förskoleenheten som schemat avser i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera gruppen på förskoleenheten som schemat avser. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ]
