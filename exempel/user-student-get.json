@@ -50,13 +50,13 @@
       {
         "value": "26118915-6090-4610-aaaa-49d8ca9f808d",
         "$ref": "../Users/26118915-6090-4610-aaaa-49d8ca9f808d",
-        "displayName": "John Smith",
+        "display": "John Smith",
         "relationType": "Vårdnadshavare"
       },
       {
         "value": "26118915-6090-4610-87e4-4f1234234223",
         "$ref": "../Users/26118915-6090-4610-87e4-4f1234234223",
-        "displayName": "Gullan Olsson",
+        "display": "Gullan Olsson",
         "relationType": "Kontaktperson"
       }
     ],

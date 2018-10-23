@@ -62,7 +62,7 @@
             "required": true
           },
           {
-            "name": "displayName",
+            "name": "display",
             "type": "string",
             "multiValued": false,
             "description": "Ett läsbart namn för att identifiera den relaterade personen i visningssyfte. READ-ONLY.",
