@@ -121,16 +121,16 @@
         "name": "authorisationRoles",
         "type": "complex",
         "multiValued": true,
-        "description": "Behörighetsroller för den aktuella tjänstgöringen, kan kopplas mot elevgrupper, anges inga gupper gäller behörigheten för tjänstgöringens skolenhet.",
+        "description": "Behörighetsroller för den aktuella tjänstgöringen uttrycker en behörighet som kan omfatta en angiven elevgrupp eller en hel skolenhet. Identifierare för gruppen som behörigheten gäller för. Om elevgrupp utelämnas avser behörigheten hela skolenheten. Lärares undervisning ska inte uttryckas med behörighetsroll, för detta syfte används i stället Aktivitet. Om datum för behörigheten saknas avses det datum som anges under Tjänstgöring.",
         "subAttributes": [
           {
-            "name": "group",
+            "name": "value",
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för elevgrupp."
           },
           {
-            "name": "$groupRef",
+            "name": "$ref",
             "type": "reference",
             "referenceTypes": [
               "StudentGroup"
@@ -140,7 +140,14 @@
             "mutability": "readOnly"
           },
           {
-            "name": "authorisatioRole",
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för elevgrupp.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "authorisationRole",
             "type": "string",
             "multiValued": false,
             "description": "Anger vilken roll behörigheten gäller.",
