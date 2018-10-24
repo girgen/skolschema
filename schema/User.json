@@ -75,6 +75,7 @@
         "type": "complex",
         "multiValued": true,
         "description": "En elevs medlemsskap i elevgrupper. Visar vilka grupper en elev är medlem i. Dessa visas vid läsning som redundant information, och är READ-ONLY",
+        "mutability": "readOnly",
         "subAttributes": [
           {
             "name": "value",
@@ -104,15 +105,15 @@
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "mutability": "readOnly",
-            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\"). READ-ONLY."
+            "description": "Startdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
+            "mutability": "readOnly"
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "mutability": "readOnly",
-            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\"). READ-ONLY."
+            "description": "Slutdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
+            "mutability": "readOnly"
           }
         ]
       },
@@ -123,7 +124,7 @@
         "description": "En elevs eller ett barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
-            "name": "value",
+            "name": "enroledAt",
             "type": "string",
             "multiValued": false,
             "description": "Identifierare för skolenheten där eleven är inskriven.",
@@ -139,7 +140,14 @@
             "multiValued": false,
             "description": "URI för skolenhetensgruppen.",
             "mutability": "immutable",
-            "required": true
+            "required": false
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Läsbart namn på skolenheten i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           },
           {
             "name": "schoolUnitCode",
@@ -236,6 +244,79 @@
             "multiValued": false,
             "description": "Programinriktningskoden för GY/GYSÄR-elever.",
             "mutability": "immutable"
+          }
+        ]
+      },
+      {
+        "name": "assignmentRoles",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Arbetsuppgifter för personen i relation till en studentgrupp eller en skolenhet. Identifierare för gruppen eller skolenheten som behörigheten gäller för. Lärares undervisning ska inte uttryckas med behörighetsroll, för detta syfte används i stället Aktivitet.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för elevgruppen eller skolenheten."
+          },
+          {
+            "name": "$ref",
+            "multiValued": false,
+            "description": "URI för elevgruppen eller skolenheten.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för elevgruppen eller skolenheten.",
+            "mutability": "readOnly"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "multiValued": false,
+            "description": "Typ av referens.",
+            "required": true,
+            "caseExact": true,
+            "canonicalValues": [
+              "StudentGroup",
+              "SchoolUnit"
+            ],
+            "mutability": "immutable",
+            "returned": "default",
+            "uniqueness": "none"
+          },
+          {
+            "name": "authorisationRole",
+            "type": "string",
+            "multiValued": false,
+            "description": "Anger vilken roll behörigheten gäller.",
+            "caseExact": true,
+            "mutability": "immutable",
+            "canonicalValues": [
+              "Mentor",
+              "Förskollärare",
+              "Barnskötare",
+              "Fritidspedagog",
+              "Specialpedagog",
+              "Elevhälsopersonal",
+              "Pedagogisk ledare"
+            ],
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "type": "string",
+            "multiValued": false,
+            "required": true,
+            "description": "Startdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
+          },
+          {
+            "name": "endDate",
+            "type": "string",
+            "multiValued": false,
+            "description": "Slutdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
           }
         ]
       }

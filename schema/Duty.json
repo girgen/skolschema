@@ -116,68 +116,6 @@
         "type": "string",
         "multiValued": false,
         "description": "Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
-        "name": "authorisationRoles",
-        "type": "complex",
-        "multiValued": true,
-        "description": "Behörighetsroller för den aktuella tjänstgöringen uttrycker en behörighet som kan omfatta en angiven elevgrupp eller en hel skolenhet. Identifierare för gruppen som behörigheten gäller för. Om elevgrupp utelämnas avser behörigheten hela skolenheten. Lärares undervisning ska inte uttryckas med behörighetsroll, för detta syfte används i stället Aktivitet. Om datum för behörigheten saknas avses det datum som anges under Tjänstgöring.",
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för elevgrupp."
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "StudentGroup"
-            ],
-            "multiValued": false,
-            "description": "URI för elevgruppen.",
-            "mutability": "readOnly"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för elevgrupp.",
-            "mutability": "readOnly"
-          },
-          {
-            "name": "authorisationRole",
-            "type": "string",
-            "multiValued": false,
-            "description": "Anger vilken roll behörigheten gäller.",
-            "caseExact": true,
-            "mutability": "immutable",
-            "canonicalValues": [
-              "Mentor",
-              "Förskollärare",
-              "Barnskötare",
-              "Fritidspedagog",
-              "Specialpedagog",
-              "Elevhälsopersonal",
-              "Pedagogisk ledare"
-            ],
-            "required": true
-          },
-          {
-            "name": "startDate",
-            "type": "string",
-            "multiValued": false,
-            "required": true,
-            "description": "Startdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
-          },
-          {
-            "name": "endDate",
-            "type": "string",
-            "multiValued": false,
-            "description": "Slutdatum för behörigheten (ISO8601 format, e.g. \"2016-10-15\")."
-          }
-        ]
       }
     ],
     "meta": {
