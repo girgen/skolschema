@@ -4,19 +4,12 @@
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-  "schoolUnits": [
-    {
-      "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a331660a",
-      "display": "Rudbäcksskolan 1"
-    },
-    {
-      "value": "4566c223-7f76-453a-919d-413861904646",
-      "$ref": "/v2/SchoolUnits/4566c223-7f76-453a-919d-413861904646",
-      "display": "Rudbäcksskolan 2"
-    }
-  ],
-  "syllabi": [
+  "offeredAt": {
+    "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+    "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a331660a",
+    "display": "Rudbäcksskolan 1"
+  },
+  "offeredSyllabi": [
     {
       "value": "aae30dba-f08f-4109-8486-d5c6a331660a",
       "$ref": "/v2/Syllabi/e9e30dba-f08f-4109-8486-d5c6a331660a",
