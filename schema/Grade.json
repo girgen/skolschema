@@ -5,6 +5,198 @@
     "description": "Avser ett registrerat betyg för en elev i ett ämne eller en kurs.",
     "attributes": [
       {
+        "name": "student",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Referens till eleven.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för eleven.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för eleven.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ]
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera eleven. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "SchoolUnit",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Skolenheten där undervisningen genomförts.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för schemaenheten.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "registeredBy",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Den person som registrerade betyget.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för personen som registrerade betyget.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för personen som registrerade betyget.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ]
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera personen. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "gradingTeacher",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Den behöriga lärare som är ansvarig för betyget.",
+        "required": true,
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för läraren.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "multiValued": false,
+            "description": "URI för läraren.",
+            "mutability": "immutable",
+            "referenceTypes": [
+              "User"
+            ]
+          },
+          {
+            "name": "displayName",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera läraren. I visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "studentGroup",
+        "type": "complex",
+        "multiValued": true,
+        "description": "Anger vilken elevgrupp eleven ingick i.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för elevgruppen.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "StudentGroup"
+            ],
+            "multiValued": false,
+            "description": "URI för elevgruppen.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera gruppen i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "date",
+        "type": "string",
+        "multiValued": false,
+        "description": "Det datum då betyget registrerades.",
+        "mutability": "immutable"
+      },
+      {
+        "name": "gradeValue",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Anger vilket betyg eleven har tilldelats."
+       },
+      {
+        "name": "finalGrade",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Anger om det registrerade betyget är ett slutbetyg för ämnet eller kursen."
+     },
+      {
+        "name": "trial",
+        "type": "boolean",
+        "multiValued": false,
+        "description": "Anger om betyget satts vid en prövning. Förvalt värde är \"false\"."
+      },
+      {
         "name": "schoolType",
         "type": "string",
         "multiValued": false,
@@ -63,13 +255,6 @@
         "description": "Antalet poäng för en specifik kurs. Exempelvis 100 poäng. Detta värde krävs för gymnasiekurser."
       },
       {
-        "name": "gradeValue",
-        "type": "string",
-        "multiValued": false,
-        "required": true,
-        "description": "Anger vilket betyg eleven har tilldelats."
-      },
-      {
         "name": "correctionType",
         "type": "string",
         "multiValued": false,
@@ -82,23 +267,10 @@
         ]
       },
       {
-        "name": "finalGrade",
-        "type": "boolean",
-        "multiValued": false,
-        "required": true,
-        "description": "Anger om det registrerade betyget är ett slutbetyg för ämnet eller kursen."
-      },
-      {
         "name": "converted",
         "type": "boolean",
         "multiValued": false,
         "description": "Anger om betyget är omvandlat. Förvalt värde är \"false\"."
-      },
-      {
-        "name": "trial",
-        "type": "boolean",
-        "multiValued": false,
-        "description": "Anger om betyget satts vid en prövning. Förvalt värde är \"false\"."
       },
       {
         "name": "diplomaProject",
@@ -176,39 +348,6 @@
         "canonicalValues": [
           "HT",
           "VT"
-        ]
-      },
-      {
-        "name": "student",
-        "type": "complex",
-        "multiValued": false,
-        "description": "Referens till eleven.",
-        "required": true,
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för eleven.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "multiValued": false,
-            "description": "URI för eleven.",
-            "mutability": "immutable",
-            "referenceTypes": [
-              "User"
-            ]
-          },
-          {
-            "name": "displayName",
-            "type": "string",
-            "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera eleven. I visningssyfte. READ-ONLY.",
-            "mutability": "readOnly"
-          }
         ]
       },
       {
