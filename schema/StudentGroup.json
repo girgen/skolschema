@@ -121,6 +121,13 @@
             "mutability": "immutable"
           },
           {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Elevens namn, i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
+          },
+          {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
