@@ -52,7 +52,6 @@
         "name": "subjectDesignation",
         "type": "string",
         "multiValued": false,
-        "required": true,
         "description": "Ämnets beteckning, exempelvis MA, MLARA."
       },
       {
@@ -101,7 +100,6 @@
         "multiValued": false,
         "description":
           "Referens till Skolverkets läroplan om det är en officiell kurs eller ett officiellt ämne, annars valfritt. Exempelvis GY2011, LGR11.",
-        "required": false,
         "caseExact": true,
         "mutability": "immutable",
         "canonicalValues": [
@@ -125,7 +123,6 @@
         "multiValued": false,
         "description":
           "Språkkod för moderna språk och modersmål, exempelvis FRA, Franska.",
-        "required": false,
         "mutability": "immutable"
       },
       {
@@ -134,7 +131,6 @@
         "multiValued": false,
         "description":
           "Beskrivning av innehållet i en specialiseringskurs på gymnasiet.",
-        "required": false,
         "mutability": "immutable"
       },
       {
