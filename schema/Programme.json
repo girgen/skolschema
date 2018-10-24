@@ -84,15 +84,13 @@
             "name": "orientationCode",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för en inriktning inom vilken kursen ges.",
-            "mutability": "immutable"
+            "description": "Identifierare för en inriktning inom vilken kursen ges."
           },
           {
             "name": "orientationName",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för en inriktning inom vilken kursen ges.",
-            "mutability": "immutable"
+            "description": "Identifierare för en inriktning inom vilken kursen ges."
           },
           {
             "name": "points",
@@ -102,10 +100,15 @@
           },
           {
             "name": "content",
+            "type": "string",
+            "multiValued": true,
+            "description": "Lista av ingående kursera kursplaners ID:n."
+          },
+          {
+            "name": "$contentRef",
             "type": "reference",
             "multiValued": true,
-            "description": "Lista av ingående kurser som gäller för den specificerade typen.",
-            "mutability": "immutable",
+            "description": "Lista av ingående kursers kursplaners URL:er.",
             "referenceTypes": [
               "Syllabus"
             ]
