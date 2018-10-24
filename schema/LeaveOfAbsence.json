@@ -2,24 +2,24 @@
   {
     "id": "urn:scim:schemas:extension:sis:school:2.0:LeaveOfAbsence",
     "name": "LeaveOfAbsence",
-    "description": "Föranmäld frånvaro för en elev",
+    "description": "Anmäld frånvaro för en elev",
     "attributes": [
       {
         "name": "startTime",
         "type": "dateTime",
         "multiValued": false,
         "required": true,
-        "description": "Starttid för ledigheten."
+        "description": "Starttid för den anmälda frånvaron."
       },
       {
         "name": "endTime",
         "type": "dateTime",
         "multiValued": false,
         "required": true,
-        "description": "Sluttid för ledigheten."
+        "description": "Sluttid för den anmälda frånvaron."
       },
       {
-        "name": "absenceType",
+        "name": "type",
         "type": "string",
         "multiValued": false,
         "description": "Anger om det rör beviljad ledighet eller frånvaro anmäld av vårdnadshavare.",
@@ -63,20 +63,54 @@
         "type": "complex"
       },
       {
-        "name": "grantedBy",
-        "description": "Referens till den person som godkänt ledigheten.",
+        "name": "SchoolUnit",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Den skolenhet som den anmälda frånvaron avser.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för skolenheten.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för schemaenheten.",
+            "mutability": "immutable",
+            "required": true
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera skolenheten. READ-ONLY.",
+            "mutability": "readOnly"
+          }
+        ]
+      },
+      {
+        "name": "registeredBy",
+        "description": "Referens till den person som registrerat den anmälda frånvaron.",
         "multiValued": false,
         "subAttributes": [
           {
             "name": "value",
-            "description": "Identifierare för den person som godkänt ledigheten.",
+            "description": "Identifierare för den person som registrerat den anmälda frånvaron.",
             "multiValued": false,
             "mutability": "immutable",
             "type": "string"
           },
           {
             "name": "$ref",
-            "description": "URI för den person som godkänt ledigheten.",
+            "description": "URI för den person som registrerat den anmälda frånvaron.",
             "multiValued": false,
             "mutability": "immutable",
             "referenceTypes": [
@@ -88,7 +122,7 @@
             "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera den person som godkänt ledigheten. I visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera den person som registrerat den anmälda frånvaron. I visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           }
         ],
