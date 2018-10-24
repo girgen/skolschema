@@ -120,7 +120,7 @@
         "name": "enrolments",
         "type": "complex",
         "multiValued": true,
-        "description": "En elev/barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår.",
+        "description": "En elevs eller ett barns inskrivningar på skolor/förskolor under en tidsperiod, tex ett läsår.",
         "subAttributes": [
           {
             "name": "value",

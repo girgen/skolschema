@@ -322,7 +322,7 @@
         "name": "schoolYear",
         "type": "integer",
         "multiValued": false,
-        "description": "Värdet årskurs anger det år efter skolstarten för vilket betyget gäller.",
+        "description": "Elevens årskurs när betyget sattes, exempelvis 9. Endast applicerbart för obligatoriska skolformer.",
         "mutability": "immutable",
         "canonicalValues": [
           0,
