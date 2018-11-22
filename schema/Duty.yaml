@@ -1,0 +1,42 @@
+Duty:
+  type: object
+  properties:
+    dutyAt:
+      allOf:
+        - $ref: '#/components/objects/ObjectReference'
+        - description: Identifierare av skolenhet som tjänsten är knuten till.
+    user:
+      allOf:
+        - $ref: '#/components/objects/UserReference'
+        - description: Identifierare av skolenhet som tjänsten är knuten till.
+    dutyRole:
+      type: string
+      enum:
+        - Rektor
+        - Lärare",
+        - Förskollärare
+        - Övrig pedagogisk personal
+        - Förskolechef
+        - Annan personal
+      description: Syfte med tjänsten, den roll tjänsen avser, till exempel lärare eller rektor.
+    signature:
+      type: string
+      description: En signatur för tjänstgöringen exempelvis NJN, JOAN.
+    dutyPercent:
+      type: integer
+      description: Tjänstgöringsgrad i procent
+    hoursPerYear:
+      type: integer
+      description: Antalet timmar tjänstgöringen omfattar under ett år.
+    startDate:
+      type: string
+      format: date
+      description: Startdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, t.ex. "2016-10-15")
+    endDate:
+      type: string
+      format: date
+      description: Slutdatum för personens anställning på en viss skolenhet eller skola (ISO8601 format, e.g. "2016-10-15").
+  required:
+    - dutyAt
+    - dutyRole
+    - startDate
