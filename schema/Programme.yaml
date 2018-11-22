@@ -1,0 +1,75 @@
+Programme:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett program av kurser.
+    name:
+      type: string
+      enum:
+        - Yrkesprogram
+        - Högskoleförberedande
+        - Intruduktionsprogram
+      description: Typ av program.
+    schoolType:
+      type: string
+      enum:
+        - FS
+        - FSK
+        - FTH
+        - GR
+        - GRS
+        - SP
+        - SAM
+        - GY
+        - GYS
+        - VUX
+        - SUV
+        - YH
+        - FHS
+        - HS
+        - AU
+      description: |
+        Skolform där kursen eller ämnet ges.
+        Förklaring till Skolverkets kodsystem finns på deras webbplats.
+        Exempelvis MATMAT01a.
+      code:
+        type: string
+        description: |
+          Programmets programkod.
+          För gymnasieskolans program måste denna finnas och vara enligt Skolverket.
+      content:
+        type: array
+        description: Kurser som ges inom programmet.
+        required:
+          - type
+          - content
+        properties:
+          type:
+            type: string
+            description: Typ för gruppering av kurser.
+            enum:
+              - Obligatoriska
+              - Programgemensamma
+              - Inriktning
+              - Programfördjupning
+              - Gymnasiearbete
+              - Valbara
+          orientationCode:
+            type: string
+            description: Identifierare för en inriktning inom vilken kursen ges.
+          orientationName:
+            type: string
+            description: Identifierare för en inriktning inom vilken kursen ges.
+          points:
+            type: integer
+            description: Poäng för innehållstypen i förekommande fall.
+          content:
+            type: array
+            description: Lista av ingående kursers kursplaner.
+            type: string
+            ## TODO: referenser tll Syllabus
+  required:
+    - name
+    - schoolType
