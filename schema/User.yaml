@@ -1,0 +1,52 @@
+User:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    eduPersonPrincipalName:
+      type: string
+      description: A unique identifier for the user.
+    norEduPersonNIN:
+      type: string
+      description: The National ID for the person.
+      pattern: '^\d{8}[A-Z0-9]{2}\d{2}$'
+    givenName:
+      type: string
+    middleName:
+      type: string
+    familyName:
+      type: string
+    email:
+      type: string
+    phone:
+      type: string
+    userStatus:
+      type: integer
+      format: int32
+      description: User Status
+
+Address:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - work
+        - home
+        - other
+    streetAddress:
+      type: string
+      description: "Ex: 100 Universal City Plaza"
+    locality:
+      type: string
+      description: "Postal city"
+    postalCode:
+      type: string
+    country:
+      type: string
+    formatted":
+      type: string
+      description: "100 Universal City Plaza\nHollywood, CA 91608 USA"
+    primary":
+      type: boolean
