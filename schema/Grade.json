@@ -38,7 +38,7 @@
         ]
       },
       {
-        "name": "SchoolUnit",
+        "name": "schoolUnit",
         "type": "complex",
         "multiValued": false,
         "description": "Skolenheten där undervisningen genomförts.",
@@ -170,7 +170,7 @@
         ]
       },
       {
-        "name": "date",
+        "name": "registeredDate",
         "type": "string",
         "multiValued": false,
         "description": "Det datum då betyget registrerades.",
