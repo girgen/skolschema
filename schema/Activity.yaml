@@ -11,17 +11,23 @@ Activity:
 
     calendarEventsRequired:
       type: boolean
-      description: Detta ska uttrycka huruvida aktiviteten ska vara underlag för generering av lektion eller inte.
+      description: >
+        Detta ska uttrycka huruvida aktiviteten ska vara
+        underlag för generering av lektion eller inte.
 
     startDate:
       type: string
       format: date
-      description: Datum för när aktiviteten startar (ISO8601 format, t.ex. "2016-10-15")
+      description: >
+        Datum för när aktiviteten startar (ISO8601 format,
+        t.ex. "2016-10-15")
 
     endDate:
       type: string
       format: date
-      description: Datum för när aktiviteten slutar (ISO8601 format, t.ex. "2016-10-15".
+      description: >
+        Datum för när aktiviteten slutar (ISO8601 format,
+        t.ex. "2016-10-15".
 
     activityType:
       type: string
