@@ -6,7 +6,7 @@ Activity:
       format: uuid
 
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
 
     displayName:
       type: string
@@ -219,7 +219,7 @@ Attendance:
       format: uuid
       description: Ett UUID för närvaron.
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
     isReported:
       type: boolean
       description: Anger om lektionen är explicit rapporterad.
@@ -261,7 +261,7 @@ CalendarEvent:
       format: uuid
       description: Ett UUID för kalenderhändelsen.
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
     startTime:
       type: string
       format: date-time
@@ -320,7 +320,7 @@ ChildAttendanceEvent:
       format: uuid
       description: Ett ID för närvarohändelsen.
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
     time:
       type: string
       format: date-time
@@ -355,7 +355,7 @@ ChildCareSchedule:
       format: uuid
       description: Ett ID för schemat.
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
     temporary:
       type: boolean
       description: Anger om detta är ett undantag som gäller istället för normalschemat, oftast under en begränsad tid.
@@ -416,7 +416,7 @@ Duty:
       format: uuid
       description: Ett ID för tjänsten.
     meta:
-      $ref: '#/Meta'
+      $ref: "#/Meta"
     dutyAt:
       allOf:
         - $ref: "#/ObjectReference"
@@ -897,77 +897,81 @@ SchoolUnitGroup:
   description: >
     En samling av en eller flera skolenheter som delar resurser
     och byggnader som omfattar en eller skolenheter.
-  displayName:
-    type: string
-    description: Namn på samlingen.
-  schoolUnits:
-    type: array
-    description: >
-      En lista på skolenhetsgruppens ingående skolenheter.
-      Dessa visas vid läsning som redundant information,
-      och är READ-ONLY.
-    items:
-      - $ref: "#/ObjectReference"
+  properties:
+    displayName:
+      type: string
+      description: Namn på samlingen.
+    schoolUnits:
+      type: array
+      description: >
+        En lista på skolenhetsgruppens ingående skolenheter.
+        Dessa visas vid läsning som redundant information,
+        och är READ-ONLY.
+      items:
+        $ref: "#/ObjectReference"
 
 SchoolUnitOffering:
   type: object
   description: Ett utbud av kurser som av en skola.
   properties:
     offeredAt:
-      $ref: '#/ObjectReference'
+      $ref: "#/ObjectReference"
     offeredSyllabus:
       allOf:
-        $ref: '#/ObjectReference/Syllabus'
-        startDate:
-          type: string
-          format: date
-          description: >
-            Startdatum för när undervisningen börjar erbjudas vid skolan,
-            i förekommande fall. Kan utelämnas vilket innebär att det är
-            odefinierat när kursen började ges vid skolan.
-            Anges i ISO8601 format, exempelvis "2016-10-15".
-        endDate:
-          type: string
-          format: date
-          description: >
-            Slutdatum för när undervisningen börjar erbjudas vid skolan,
-            i förekommande fall. Kan utelämnas vilket innebär att kursen
-            ges aktivt just nu och det finns inga beslut att avsluta
-            erbjudandet. Ett angivet datum innebär att kursen inte ges
-            vid skolan efter det datumet. Anges i ISO8601 format,
-            exempelvis "2016-10-15".
-        displayName:
-          type: string
-          readOnly: true
-          description: >
-            Ett läsbart namn för att identifiera kursen. READ-ONLY.
+        - $ref: "#/ObjectReference"
+        - type: object
+          properties:
+            startDate:
+              type: string
+              format: date
+              description: >
+                Startdatum för när undervisningen börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att det är
+                odefinierat när kursen började ges vid skolan.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            endDate:
+              type: string
+              format: date
+              description: >
+                Slutdatum för när undervisningen börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att kursen
+                ges aktivt just nu och det finns inga beslut att avsluta
+                erbjudandet. Ett angivet datum innebär att kursen inte ges
+                vid skolan efter det datumet. Anges i ISO8601 format,
+                exempelvis "2016-10-15".
+            displayName:
+              type: string
+              readOnly: true
+              description: >
+                Ett läsbart namn för att identifiera kursen. READ-ONLY.
     programmes:
       allOf:
         - description: Program som ges av skolan.
-        - $ref: '#/ObjectReference/Syllabus'
-        - startDate:
-            type: string
-            format: date
-            description: >
-              Startdatum för när programmet börjar erbjudas vid skolan,
-              i förekommande fall. Kan utelämnas vilket innebär att det
-              är odefinierat när kursen började ges vid skolan.
-              Anges i ISO8601 format, exempelvis "2016-10-15".
-        - endDate:
-            type: string
-            format: date
-            description: >
-              Slutdatum för när programmet börjar erbjudas vid skolan,
-              i förekommande fall. Kan utelämnas vilket innebär att
-              kursen ges aktivt just nu och det finns inga beslut att
-              avsluta erbjudandet. Ett angivet datum innebär att
-              kursen inte ges vid skolan efter det datumet.
-              Anges i ISO8601 format, exempelvis "2016-10-15".
-        - displayName:
-            type: string
-            readOnly: true
-            description: >
-              Ett läsbart namn för att identifiera kursen. READ-ONLY.
+        - $ref: "#/ObjectReference"
+        - properties:
+            startDate:
+              type: string
+              format: date
+              description: >
+                Startdatum för när programmet börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att det
+                är odefinierat när kursen började ges vid skolan.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            endDate:
+              type: string
+              format: date
+              description: >
+                Slutdatum för när programmet börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att
+                kursen ges aktivt just nu och det finns inga beslut att
+                avsluta erbjudandet. Ett angivet datum innebär att
+                kursen inte ges vid skolan efter det datumet.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            displayName:
+              type: string
+              readOnly: true
+              description: >
+                Ett läsbart namn för att identifiera kursen. READ-ONLY.
 
 Room:
   type: object
@@ -997,6 +1001,10 @@ User:
         således är det ett enda namespace för de gemensamma ID:na.
         Objektidentifikatorn är den nyckel som skall vara persistent
         mellan olika processer (enl figur 1).
+
+    meta:
+      $ref: "#/Meta"
+
     eduPersonPrincipalName:
       type: string
       description: >
