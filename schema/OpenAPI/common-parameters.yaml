@@ -1,0 +1,8 @@
+filterParam: # <-- Arbitrary name for the definition that will be used to refer to it.
+  # Not necessarily the same as the parameter name.
+  in: query
+  name: filter
+  required: false
+  schema:
+    type: string
+  description: Filters according to [https://tools.ietf.org/html/rfc7644#section-3.4.2.2](RFC7644)

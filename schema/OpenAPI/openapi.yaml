@@ -35,19 +35,14 @@ paths:
               $ref: "#/components/schemas/User"
         description: Created user object
         required: true
-  "/userByName/{username}":
+  "/users/":
     get:
       tags:
         - user
-      summary: Get user by user name
-      operationId: getUserByName
+      summary: Get users
+      operationId: getAllUsers
       parameters:
-        - name: username
-          in: path
-          description: The name that needs to be fetched. Use user1 for testing.
-          required: true
-          schema:
-            type: string
+        - $ref: "#/components/parameters/FilterParam"
       responses:
         "200":
           description: successful operation
@@ -138,6 +133,15 @@ externalDocs:
 components:
   schemas:
     $ref: schemas.yaml
+  parameters:
+    FilterParam: # <-- Arbitrary name for the definition that will be used to refer to it.
+      # Not necessarily the same as the parameter name.
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+      description: Filters according to [RFC7644](https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 requestBodies:
   UserArray:
