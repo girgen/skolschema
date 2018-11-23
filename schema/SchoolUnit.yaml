@@ -1,6 +1,45 @@
 SchoolUnit:
   type: object
-  description: |
+  description: >
     En Skolenhet, i förekommande fall med skolenhetskod
     enligt Skolenhetsregistret.
-  
+  properties:
+    organisation:
+      allOf:
+        $ref: '#/components/objects/OrganisationReference'
+        description: Organisationstillhörighet.
+    schoolUnitGroup:
+      allOf:
+        $ref: '#/components/objects/SchoolUnitGroupReference'
+        description: >
+          Möjlighet att ange vilken skolenhetsgrupp
+          som skolenheten tillhör.
+    displayName:
+      type: string
+      description: Namn för skolenheten.
+    schoolUnitCode:
+      type: string
+      description: >
+        Skolenhetskod. Identifierare för skolenheten enligt Skolverket.
+        Används för de skolformer där skolverket bestämmer en
+        skolenhetskod för varje enhet.
+    schoolTypes:
+      type: array
+      items:
+        type: string
+        enum:
+          - FS
+          - FSK
+          - FTH
+          - GR
+          - GRS
+          - SP
+          - SAM
+          - GY
+          - GYS
+          - VUX
+          - SUV
+          - YH
+          - FHS
+          - HS
+          - AU

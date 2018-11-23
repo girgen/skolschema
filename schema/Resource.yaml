@@ -10,5 +10,5 @@ Resource:
     owner:
       type: object
       allOf:
-        - description: Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
         - $ref: '#/components/objects/SchoolUnitGroupReference'
+        - description: Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
