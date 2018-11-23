@@ -21,21 +21,33 @@ User:
         internet-domännamn.
         _Exempel: kalko@edu.goteborg.se_
     norEduPersonNIN:
-      type: string
-      description: |
-        Svenskt personnummer, tilldelat personnummer eller Skatteverkets
-        samordningsnummer för personen. Ska anges med 12 siffror utan
-        separatorer. _Exempel: 200112240123_
+      type: object
+      description: Personnummer.
+      properties:
+        value:
+          type: string
+          description: |
+            Svenskt personnummer, tilldelat personnummer eller Skatteverkets
+            samordningsnummer för personen. Ska anges med 12 siffror utan
+            separatorer. _Exempel: 200112240123_
 
-        Samordningsnummer ska anges med 12 siffror utan separator.
-        Födelsedagen adderas med talet 60, det vill säga någon född den 24
-        i en månad får talet 84 som dag. _Exempel: 200112840123_
+            Samordningsnummer ska anges med 12 siffror utan separator.
+            Födelsedagen adderas med talet 60, det vill säga någon född den 24
+            i en månad får talet 84 som dag. _Exempel: 200112840123_
 
-        Saknas både personnummer och samordningsnummer så förekommer det att
-        "tillfälligt personnummer" definieras i elevregistret. Dessa är möjliga
-        att beskriva i detta fält och i så fall tillåts de två första positionerna
-        efter datumdelen att vara bokstäver. _Exempel: 20130101TF01_
-      pattern: '^\d{8}[A-Z0-9]{2}\d{2}$'
+            Saknas både personnummer och samordningsnummer så förekommer det att
+            "tillfälligt personnummer" definieras i elevregistret. Dessa är möjliga
+            att beskriva i detta fält och i så fall tillåts de två första positionerna
+            efter datumdelen att vara bokstäver. _Exempel: 20130101TF01_
+          pattern: '^\d{8}[A-Z0-9]{2}\d{2}$'
+        nationality:
+          type: string
+          default: SE
+          description: >
+            Landskod för det land som personnumret härstammar från,
+            enligt ISO 3166-1 alpha-2.
+      required: value
+
     givenName:
       type: string
       description: Förnamn.
@@ -50,7 +62,7 @@ User:
       description:
       items:
         email:
-          type: string          # https://emailregex.com W3C reference
+          type: string
           format: email
         role:
           type: string
