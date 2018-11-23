@@ -68,9 +68,10 @@ Programme:
             description: Poäng för innehållstypen i förekommande fall.
           content:
             type: array
-            description: Lista av ingående kursers kursplaner.
-            type: string
-            ## TODO: referenser tll Syllabus
+            properties:
+              allOf:
+                - description: Lista av ingående kursers kursplaner.
+                - $ref: '#/components/objects/SyllabusReference'
   required:
     - name
     - schoolType
