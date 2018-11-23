@@ -203,7 +203,7 @@ AggregatedAttendance:
       $ref: "#/ActivityReference"
 
     student:
-      $ref: "#/StudentReference"
+      $ref: "#/PersonReference"
 
   required:
     - startDate
@@ -246,7 +246,7 @@ Attendance:
       type: string
       format: uuid
     student:
-      $ref: "#/StudentReference"
+      $ref: "#/PersonReference"
   required:
     - isReported
     - calendarEvent
@@ -288,7 +288,7 @@ CalendarEvent:
       type: array
       items:
         allOf:
-          - $ref: "#/StudentReference"
+          - $ref: "#/PersonReference"
           - description: Anger avvikelser beträffande elevgruppens deltagande, tid och längd för ett enstaka kalendertillfälle.
             properties:
               participates:
@@ -331,11 +331,11 @@ ChildAttendanceEvent:
         - ut
     registeredBy:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Anger den person som registrat in- respektive utcheckning.
     child:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Referens till barnet
     group:
       allOf:
@@ -401,7 +401,7 @@ ChildCareSchedule:
             description: Sluttid på dagen för schemat (ISO8601 format, t.ex. "16:30").
     child:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Referens till barnet
     group:
       allOf:
@@ -421,9 +421,9 @@ Duty:
       allOf:
         - $ref: "#/ObjectReference"
         - description: Identifierare av skolenhet som tjänsten är knuten till.
-    user:
+    Person:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Identifierare av skolenhet som tjänsten är knuten till.
     dutyRole:
       type: string
@@ -467,7 +467,7 @@ Grade:
       description: ID för betyget.
     student:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Referens till eleven.
     schoolUnit:
       allOf:
@@ -475,11 +475,11 @@ Grade:
         - description: Skolenheten där undervisningen genomförts.
     registeredBy:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Den person som registrerade betyget.
     gradingTeacher:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Den behöriga lärare som är ansvarig för betyget.
     studentGroup:
       allOf:
@@ -621,7 +621,7 @@ LeaveOfAbsence:
         - Anmälan
     student:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: Referens till eleven.
     schoolUnit:
       allOf:
@@ -629,7 +629,7 @@ LeaveOfAbsence:
         - description: Den skolenhet som den anmälda frånvaron avser.
     registeredBy:
       allOf:
-        - $ref: "#/UserReference"
+        - $ref: "#/PersonReference"
         - description: |
             Referens till den person som registrerat den anmälda frånvaron.
   required:
@@ -985,7 +985,7 @@ Room:
         - $ref: "#/ObjectReference"
         - description: Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
 
-User:
+Person:
   type: object
   properties:
     id:
@@ -1138,32 +1138,28 @@ Meta:
 SchoolUnitReference:
   allOf:
     - $ref: "#/ObjectReference"
-    - type: object
-      description: Referens till skolenhet
-
-StudentReference:
-  allOf:
-    - $ref: "#/ObjectReference"
-    - type: object
-      description: Referens till Student objekt
+    - description: Referens till skolenhet
 
 ActivityReference:
   allOf:
     - $ref: "#/ObjectReference"
-    - type: object
-      description: Referens till en aktivitet
+    - description: Referens till en aktivitet
 
-UserReference:
+PersonReference:
   allOf:
     - $ref: "#/ObjectReference"
-    - type: object
-      description: Referens till en anvädare
+    - description: Referens till en person
 
 StudentGroupReference:
   allOf:
     - $ref: "#/ObjectReference"
     - type: object
       description: Referens till en elevgrupp
+
+SyllabusReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - type: object
 
 DateConstrainedObjectReference:
   allOf:
@@ -1188,6 +1184,7 @@ ObjectReference:
   properties:
     displayName:
       type: string
+      readOnly: true
     id:
       type: string
       format: uuid
