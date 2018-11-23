@@ -15,16 +15,16 @@ info:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
-  - name: user
-    description: Operations about user
+  - name: person
+    description: Operations about person
 paths:
-  /user:
+  /person:
     post:
       tags:
-        - user
-      summary: Create user
-      description: This can only be done by the logged in user.
-      operationId: createUser
+        - person
+      summary: Create person
+      description: This can only be done by the logged in person.
+      operationId: createPerson
       responses:
         default:
           description: successful operation
@@ -32,120 +32,118 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
-        description: Created user object
+              $ref: "#/components/schemas/Person"
+        description: Created person object
         required: true
-  "/userByName/{username}":
-    get:
-      tags:
-        - user
-      summary: Get user by user name
-      operationId: getUserByName
-      parameters:
-        - name: username
-          in: path
-          description: The name that needs to be fetched. Use user1 for testing.
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/User"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/User"
-        "400":
-          description: Invalid username supplied
-        "404":
-          description: User not found
-  "/user/{id}":
-    get:
-      tags:
-        - user
-      summary: Get user by user name
-      operationId: getUserByName
-      parameters:
-        - name: id
-          in: path
-          description: The name that needs to be fetched. Use user1 for testing.
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/User"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/User"
-        "400":
-          description: Invalid username supplied
-        "404":
-          description: User not found
     put:
       tags:
-        - user
-      summary: Updated user
-      description: This can only be done by the logged in user.
-      operationId: updateUser
-      parameters:
-        - name: id
-          in: path
-          description: name that need to be updated
-          required: true
-          schema:
-            type: string
+        - person
+      summary: Updated person
+      description: This can only be done by the logged in person.
+      operationId: updatePerson
       responses:
         "400":
-          description: Invalid user supplied
+          description: Invalid person supplied
         "404":
-          description: User not found
+          description: Person not found
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
-        description: Updated user object
+              $ref: "#/components/schemas/Person"
+        description: Updated person object
         required: true
-    delete:
+  "/persons/":
+    get:
       tags:
-        - user
-      summary: Delete user
-      description: This can only be done by the logged in user.
-      operationId: deleteUser
+        - person
+      summary: Get persons
+      operationId: getAllPersons
+      parameters:
+        - $ref: "#/components/parameters/FilterParam"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Person"
+        "400":
+          description: Invalid personname supplied
+        "404":
+          description: Person not found
+
+  "/person/{id}":
+    get:
+      tags:
+        - person
+      summary: Get person by person name
+      operationId: getPersonByName
       parameters:
         - name: id
           in: path
-          description: The name that needs to be deleted
+          description: The name that needs to be fetched. Use person1 for testing.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Person"
+        "400":
+          description: Invalid personname supplied
+        "404":
+          description: Person not found
+    delete:
+      tags:
+        - person
+      summary: Delete person
+      description: This can only be done by the logged in person.
+      operationId: deletePerson
+      parameters:
+        - name: id
+          in: path
+          description: The person that needs to be deleted
           required: true
           schema:
             type: string
       responses:
         "400":
-          description: Invalid username supplied
+          description: Invalid personname supplied
         "404":
-          description: User not found
+          description: Person not found
 externalDocs:
   description: Find out more about Swagger
   url: "http://swagger.io"
 components:
   schemas:
     $ref: schemas.yaml
+  parameters:
+    FilterParam: # <-- Arbitrary name for the definition that will be used to refer to it.
+      # Not necessarily the same as the parameter name.
+      in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+      description: Filters according to [RFC7644](https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 requestBodies:
-  UserArray:
+  PersonArray:
     content:
       application/json:
         schema:
           type: array
           items:
-            $ref: "#/components/schemas/User"
-    description: List of user object
+            $ref: "#/components/schemas/Person"
+    description: List of person object
     required: true
