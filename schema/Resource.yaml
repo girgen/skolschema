@@ -1,0 +1,14 @@
+Resource:
+  type: objects
+  properties:
+    displayName:
+      type: string
+      description: Namn på resursen.
+    description:
+      type: string
+      description: Beskrivning av resursen.
+    owner:
+      type: object
+      allOf:
+        - description: Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
+        - $ref: '#/components/objects/SchoolUnitGroupReference'

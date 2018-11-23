@@ -1,0 +1,6 @@
+SchoolUnit:
+  type: object
+  description: |
+    En Skolenhet, i förekommande fall med skolenhetskod
+    enligt Skolenhetsregistret.
+  

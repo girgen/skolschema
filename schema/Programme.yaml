@@ -1,10 +1,11 @@
 Programme:
   type: object
+  description: Ett program av kurser.
   properties:
     id:
       type: string
       format: uuid
-      description: Ett program av kurser.
+      description: ID för programmet.
     name:
       type: string
       enum:
