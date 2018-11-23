@@ -137,36 +137,15 @@ externalDocs:
   url: "http://swagger.io"
 components:
   schemas:
-    - $ref: Syllabus.yaml
-    - $ref: Organisation.yaml
-    - $ref: User.yaml
-    - $ref: References.yaml
-    - $ref: Activity.yaml
-    - $ref: AggregatedAttendance.yaml
-    - $ref: Attendance.yaml
-    - $ref: CalendarEvent.yaml
-    - $ref: ChildAttendanceEvent.yaml
-    - $ref: Duty.yaml
-  requestBodies:
-    UserArray:
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: "#/components/schemas/User"
-      description: List of user object
-      required: true
-  securitySchemes:
-    petstore_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
-          scopes:
-            "write:pets": modify pets in your account
-            "read:pets": read your pets
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+    $ref: schemas.yaml
+
+requestBodies:
+  UserArray:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: "#/components/schemas/User"
+    description: List of user object
+    required: true

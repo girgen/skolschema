@@ -8,23 +8,23 @@ Grade:
       description: ID för betyget.
     student:
       allOf:
-        - $ref: '#/components/schemas/UserReference'
+        - $ref: "#/components/schemas/UserReference"
         - description: Referens till eleven.
     schoolUnit:
       allOf:
-        - $ref: '#/components/schemas/SchoolUnitReference'
+        - $ref: "#/components/schemas/SchoolUnitReference"
         - description: Skolenheten där undervisningen genomförts.
     registeredBy:
       allOf:
-        - $ref: '#/components/schemas/UserReference'
+        - $ref: "#/components/schemas/UserReference"
         - description: Den person som registrerade betyget.
     gradingTeacher:
       allOf:
-        - $ref: '#/components/schemas/UserReference'
+        - $ref: "#/components/schemas/UserReference"
         - description: Den behöriga lärare som är ansvarig för betyget.
     studentGroup:
-       allOf:
-        - $ref: '#/components/schemas/StudentGroupReference'
+      allOf:
+        - $ref: "#/components/schemas/StudentGroupReference"
         - description: Anger vilken elevgrupp eleven ingick i.
     registeredDate:
       type: string
@@ -128,13 +128,9 @@ Grade:
         enum:
           - HT
           - VT
-      gradingTeacher:
-        allOf:
-          - $ref: '#/components/objects/UserReference'
-          - description: Referens till den lärare som satt betyget.
       registeredBy:
         allOf:
-          - $ref: '#/components/objects/UserReference'
+          - $ref: "#/components/objects/UserReference"
           - description: Referens till den person som registrerat betygsraden.
       curriculum:
         type: string
