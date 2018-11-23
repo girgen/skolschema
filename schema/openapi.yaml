@@ -1,0 +1,172 @@
+openapi: 3.0.0
+servers:
+  - description: SS12000
+    url: https://virtserver.swaggerhub.com/TK450-AG10/SS12000/1.0.0
+info:
+  description: |
+    This is a test implementation of SS12000 v2
+    [TK450](https://www.sis.se/standardutveckling/tksidor/tk400499/sistk450/)
+  version: "1.0.0"
+  title: SS12000
+  termsOfService: "https://www.sis.se/standardutveckling/tksidor/tk400499/sistk450/"
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user:
+    post:
+      tags:
+        - user
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        description: Created user object
+        required: true
+  "/userByName/{username}":
+    get:
+      tags:
+        - user
+      summary: Get user by user name
+      operationId: getUserByName
+      parameters:
+        - name: username
+          in: path
+          description: The name that needs to be fetched. Use user1 for testing.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid username supplied
+        "404":
+          description: User not found
+  "/user/{id}":
+    get:
+      tags:
+        - user
+      summary: Get user by user name
+      operationId: getUserByName
+      parameters:
+        - name: id
+          in: path
+          description: The name that needs to be fetched. Use user1 for testing.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid username supplied
+        "404":
+          description: User not found
+    put:
+      tags:
+        - user
+      summary: Updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      parameters:
+        - name: id
+          in: path
+          description: name that need to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        "400":
+          description: Invalid user supplied
+        "404":
+          description: User not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        description: Updated user object
+        required: true
+    delete:
+      tags:
+        - user
+      summary: Delete user
+      description: This can only be done by the logged in user.
+      operationId: deleteUser
+      parameters:
+        - name: id
+          in: path
+          description: The name that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        "400":
+          description: Invalid username supplied
+        "404":
+          description: User not found
+externalDocs:
+  description: Find out more about Swagger
+  url: "http://swagger.io"
+components:
+  schemas:
+    - $ref: Syllabus.yaml
+    - $ref: Organisation.yaml
+    - $ref: User.yaml
+    - $ref: References.yaml
+    - $ref: Activity.yaml
+    - $ref: AggregatedAttendance.yaml
+    - $ref: Attendance.yaml
+    - $ref: CalendarEvent.yaml
+    - $ref: ChildAttendanceEvent.yaml
+    - $ref: Duty.yaml
+  requestBodies:
+    UserArray:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/User"
+      description: List of user object
+      required: true
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+          scopes:
+            "write:pets": modify pets in your account
+            "read:pets": read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
