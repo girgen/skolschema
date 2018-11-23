@@ -5,6 +5,9 @@ Activity:
       type: string
       format: uuid
 
+    meta:
+      $ref: '#/Meta'
+
     displayName:
       type: string
       description: Namn på aktiviteten, i presentationssyfte.
@@ -211,6 +214,12 @@ AggregatedAttendance:
 Attendance:
   type: object
   properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett UUID för närvaron.
+    meta:
+      $ref: '#/Meta'
     isReported:
       type: boolean
       description: Anger om lektionen är explicit rapporterad.
@@ -242,10 +251,17 @@ Attendance:
     - isReported
     - calendarEvent
     - student
+    - meta
 
 CalendarEvent:
   type: object
   properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett UUID för kalenderhändelsen.
+    meta:
+      $ref: '#/Meta'
     startTime:
       type: string
       format: date-time
@@ -299,6 +315,12 @@ CalendarEvent:
 ChildAttendanceEvent:
   type: object
   properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett ID för närvarohändelsen.
+    meta:
+      $ref: '#/Meta'
     time:
       type: string
       format: date-time
@@ -328,6 +350,12 @@ ChildAttendanceEvent:
 ChildCareSchedule:
   type: object
   properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett ID för schemat.
+    meta:
+      $ref: '#/Meta'
     temporary:
       type: boolean
       description: Anger om detta är ett undantag som gäller istället för normalschemat, oftast under en begränsad tid.
@@ -344,31 +372,33 @@ ChildCareSchedule:
       description: Hur många veckor schemat gäller för innan det "börjar om".
     request:
       type: boolean
-      description: Beskriver om detta är en begäran som ännu ej är godkänd. Förvalt är false.
+      description: >
+        Beskriver om detta är en begäran som ännu ej är godkänd.
+        Förvalt är false.
     scheduleDays:
-      type: object
-      properties:
-        weekOffset:
-          type: integer
-          description: Anger vecka för alternerande schema, exempelvis 0, 1, eller 2 beroende på hur många olika veckor som är specificerade i schemat.
-        dayOfWeek:
-          type: string
-          enum:
-            - 0
-            - 1
-            - 2
-            - 3
-            - 4
-            - 5
-            - 6
-        startTime:
-          type: string
-          format: "^[0-9]{2}:[0-9]{2}$"
-          description: Starttid på dagen för schemat (ISO8601 format, e.g. "08:30").
-        endTime:
-          type: string
-          format: "^[0-9]{2}:[0-9]{2}$"
-          description: Sluttid på dagen för schemat (ISO8601 format, e.g. "16:30").
+      type: array
+      items:
+        type: object
+        properties:
+          weekOffset:
+            type: integer
+            description: >
+              Anger vecka för alternerande schema, exempelvis 0, 1, eller 2
+              beroende på hur många olika veckor som är specificerade i schemat.
+          dayOfWeek:
+            type: integer
+            minimum: 1
+            maximum: 7
+            description: >
+              Anger dag i veckan, enligt ISO 8601. 1 = måndag, 7 = söndag.
+          startTime:
+            type: string
+            format: "^[0-9]{2}:[0-9]{2}$"
+            description: Starttid på dagen för schemat (ISO8601 format, t.ex. "08:30").
+          endTime:
+            type: string
+            format: "^[0-9]{2}:[0-9]{2}$"
+            description: Sluttid på dagen för schemat (ISO8601 format, t.ex. "16:30").
     child:
       allOf:
         - $ref: "#/UserReference"
@@ -381,6 +411,12 @@ ChildCareSchedule:
 Duty:
   type: object
   properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett ID för tjänsten.
+    meta:
+      $ref: '#/Meta'
     dutyAt:
       allOf:
         - $ref: "#/ObjectReference"
@@ -393,7 +429,7 @@ Duty:
       type: string
       enum:
         - Rektor
-        - Lärare",
+        - Lärare
         - Förskollärare
         - Övrig pedagogisk personal
         - Förskolechef
@@ -791,7 +827,8 @@ Resource:
     owner:
       allOf:
         - $ref: "#/ObjectReference"
-        - description: Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
+        - description: >
+            Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.
 
 SchoolUnit:
   type: object
@@ -838,6 +875,99 @@ SchoolUnit:
           - FHS
           - HS
           - AU
+    municipalityCode:
+      type: string
+      description: >
+        Län och kommunkod för den kommun där skolan är belägen.
+    startDate:
+      type: string
+      format: date
+      description: >
+        Startdatum för skolenhetens giltighetstid,
+        från och med (ISO8601 format, e.g. "1976-01-01")
+    endDate:
+      type: string
+      format: date
+      description: >
+        Slutdatum för skolenhetens giltighetstid,
+        från och med (ISO8601 format, e.g. "2016-10-15")
+
+SchoolUnitGroup:
+  type: object
+  description: >
+    En samling av en eller flera skolenheter som delar resurser
+    och byggnader som omfattar en eller skolenheter.
+  displayName:
+    type: string
+    description: Namn på samlingen.
+  schoolUnits:
+    type: array
+    description: >
+      En lista på skolenhetsgruppens ingående skolenheter.
+      Dessa visas vid läsning som redundant information,
+      och är READ-ONLY.
+    items:
+      - $ref: "#/ObjectReference"
+
+SchoolUnitOffering:
+  type: object
+  description: Ett utbud av kurser som av en skola.
+  properties:
+    offeredAt:
+      $ref: '#/ObjectReference'
+    offeredSyllabus:
+      allOf:
+        $ref: '#/ObjectReference/Syllabus'
+        startDate:
+          type: string
+          format: date
+          description: >
+            Startdatum för när undervisningen börjar erbjudas vid skolan,
+            i förekommande fall. Kan utelämnas vilket innebär att det är
+            odefinierat när kursen började ges vid skolan.
+            Anges i ISO8601 format, exempelvis "2016-10-15".
+        endDate:
+          type: string
+          format: date
+          description: >
+            Slutdatum för när undervisningen börjar erbjudas vid skolan,
+            i förekommande fall. Kan utelämnas vilket innebär att kursen
+            ges aktivt just nu och det finns inga beslut att avsluta
+            erbjudandet. Ett angivet datum innebär att kursen inte ges
+            vid skolan efter det datumet. Anges i ISO8601 format,
+            exempelvis "2016-10-15".
+        displayName:
+          type: string
+          readOnly: true
+          description: >
+            Ett läsbart namn för att identifiera kursen. READ-ONLY.
+    programmes:
+      allOf:
+        - description: Program som ges av skolan.
+        - $ref: '#/ObjectReference/Syllabus'
+        - startDate:
+            type: string
+            format: date
+            description: >
+              Startdatum för när programmet börjar erbjudas vid skolan,
+              i förekommande fall. Kan utelämnas vilket innebär att det
+              är odefinierat när kursen började ges vid skolan.
+              Anges i ISO8601 format, exempelvis "2016-10-15".
+        - endDate:
+            type: string
+            format: date
+            description: >
+              Slutdatum för när programmet börjar erbjudas vid skolan,
+              i förekommande fall. Kan utelämnas vilket innebär att
+              kursen ges aktivt just nu och det finns inga beslut att
+              avsluta erbjudandet. Ett angivet datum innebär att
+              kursen inte ges vid skolan efter det datumet.
+              Anges i ISO8601 format, exempelvis "2016-10-15".
+        - displayName:
+            type: string
+            readOnly: true
+            description: >
+              Ett läsbart namn för att identifiera kursen. READ-ONLY.
 
 Room:
   type: object
@@ -994,30 +1124,16 @@ User:
               - photo
               - thumbnail
 
-Address:
+Meta:
   type: object
+  readOnly: true
   properties:
-    type:
+    created:
       type: string
-      enum:
-        - work
-        - home
-        - other
-    streetAddress:
+      format: date-time
+    lastModified:
       type: string
-      description: "Ex: 100 Universal City Plaza"
-    locality:
-      type: string
-      description: "Postal city"
-    postalCode:
-      type: string
-    country:
-      type: string
-    formatted":
-      type: string
-      description: "100 Universal City Plaza\nHollywood, CA 91608 USA"
-    primary":
-      type: boolean
+      format: date-time
 
 SchoolUnitReference:
   allOf:
