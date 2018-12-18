@@ -1,24 +1,24 @@
 openapi: 3.0.0
 servers:
   - description: SS12000
-    url: https://virtserver.swaggerhub.com/TK450-AG10/SS12000/1.0.0
+    url: 'https://virtserver.swaggerhub.com/TK450-AG10/SS12000/1.0.0'
 info:
   description: |
     This is a test implementation of SS12000 v2
     [TK450](https://www.sis.se/standardutveckling/tksidor/tk400499/sistk450/)
-  version: "1.0.0"
+  version: 1.0.0
   title: SS12000
-  termsOfService: "https://www.sis.se/standardutveckling/tksidor/tk400499/sistk450/"
+  termsOfService: 'https://www.sis.se/standardutveckling/tksidor/tk400499/sistk450/'
   contact:
     email: apiteam@swagger.io
   license:
     name: Apache 2.0
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
   - name: person
     description: Operations about person
 paths:
-  /person:
+  /persons:
     post:
       tags:
         - person
@@ -32,7 +32,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Person"
+              $ref: 'schemas.yaml#/Person'
         description: Created person object
         required: true
     put:
@@ -42,41 +42,40 @@ paths:
       description: This can only be done by the logged in person.
       operationId: updatePerson
       responses:
-        "400":
+        '400':
           description: Invalid person supplied
-        "404":
+        '404':
           description: Person not found
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Person"
+              $ref: 'schemas.yaml#/Person'
         description: Updated person object
         required: true
-  "/persons/":
+  /persons/:
     get:
       tags:
         - person
       summary: Get persons
       operationId: getAllPersons
       parameters:
-        - $ref: "#/components/parameters/FilterParam"
+        - $ref: '#/components/parameters/FilterParam'
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Person"
+                $ref: 'schemas.yaml#/Person'
             application/xml:
               schema:
-                $ref: "#/components/schemas/Person"
-        "400":
+                $ref: 'schemas.yaml#/Person'
+        '400':
           description: Invalid personname supplied
-        "404":
+        '404':
           description: Person not found
-
-  "/person/{id}":
+  '/person/{id}':
     get:
       tags:
         - person
@@ -90,18 +89,18 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Person"
+                $ref: 'schemas.yaml#/Person'
             application/xml:
               schema:
-                $ref: "#/components/schemas/Person"
-        "400":
+                $ref: 'schemas.yaml#/Person'
+        '400':
           description: Invalid personname supplied
-        "404":
+        '404':
           description: Person not found
     delete:
       tags:
@@ -117,33 +116,23 @@ paths:
           schema:
             type: string
       responses:
-        "400":
+        '400':
           description: Invalid personname supplied
-        "404":
+        '404':
           description: Person not found
 externalDocs:
   description: Find out more about Swagger
-  url: "http://swagger.io"
+  url: 'http://swagger.io'
 components:
   schemas:
-    $ref: schemas.yaml
+    $ref: 'schemas.yaml'
   parameters:
-    FilterParam: # <-- Arbitrary name for the definition that will be used to refer to it.
-      # Not necessarily the same as the parameter name.
+    FilterParam:
       in: query
       name: filter
       required: false
       schema:
         type: string
-      description: Filters according to [RFC7644](https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
-
-requestBodies:
-  PersonArray:
-    content:
-      application/json:
-        schema:
-          type: array
-          items:
-            $ref: "#/components/schemas/Person"
-    description: List of person object
-    required: true
+      description: >-
+        Filters according to
+        [RFC7644](https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
