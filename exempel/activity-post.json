@@ -1,39 +1,32 @@
 {
-  "displayName": "Turgajdning",
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:1.0:Activity"
+  ],
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "activityType": "Undervisning",
   "calendarEventsRequired": true,
-  "comment": "Tour guide training.",
+  "startDate": "2016-02-25",
   "endDate": "2016-04-15",
-  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "minutesPlanned": 4000,
+  "comment": "Tour guide training.",
   "groups": [
     {
       "value": "e9e30dba-f08f-4109-8486-d5c6a331660a"
     },
     {
-      "endDate": "2016-04-01",
+      "value": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
       "startDate": "2016-03-15",
-      "value": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
+      "endDate": "2016-04-01"
     }
   ],
-  "minutesPlanned": 4000,
-  "owner": {
-    "value": "87dda8fa-7f76-453a-919d-413861904641"
-  },
-  "parentActivity": {
-    "value": "87dda8fa-7f76-453a-919d-413861904646"
-  },
-  "schemas": [
-    "urn:scim:schemas:extension:sis:school:1.0:Activity"
-  ],
-  "startDate": "2016-02-25",
   "students": [
     {
       "value": "2819c223-7f76-453a-919d-413861904646"
     },
     {
-      "endDate": "2016-03-15",
+      "value": "902c246b-6245-4190-8e05-00816be7344a",
       "startDate": "2016-02-25",
-      "value": "902c246b-6245-4190-8e05-00816be7344a"
+      "endDate": "2016-03-15"
     },
     {
       "value": "462aae3b-5883-4796-991e-00891ee352d0"
@@ -41,16 +34,22 @@
   ],
   "teachers": [
     {
-      "endDate": "2016-04-15",
-      "minutesPlanned": 3600,
+      "value": "87dda8fa-7f76-453a-919d-413861904646",
       "startDate": "2016-02-25",
-      "value": "87dda8fa-7f76-453a-919d-413861904646"
+      "endDate": "2016-04-15",
+      "minutesPlanned": 3600
     },
     {
       "value": "71ae9056-e142-4561-a163-6579bf6054c5"
     }
   ],
-  "syllabus": {
+  "topic": {
     "value": "87dda8fa-7f76-453a-919d-413861904646"
+  },
+  "parentActivity": {
+    "value": "87dda8fa-7f76-453a-919d-413861904646"
+  },
+  "owner": {
+    "value": "87dda8fa-7f76-453a-919d-413861904641"
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:sis:school:2.0:User"
+    "urn:scim:schemas:extension:sis:school:1.0:User"
   ],
   "id": "2819c223-7f76-453a-919d-413861904646",
   "externalId": "2819c223-7f76-453a-919d-413861904646",
@@ -39,24 +39,20 @@
       "display": "Elevrådet"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:2.0:User": {
-    "eduPersonPrincipalName": [
-      "girgen@pingpong.net",
-      "girgen@pingpong.se"
-    ],
+  "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "securityMarking": "false",
     "userRelations": [
       {
         "value": "26118915-6090-4610-aaaa-49d8ca9f808d",
         "$ref": "../Users/26118915-6090-4610-aaaa-49d8ca9f808d",
-        "display": "John Smith",
+        "displayName": "John Smith",
         "relationType": "Vårdnadshavare"
       },
       {
         "value": "26118915-6090-4610-87e4-4f1234234223",
         "$ref": "../Users/26118915-6090-4610-87e4-4f1234234223",
-        "display": "Gullan Olsson",
+        "displayName": "Gullan Olsson",
         "relationType": "Kontaktperson"
       }
     ],

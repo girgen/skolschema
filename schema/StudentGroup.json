@@ -1,60 +1,35 @@
 [
   {
     "id": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
-    "name": "StudentGroup",
-    "description": "Kan innehålla elever, eller bara bara en tom platshållare. Gruppens koppling till ämnen/kurser och lärare görs via aktivitet.",
+    "name": "Student group",
+    "description": "An extension of the SIS User group consisting of students.",
     "attributes": [
       {
-        "name": "owner",
-        "type": "complex",
-        "multiValued": false,
-        "description": "Möjlighet att ange vilken skolenhet gruppen tillhör.",
-        "subAttributes": [
-          {
-            "name": "value",
-            "type": "string",
-            "multiValued": false,
-            "description": "Identifierare för schemaenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "$ref",
-            "type": "reference",
-            "referenceTypes": [
-              "SchoolUnit"
-            ],
-            "multiValued": false,
-            "description": "URI för skolan/skolenheten.",
-            "mutability": "immutable"
-          },
-          {
-            "name": "display",
-            "type": "string",
-            "multiValued": false,
-            "description": "Ett läsbart namn för att identifiera ägaren av gruppen (skolenheten) i visningssyfte. READ-ONLY.",
-            "mutability": "readOnly"
-          }
-        ]
-      },
-      {
-        "name": "displayName",
+        "name": "startDate",
         "type": "string",
         "multiValued": false,
-        "description": "Gruppens benämning."
+        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
+        "required": true
+      },
+      {
+        "name": "endDate",
+        "type": "string",
+        "multiValued": false,
+        "description": "Slutdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
       },
       {
         "name": "studentGroupType",
         "type": "string",
         "multiValued": false,
-        "description": "Grupptyp indikerar vad en grupp ska användas till.",
+        "description": "Grupptyp anger vad en grupp ska användas till. Ett värdeförråd för att indikera anger vilka grupptyper som finns.",
         "required": true,
         "caseExact": true,
         "mutability": "immutable",
         "canonicalValues": [
           "Undervisning",
           "Klass",
+          "Mentor",
           "Schema",
-          "Avdelning",
           "Övrigt"
         ]
       },
@@ -85,29 +60,16 @@
         "required": true
       },
       {
-        "name": "startDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\").",
-        "required": true
-      },
-      {
-        "name": "endDate",
-        "type": "string",
-        "multiValued": false,
-        "description": "Slutdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
-      },
-      {
         "name": "studentMemberships",
         "type": "complex",
         "multiValued": true,
-        "description": "Elevers medlemskap anger att elever är medlemmar i gruppen och vilken tidsperiod medlemskapet omfattar.",
+        "description": "Studentmedlemskap anger att en student är medlem i en grupp och vilken tidsperiod medlemskapet omfattar.",
         "subAttributes": [
           {
             "name": "value",
             "type": "string",
             "multiValued": false,
-            "description": "Identifierare för eleven.",
+            "description": "Identifierare för studentgruppen.",
             "mutability": "immutable"
           },
           {
@@ -117,27 +79,59 @@
               "User"
             ],
             "multiValued": false,
-            "description": "URI för eleven.",
+            "description": "URI för studentgruppen.",
             "mutability": "immutable"
           },
           {
-            "name": "display",
+            "name": "displayName",
             "type": "string",
             "multiValued": false,
-            "description": "Elevens namn, i visningssyfte. READ-ONLY.",
+            "description": "Ett läsbart namn för att identifiera studentgruppen i visningssyfte. READ-ONLY.",
             "mutability": "readOnly"
           },
           {
             "name": "startDate",
             "type": "string",
             "multiValued": false,
-            "description": "Startdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
           },
           {
             "name": "endDate",
             "type": "string",
             "multiValued": false,
-            "description": "Slutdatum för medlemskapets giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+            "description": "Startdatum för gruppens giltighetstid (ISO8601 format, e.g. \"2016-10-15\")."
+          }
+        ]
+      },
+      {
+        "name": "owner",
+        "type": "complex",
+        "multiValued": false,
+        "description": "Möjlighet att ange vilken skolenhet rummet tillhör.",
+        "subAttributes": [
+          {
+            "name": "value",
+            "type": "string",
+            "multiValued": false,
+            "description": "Identifierare för schemaenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "$ref",
+            "type": "reference",
+            "referenceTypes": [
+              "SchoolUnit"
+            ],
+            "multiValued": false,
+            "description": "URI för skolan/skolenheten.",
+            "mutability": "immutable"
+          },
+          {
+            "name": "display",
+            "type": "string",
+            "multiValued": false,
+            "description": "Ett läsbart namn för att identifiera ägaren av rummet (skolan/skolenheten) i visningssyfte. READ-ONLY.",
+            "mutability": "readOnly"
           }
         ]
       }

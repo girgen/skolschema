@@ -1,7 +1,7 @@
 {
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
-    "urn:scim:schemas:extension:sis:school:2.0:User"
+    "urn:scim:schemas:extension:sis:school:1.0:User"
   ],
   "externalId": "2819c223-7f76-453a-919d-413861904646",
   "userName": "girgen@example.com",
@@ -21,11 +21,7 @@
       "type": "home"
     }
   ],
-  "urn:scim:schemas:extension:sis:school:2.0:User": {
-    "eduPersonPrincipalName": [
-      "girgen@pingpong.net",
-      "girgen@pingpong.se"
-    ],
+  "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "securityMarking": "false",
     "userRelations": [
@@ -40,7 +36,7 @@
     ],
     "enrolments": [
       {
-        "value": "26118915-bbbb-4610-87e4-4f1234234224",
+        "value" : "26118915-bbbb-4610-87e4-4f1234234224",
         "schoolYear": 1,
         "startDate": "2014-08-20",
         "endDate": "2015-06-14",
@@ -48,7 +44,7 @@
         "programCode": "NA"
       },
       {
-        "value": "26118915-6090-4610-87e4-4f1234234224",
+        "value" : "26118915-6090-4610-87e4-4f1234234224",
         "schoolType": "GY",
         "programCode": "NA",
         "schoolYear": 2,

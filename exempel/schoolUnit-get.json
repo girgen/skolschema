@@ -1,6 +1,6 @@
 {
   "schemas": [
-    "urn:scim:schemas:extension:sis:school:2.0:SchoolUnit"
+    "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit"
   ],
   "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
   "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
@@ -11,12 +11,14 @@
     "GRS"
   ],
   "municipalityCode": "1480",
-  "startDate": "1970-01-01",
+  "responsibleBody": "Göteborgs stad",
+  "responsibleBodyType": "Kommun",
   "organisation": {
     "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
     "$ref": "/v2/Organisations/e9e30dba-f08f-4109-8486-d5c6a331660a",
     "display": "Askim-Frölunda-Högsbo"
   },
+  "startDate": "1970-01-01",
   "schoolUnitGroup": {
     "value": "f9e30dba-f08f-4109-8486-d5c6a331660a",
     "$ref": "/v2/SchoolUnitGroups/f9e30dba-f08f-4109-8486-d5c6a331660a",

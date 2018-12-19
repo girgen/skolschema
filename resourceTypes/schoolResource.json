@@ -10,7 +10,7 @@
     "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
     "schemaExtensions": [
       {
-        "schema": "urn:scim:schemas:extension:sis:school:2.0:User",
+        "schema": "urn:scim:schemas:extension:sis:school:1.0:User",
         "required": false
       }
     ],
@@ -27,7 +27,7 @@
     "name": "Organisation",
     "endpoint": "/Organisations",
     "description": "Organisations",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:Organisations",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Organisations",
     "meta": {
       "location": "/v2/ResourceTypes/Organisations",
       "resourceType": "ResourceType"
@@ -41,23 +41,9 @@
     "name": "SchoolUnitGroup",
     "endpoint": "/SchoolUnitGroups",
     "description": "SchoolUnitGroup",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnitGroup",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnitGroup",
     "meta": {
       "location": "/v2/ResourceTypes/SchoolUnitGroup",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "SchoolUnitOffering",
-    "name": "SchoolUnitOffering",
-    "endpoint": "/SchoolUnitOfferings",
-    "description": "SchoolUnitOffering",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnitOffering",
-    "meta": {
-      "location": "/v2/ResourceTypes/SchoolUnitOffering",
       "resourceType": "ResourceType"
     }
   },
@@ -69,7 +55,7 @@
     "name": "SchoolUnit",
     "endpoint": "/SchoolUnits",
     "description": "SchoolUnit",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:SchoolUnit",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:SchoolUnit",
     "meta": {
       "location": "/v2/ResourceTypes/SchoolUnit",
       "resourceType": "ResourceType"
@@ -83,7 +69,7 @@
     "name": "StudentGroup",
     "endpoint": "/StudentGroups",
     "description": "StudentGroup",
-    "schema": "urn:ietf:params:scim:schemas:core:2.0:StudentGroup",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:StudentGroup",
     "meta": {
       "location": "/v2/ResourceTypes/StudentGroup",
       "resourceType": "ResourceType"
@@ -121,13 +107,41 @@
     "schemas": [
       "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
     ],
-    "id": "Duty",
-    "name": "Duty",
-    "endpoint": "/Duty",
-    "description": "Duty",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:Duty",
+    "id": "Course",
+    "name": "Course",
+    "endpoint": "/Courses",
+    "description": "Course",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Course",
     "meta": {
-      "location": "/v2/ResourceTypes/Duty",
+      "location": "/v2/ResourceTypes/Course",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Employment",
+    "name": "Employment",
+    "endpoint": "/Employments",
+    "description": "Employment",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Employment",
+    "meta": {
+      "location": "/v2/ResourceTypes/Employment",
+      "resourceType": "ResourceType"
+    }
+  },
+  {
+    "schemas": [
+      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+    ],
+    "id": "Subject",
+    "name": "Subject",
+    "endpoint": "/Subjects",
+    "description": "Subject",
+    "schema": "urn:scim:schemas:extension:sis:school:1.0:Subject",
+    "meta": {
+      "location": "/v2/ResourceTypes/Subject",
       "resourceType": "ResourceType"
     }
   },
@@ -156,116 +170,6 @@
     "schema": "urn:scim:schemas:extension:sis:school:1.0:Resource",
     "meta": {
       "location": "/v2/ResourceTypes/Resource",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "Attendance",
-    "name": "Attendance",
-    "endpoint": "/Attendance",
-    "description": "Attendance",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:Attendance",
-    "meta": {
-      "location": "/v2/ResourceTypes/Attendance",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "AggregatedAttendance",
-    "name": "AggregatedAttendance",
-    "endpoint": "/AggregatedAttendance",
-    "description": "AggregatedAttendance",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:AggregatedAttendance",
-    "meta": {
-      "location": "/v2/ResourceTypes/AggregatedAttendance",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "GrantedLeave",
-    "name": "GrantedLeave",
-    "endpoint": "/GrantedLeave",
-    "description": "GrantedLeave",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:GrantedLeave",
-    "meta": {
-      "location": "/v2/ResourceTypes/GrantedLeave",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "Grade",
-    "name": "Grade",
-    "endpoint": "/Grade",
-    "description": "Grade",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:Grade",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference",
-        "required": true
-      }
-    ],
-    "meta": {
-      "location": "/v2/ResourceTypes/Grade",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "Attendance",
-    "name": "Attendance",
-    "endpoint": "/Attendance",
-    "description": "Attendance",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:Attendance",
-    "meta": {
-      "location": "/v2/ResourceTypes/Attendance",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "CurriculumReference",
-    "name": "CurriculumReference",
-    "endpoint": "/CurriculumReference",
-    "description": "CurriculumReference",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference",
-    "meta": {
-      "location": "/v2/ResourceTypes/CurriculumReference",
-      "resourceType": "ResourceType"
-    }
-  },
-  {
-    "schemas": [
-      "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
-    ],
-    "id": "Syllabus",
-    "name": "Syllabus",
-    "endpoint": "/Syllabus",
-    "description": "Syllabus",
-    "schema": "urn:scim:schemas:extension:sis:school:2.0:Syllabus",
-    "schemaExtensions": [
-      {
-        "schema": "urn:scim:schemas:extension:sis:school:2.0:CurriculumReference",
-        "required": true
-      }
-    ],
-    "meta": {
-      "location": "/v2/ResourceTypes/Syllabus",
       "resourceType": "ResourceType"
     }
   }

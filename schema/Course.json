@@ -1,0 +1,46 @@
+[
+  {
+    "id": "urn:scim:schemas:extension:sis:school:1.0:Course",
+    "name": "Course",
+    "description": "En kurs, exempelvis i gymnasiekolan.",
+    "attributes": [
+      {
+        "name": "courseCode",
+        "type": "string",
+        "multiValued": false,
+        "required": true,
+        "description": "Kursens kod. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a."
+      },
+      {
+        "name": "official",
+        "type": "boolean",
+        "multiValued": false,
+        "required": true,
+        "description": "Ett attribut för att ange om ett ämne eller kurs är officiell enligt Skolverket. Användare kan skapa andra ämnen för andra ändamål."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "multiValued": false,
+        "description": "Kursens namn exempelvis Matematik 1a."
+      },
+      {
+        "name": "subjectShortName",
+        "type": "string",
+        "multiValued": false,
+        "description": "Beteckning för det ämne kursen hör till, exempelvis MAT."
+      },
+      {
+        "name": "points",
+        "type": "integer",
+        "multiValued": false,
+        "description": "Antalet poäng för en specifik kurs. Exempelvis 100 poäng.",
+        "required": false
+      }
+    ],
+    "meta": {
+      "resourceType": "Schema",
+      "location": "/v2/Schemas/urn:scim:schemas:extension:sis:school:1.0:Course"
+    }
+  }
+]

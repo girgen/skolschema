@@ -10,7 +10,12 @@
     "GRS"
   ],
   "municipalityCode": "1480",
+  "responsibleBody": "Göteborgs stad",
+  "responsibleBodyType": "Kommun",
   "startDate": "1970-01-01",
+  "organisation": {
+    "value": "e9e30dba-f08f-4109-8486-d5c6a331660a"
+  },
   "schoolUnitGroup": {
     "value": "f9e30dba-f08f-4109-8486-d5c6a331660a"
   }

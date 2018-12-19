@@ -1,0 +1,31 @@
+{
+  "schemas": [
+    "urn:scim:schemas:extension:sis:school:1.0:Employment"
+  ],
+  "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "externalId": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+  "isTeacher": true,
+  "signature": "PAK",
+  "employmentPercent": 100,
+  "startDate": "1970-01-23",
+  "endDate": "2013-06-30",
+  "hoursPerYear": 1340,
+  "employedAt": {
+    "value": "e9e30dba-f08f-4109-8486-d5c6a3316602",
+    "$ref": "/v2/SchoolUnits/e9e30dba-f08f-4109-8486-d5c6a3316602",
+    "display": "Dalängsskolan A",
+    "type": "SchoolUnit"
+  },
+  "user": {
+    "value": "2819c223-7f76-453a-919d-413861904646",
+    "$ref": "/v2/Users/2819c223-7f76-453a-919d-413861904646",
+    "displayName": "Palle Girgensohn"
+  },
+  "meta": {
+    "resourceType": "Employment",
+    "created": "2010-01-23T04:56:22Z",
+    "lastModified": "2011-05-13T04:42:34Z",
+    "version": "W/\"3694e05e9dff590\"",
+    "location": "/v2/Employments/e9e30dba-f08f-4109-8486-d5c6a331660a"
+  }
+}
