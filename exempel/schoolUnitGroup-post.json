@@ -1,7 +1,0 @@
-{
-  "schemas": [
-    "urn:scim:schemas:extension:sis:school:1.0:SchoolUnitGroup"
-  ],
-  "externalId": "f9e30dba-f08f-4109-8486-d5c6a331660a",
-  "displayName": "Rudbäcksskolan"
-}
