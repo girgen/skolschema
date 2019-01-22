@@ -69,7 +69,9 @@
                         "description": "Landskod för det land som personnumret härstammar från, enligt ISO 3166-1 alpha-2.\n"
                       }
                     },
-                    "required": "value"
+                    "required": [
+                      "value"
+                    ]
                   },
                   "givenName": {
                     "type": "string",
@@ -85,42 +87,52 @@
                   },
                   "emails": {
                     "type": "array",
-                    "description": null,
+                    "description": "epostadress",
                     "items": {
-                      "email": {
-                        "type": "string",
-                        "format": "email"
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "anställd",
+                            "elev",
+                            "vårdnadshavare"
+                          ]
+                        }
                       },
-                      "role": {
-                        "type": "string",
-                        "enum": [
-                          "anställd",
-                          "elev",
-                          "vårdnadshavare"
-                        ]
-                      }
-                    },
-                    "required": "email"
+                      "required": [
+                        "email"
+                      ]
+                    }
                   },
                   "phoneNumbers": {
                     "type": "array",
                     "description": "En lista med telefonnummer till personen.",
-                    "requried": "number",
                     "items": {
-                      "number": {
-                        "type": "string",
-                        "description": "Telefonnumret."
-                      },
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "hem",
-                          "arbete"
-                        ]
-                      },
-                      "mobile": {
-                        "type": "boolean",
-                        "default": true
+                      "required": [
+                        "number"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "string",
+                          "description": "Telefonnumret."
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "hem",
+                            "arbete"
+                          ]
+                        },
+                        "mobile": {
+                          "type": "boolean",
+                          "default": true
+                        }
                       }
                     }
                   },
@@ -128,30 +140,33 @@
                     "type": "array",
                     "description": "Personens postadresser.",
                     "items": {
-                      "type": {
-                        "type": "string",
-                        "default": "folkbokföringsadress",
-                        "enum": [
-                          "folkbokföringsadress",
-                          "vistelseadress",
-                          "fakturaadress"
-                        ]
-                      },
-                      "streetAddress": {
-                        "type": "string",
-                        "description": "Gatuadress."
-                      },
-                      "locality": {
-                        "type": "string",
-                        "description": "Postort."
-                      },
-                      "postalCode": {
-                        "type": "string",
-                        "description": "Postadress."
-                      },
-                      "country": {
-                        "type": "string",
-                        "description": "Land."
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "default": "folkbokföringsadress",
+                          "enum": [
+                            "folkbokföringsadress",
+                            "vistelseadress",
+                            "fakturaadress"
+                          ]
+                        },
+                        "streetAddress": {
+                          "type": "string",
+                          "description": "Gatuadress."
+                        },
+                        "locality": {
+                          "type": "string",
+                          "description": "Postort."
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "description": "Postadress."
+                        },
+                        "country": {
+                          "type": "string",
+                          "description": "Land."
+                        }
                       }
                     }
                   },
@@ -159,18 +174,21 @@
                     "type": "array",
                     "description": "Bild på personen.",
                     "items": {
-                      "photo": {
-                        "type": "string",
-                        "format": "uri",
-                        "description": "En länk där bildfilen kan hämtas."
-                      },
-                      "type": {
-                        "type": "string",
-                        "description": "Typ av bild.",
-                        "enum": [
-                          "photo",
-                          "thumbnail"
-                        ]
+                      "type": "object",
+                      "properties": {
+                        "photo": {
+                          "type": "string",
+                          "format": "uri",
+                          "description": "En länk där bildfilen kan hämtas."
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "Typ av bild.",
+                          "enum": [
+                            "photo",
+                            "thumbnail"
+                          ]
+                        }
                       }
                     }
                   }
@@ -227,7 +245,9 @@
                         "description": "Landskod för det land som personnumret härstammar från, enligt ISO 3166-1 alpha-2.\n"
                       }
                     },
-                    "required": "value"
+                    "required": [
+                      "value"
+                    ]
                   },
                   "givenName": {
                     "type": "string",
@@ -243,42 +263,52 @@
                   },
                   "emails": {
                     "type": "array",
-                    "description": null,
+                    "description": "epostadress",
                     "items": {
-                      "email": {
-                        "type": "string",
-                        "format": "email"
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        },
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "anställd",
+                            "elev",
+                            "vårdnadshavare"
+                          ]
+                        }
                       },
-                      "role": {
-                        "type": "string",
-                        "enum": [
-                          "anställd",
-                          "elev",
-                          "vårdnadshavare"
-                        ]
-                      }
-                    },
-                    "required": "email"
+                      "required": [
+                        "email"
+                      ]
+                    }
                   },
                   "phoneNumbers": {
                     "type": "array",
                     "description": "En lista med telefonnummer till personen.",
-                    "requried": "number",
                     "items": {
-                      "number": {
-                        "type": "string",
-                        "description": "Telefonnumret."
-                      },
-                      "type": {
-                        "type": "string",
-                        "enum": [
-                          "hem",
-                          "arbete"
-                        ]
-                      },
-                      "mobile": {
-                        "type": "boolean",
-                        "default": true
+                      "required": [
+                        "number"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "string",
+                          "description": "Telefonnumret."
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "hem",
+                            "arbete"
+                          ]
+                        },
+                        "mobile": {
+                          "type": "boolean",
+                          "default": true
+                        }
                       }
                     }
                   },
@@ -286,30 +316,33 @@
                     "type": "array",
                     "description": "Personens postadresser.",
                     "items": {
-                      "type": {
-                        "type": "string",
-                        "default": "folkbokföringsadress",
-                        "enum": [
-                          "folkbokföringsadress",
-                          "vistelseadress",
-                          "fakturaadress"
-                        ]
-                      },
-                      "streetAddress": {
-                        "type": "string",
-                        "description": "Gatuadress."
-                      },
-                      "locality": {
-                        "type": "string",
-                        "description": "Postort."
-                      },
-                      "postalCode": {
-                        "type": "string",
-                        "description": "Postadress."
-                      },
-                      "country": {
-                        "type": "string",
-                        "description": "Land."
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "default": "folkbokföringsadress",
+                          "enum": [
+                            "folkbokföringsadress",
+                            "vistelseadress",
+                            "fakturaadress"
+                          ]
+                        },
+                        "streetAddress": {
+                          "type": "string",
+                          "description": "Gatuadress."
+                        },
+                        "locality": {
+                          "type": "string",
+                          "description": "Postort."
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "description": "Postadress."
+                        },
+                        "country": {
+                          "type": "string",
+                          "description": "Land."
+                        }
                       }
                     }
                   },
@@ -317,18 +350,21 @@
                     "type": "array",
                     "description": "Bild på personen.",
                     "items": {
-                      "photo": {
-                        "type": "string",
-                        "format": "uri",
-                        "description": "En länk där bildfilen kan hämtas."
-                      },
-                      "type": {
-                        "type": "string",
-                        "description": "Typ av bild.",
-                        "enum": [
-                          "photo",
-                          "thumbnail"
-                        ]
+                      "type": "object",
+                      "properties": {
+                        "photo": {
+                          "type": "string",
+                          "format": "uri",
+                          "description": "En länk där bildfilen kan hämtas."
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "Typ av bild.",
+                          "enum": [
+                            "photo",
+                            "thumbnail"
+                          ]
+                        }
                       }
                     }
                   }
