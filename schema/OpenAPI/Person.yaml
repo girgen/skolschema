@@ -1,0 +1,126 @@
+Person:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: >
+        I SS12000 är det ett krav att ett objekt har samma
+        överförings-ID mellan samtliga ingående system och
+        således är det ett enda namespace för de gemensamma ID:na.
+        Objektidentifikatorn är den nyckel som skall vara persistent
+        mellan olika processer (enl figur 1).
+    eduPersonPrincipalName:
+      type: string
+      description: >
+        Den identifierare som ska användas för att identifiera användaren
+        i skilda e-tjänster. Identifieraren ska vara en spårbar, persistent
+        och globalt unik sträng. Den ska bestå av en lokalt unik
+        användaridentifierare, ett ’@’ och en domän.
+        En domän är ofta, men inte nödvändigtvis, samma som organisationens
+        internet-domännamn.
+        _Exempel: kalko@edu.goteborg.se_
+    norEduPersonNIN:
+      type: object
+      description: Personnummer.
+      properties:
+        value:
+          type: string
+          description: |
+            Svenskt personnummer, tilldelat personnummer eller Skatteverkets
+            samordningsnummer för personen. Ska anges med 12 siffror utan
+            separatorer. _Exempel: 200112240123_
+
+            Samordningsnummer ska anges med 12 siffror utan separator.
+            Födelsedagen adderas med talet 60, det vill säga någon född den 24
+            i en månad får talet 84 som dag. _Exempel: 200112840123_
+
+            Saknas både personnummer och samordningsnummer så förekommer det att
+            "tillfälligt personnummer" definieras i elevregistret. Dessa är möjliga
+            att beskriva i detta fält och i så fall tillåts de två första positionerna
+            efter datumdelen att vara bokstäver. _Exempel: 20130101TF01_
+          pattern: '^\d{8}[A-Z0-9]{2}\d{2}$'
+        nationality:
+          type: string
+          default: SE
+          description: >
+            Landskod för det land som personnumret härstammar från,
+            enligt ISO 3166-1 alpha-2.
+      required: value
+
+    givenName:
+      type: string
+      description: Förnamn.
+    middleName:
+      type: string
+      description: Mellannamn.
+    familyName:
+      type: string
+      description: Efternamn.
+    emails:
+      type: array
+      description:
+      items:
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum:
+            - anställd
+            - elev
+            - vårdnadshavare
+      required: email
+    phoneNumbers:
+      type: array
+      description: En lista med telefonnummer till personen.
+      requried: number
+      items:
+        number:
+          type: string
+          description: Telefonnumret.
+        type:
+          type: string
+          enum:
+            - hem
+            - arbete
+        mobile:
+          type: boolean
+          default: true
+    addresses:
+      type: array
+      description: Personens postadresser.
+      items:
+        type:
+          type: string
+          default: folkbokföringsadress
+          enum:
+            - folkbokföringsadress
+            - vistelseadress
+            - fakturaadress
+        streetAddress:
+          type: string
+          description: Gatuadress.
+        locality:
+          type: string
+          description: Postort.
+        postalCode:
+          type: string
+          description: Postadress.
+        country:
+          type: string
+          description: Land.
+    photos:
+      type: array
+      description: Bild på personen.
+      items:
+        photo:
+          type: string
+          format: uri
+          description: En länk där bildfilen kan hämtas.
+        type:
+          type: string
+          description: Typ av bild.
+          enum:
+            - photo
+            - thumbnail

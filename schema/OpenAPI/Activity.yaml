@@ -1,0 +1,163 @@
+Activity:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+
+    meta:
+      $ref: "common.yaml#/Meta"
+
+    displayName:
+      type: string
+      description: Namn på aktiviteten, i presentationssyfte.
+
+    calendarEventsRequired:
+      type: boolean
+      description: >
+        Detta ska uttrycka huruvida aktiviteten ska vara
+        underlag för generering av lektion eller inte.
+
+    startDate:
+      type: string
+      format: date
+      description: >
+        Datum för när aktiviteten startar (ISO8601 format,
+        t.ex. "2016-10-15")
+
+    endDate:
+      type: string
+      format: date
+      description: >
+        Datum för när aktiviteten slutar (ISO8601 format,
+        t.ex. "2016-10-15".
+
+    activityType:
+      type: string
+      enum:
+        - Undervisning
+        - Elevaktivitet
+        - Läraraktivitet
+        - Mentorskap
+        - Omsorg
+        - Övrigt
+      description: Beskriver vilken typ av aktivitet som avses.
+
+    comment:
+      type: string
+      description: En text med kompletterande information.
+
+    minutesPlanned:
+      type: integer
+      description: Den totalt planerade tiden i minuter.
+
+    groups:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+          displayName:
+            type: string
+          startDate:
+            type: string
+            format: date
+          endDate:
+            type: string
+            format: date
+      description: De grupper som är kopplade till aktiviteten.
+
+    teachers:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+            description: Identifierare för lärarens anställning (Duty).
+          displayName:
+            type: string
+            description: Lärarens namn.
+            readOnly: true
+          startDate:
+            type: string
+            format: date
+            description: Datum för när lärarens deltagande i aktiviteten startar (ISO8601 format, t.ex. "2016-10-15").
+          endDate:
+            type: string
+            format: date
+            description: Datum för när lärarens deltagande i aktiviteten slutar (ISO8601 format, t.ex. "2016-10-15").
+          minutesPlanned:
+            type: integer
+            description: Det antal minuter läraren är kopplad till aktiviteten
+      description: De lärare (Duty-objekt) som är kopplade till aktiviteten.
+
+    students:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            format: uuid
+            description: Identifierare för personen.
+          displayName:
+            type: string
+            description: Ett läsbart namn för att identifiera personen i visningssyfte. READ-ONLY.
+            readOnly: true
+          startDate:
+            type: string
+            format: date
+            description: Datum för när lärarens deltagande i aktiviteten startar (ISO8601 format, t.ex. "2016-10-15").
+          endDate:
+            type: string
+            format: date
+            description: Datum för när lärarens deltagande i aktiviteten slutar (ISO8601 format, t.ex. "2016-10-15").
+        description: De elever som är kopplade till aktiviteten.
+
+    syllabus:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        displayName:
+          type: string
+          description: Beskrivning av ämnesplanen
+          readOnly: true
+      description: Det kurs- eller ämnesplan som aktiviteten är knuten till.
+
+    owner:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        displayName:
+          type: string
+          description: Ett läsbart namn för att identifiera skolenheten. READ-ONLY.
+          readOnly: true
+      description: Den skolenhet som aktiviteten är knuten till.
+
+    parentActivity:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Identifierare för den ursprungliga aktiviteten.
+        displayName:
+          type: string
+          description: Ett läsbart namn för att identifiera aktiviteten. READ-ONLY.
+          readOnly: true
+      description: Möjlighet att koppla aktiviteten till en ursprunglig "föräldraaktivitet"
+
+  required:
+    - id
+    - displayName
+    - calendarEventsRequired
+    - startDate
+    - endDate

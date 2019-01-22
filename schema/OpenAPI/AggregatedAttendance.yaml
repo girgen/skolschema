@@ -1,0 +1,52 @@
+AggregatedAttendance:
+  type: object
+  properties:
+    startDate:
+      type: string
+      format: date
+      description: Startdatum för aggregerad närvaro (ISO8601 format, e.g. "2016-10-15")
+
+    endDate:
+      type: string
+      format: date
+      description: Slutdatum för aggregerad närvaro (ISO8601 format, t.ex. "2016-10-15")
+
+    attendanceSum:
+      type: integer
+      description: Summerad tid i minuter för elevens närvaro på kalenderhändelser
+
+    validAbsenceSum:
+      type: integer
+      description: Summerad tid i minuter för elevens giltiga frånvaro på kalenderhändelser
+
+    invalidAbsenceSum:
+      type: integer
+      description: Summerad tid i minuter för elevens ogiltiga frånvaro på kalenderhändelser
+
+    otherAttendanceSum:
+      type: integer
+      description: Summerad tid i minuter för elevens deltagande i annan skolaktivitet, såsom elevråd, i stället för deltagande på kalenderhändelser
+
+    reportedSum:
+      type: integer
+      description: Summan av den rapporterade tiden för elevens kalenderhändelser
+
+    offeredSum:
+      type: integer
+      description: Summan av den erbjudna tiden minuter för elevens kalenderhändelser
+
+    activity:
+      allOf:
+      - $ref: "common.yaml#/ObjectReference"
+      - description: Referens till en aktivitet
+
+    student:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - description: Referens till en person
+
+  required:
+    - startDate
+    - endDate
+    - activity
+    - student

@@ -1,0 +1,30 @@
+för samtliga objekt som har start- och slutdatum så ska alltid alla nuvarande och framtida objekt skickas med om ingen annan filtrering anges
+
+/person/id/adfasdfas-asdfasdf-asdf?expand=duty,enrolment,relations
+/person/eppn/girgen@pingpong.se
+/person/pnr/200001011234
+- söka på eppn, id eller pnr
+- söka på duty/id, enrolment/id eller relations/pnr eller relations/id
+
+filtrera på datum (aktivt nu och framtid per default?)
+
+/persons?id=["asdfasdfas-asdfasdf-asdf","asdfasdvfasdfsaf"]
+
+/persons?id=["asdfasdfas-asdfasdf-asdf","asdfasdvfasdfsaf"]&pnr=["200112120122","201212120123"]
+
+OCH gäller i detta fall.
+
+/persons?pnr=["201001011234","200912311000"]
+
+svar 200: [] om inga finns.
+
+svar 200: [ {
+	"givenName": ...
+},
+           {
+    "givenName": ...
+}]
+
+
+{ "id": "sdfgasdfsaf",
+  "givenName": "Palle" }

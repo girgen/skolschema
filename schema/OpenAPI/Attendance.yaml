@@ -1,0 +1,43 @@
+Attendance:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett UUID för närvaron.
+    meta:
+      $ref: 'common.yaml#/Meta'
+    isReported:
+      type: boolean
+      description: Anger om lektionen är explicit rapporterad.
+    attendanceMinutes:
+      type: integer
+      description: Tid i minuter för elevens närvaro på kalenderhändelsen.
+    validAbsenceMinutes:
+      type: integer
+      description: Tid i minuter för elevens giltiga frånvaro på kalenderhändelsen.
+    invalidAbsenceMinutes:
+      type: integer
+      description: Tid i minuter för elevens ogiltiga frånvaro på kalenderhändelsen.
+    otherAttendanceMinutes:
+      type: integer
+      description: Tid i  minuter för elevens deltagande i annan skolaktivitet, såsom elevråd, i stället för deltagande på kalenderhändelsen.
+    absenceReason:
+      type: string
+      description: Angiven anledning till frånvaro.
+    reportedTimestamp:
+      type: string
+      format: date-time
+      description: Tidpunkt för rapportering av kalenderhändelsen.
+    calendarEvent:
+      type: string
+      format: uuid
+    student:
+      allOf:
+        - $ref: 'common.yaml#/ObjectReference'
+        - description: Referens till person som närvaron gäller.
+  required:
+    - isReported
+    - calendarEvent
+    - student
+    - meta

@@ -1,0 +1,60 @@
+CalendarEvent:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett UUID för kalenderhändelsen.
+    meta:
+      $ref: "common.yaml#/Meta"
+    startTime:
+      type: string
+      format: date-time
+      description: Kalenderhändelsens starttid med datum och tid (ISO8601 format tex "2015-12-12T10:00:00").
+    endTime:
+      type: boolean
+      format: date-time
+      description: Kalenderhändelsens sluttid med datum och tid (ISO8601 format tex "2015-12-12T10:00:00").
+    cancelled:
+      type: boolean
+      description: Inställd används för att ange att en planerad kalenderhändelse inte ska äga rum till följd av en avbokning eller annan tillfällig avvikelse. Förvalt värde är false.
+    comment:
+      type: string
+      description: En text med kompletterande information.
+    teachingLengthStudent:
+      type: integer
+      description: Faktisk undervisningstid, i minuter, för studenter. Tiden kan vara kortare eller längre än tiden för kalenderhändelsen till exempel då en rast ingår i tiden.
+    teachingLengthTeacher:
+      type: integer
+      description: Faktisk undervisningstid, i minuter, för lärare. Lärartiden kan vara kortare eller längre än tiden för kalenderhändelsen.
+    activity:
+      allOf:
+        - $ref: 'common.yaml#/ObjectReference'
+        - description: Referens till en aktivitet
+    studentExceptions:
+      type: array
+      items:
+        allOf:
+          - $ref: 'common.yaml#/ObjectReference'
+          - description: Anger avvikelser beträffande studentens deltagande, tid och längd för ett enstaka kalendertillfälle.
+            properties:
+              participates:
+                type: boolean
+                description: Används för att ange om en grupp deltar på ett visst kalendertillfälle.
+              startTime:
+                type: string
+                format: date-time
+                description: Starttid för undantaget (ISO8601 format tex "2015-12-12T10:30:00").
+              endTime:
+                type: boolean
+                format: date-time
+                description: Sluttid för undantaget (ISO8601 format tex "2015-12-12T11:00:00").
+              teachingLength:
+                type: integer
+                description: Undervisningstid i minuter för gruppen. Om den ej anges så gäller det som är angivet i, i första hand, CalendarEvent, och annars i Activity.
+            required:
+              - participates
+  required:
+    - isReported
+    - calendarEvent
+    - student

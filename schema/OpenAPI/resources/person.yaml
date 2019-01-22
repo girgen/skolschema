@@ -1,0 +1,34 @@
+post:
+  tags:
+    - person
+  summary: Create person
+  description: This can only be done by the logged in person.
+  operationId: createPerson
+  responses:
+    default:
+      description: successful operation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '/Users/girgen/repos/skolschema/schema/OpenAPI/Person.yaml'
+    description: Created person object
+    required: true
+put:
+  tags:
+    - person
+  summary: Updated person
+  description: This can only be done by the logged in person.
+  operationId: updatePerson
+  responses:
+    '400':
+      description: Invalid person supplied
+    '404':
+      description: Person not found
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '/Users/girgen/repos/skolschema/schema/OpenAPI/Person.yaml'
+    description: Updated person object
+    required: true
