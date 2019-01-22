@@ -123,6 +123,8 @@ components:
       $ref: 'LeaveOfAbsence.yaml#/LeaveOfAbsence'
     Organisation:
       $ref: 'Organisation.yaml#/Organisation'
+    Person:
+      $ref: 'Person.yaml#/Person'
     Programme:
       $ref: 'Programme.yaml#/Programme'
     Syllabus:
