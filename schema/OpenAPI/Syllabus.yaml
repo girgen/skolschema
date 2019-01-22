@@ -1,0 +1,82 @@
+Syllabus:
+  description: Används för att referera till en specifik kurskod eller ett ämne med information om årskurs och skolform som avses med undervisningen. För officiella ämnen/kurser anges läroplan.
+  type: object
+  properties:
+    schoolType:
+      type: string
+      description: Skolform där kursen eller ämnet ges. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a.
+      enum:
+        - FS
+        - FSK
+        - FTH
+        - GR
+        - GRS
+        - SP
+        - SAM
+        - GY
+        - GYS
+        - VUX
+        - SUV
+        - YH
+        - FHS
+        - HS
+        - AU
+    subjectCode:
+      type: string
+      description: En kod för ämnet som används bland annat i lärarlegitimation, till exempel GRGRMAT01. För ämnen som inte definieras av skolverket används valfri kod.
+    subjectName:
+      type: string
+      description: Ämnets namn, exempelvis Matematik.
+    subjectDesignation:
+      type: string
+      description: Ämnets beteckning, exempelvis MA, MLARA.
+    courseCode:
+      type: string
+      description: Kurskod enligt Skolverket, om det är en officiell kurs, eller annars efter eget val.
+    courseName:
+      type: string
+      description: Kursens namn, exempelvis Matematik 1a.
+    startSchoolYear:
+      type: integer
+      description: Start för årskursintervall för undervisningens innehåll.
+      maximum: 10
+      minimum: 0
+    endSchoolYear:
+      type: integer
+      description: Slut för årskursintervall för undervisningens innehåll.
+      maximum: 10
+      minimum: 0
+    points:
+      type: integer
+      description: Antalet poäng för en specifik kurs. Exempelvis 100 poäng.
+    curriculum:
+      type: string
+      description: Referens till Skolverkets läroplan om det är en officiell kurs eller ett officiellt ämne. Exempelvis GY2011, LGR11.
+      enum:
+        - Lpfö98
+        - Lgr80
+        - Lpo94
+        - Lgr11
+        - Lgrsär11
+        - Lspec11
+        - Lsam11
+        - Lgy70
+        - Lpf94
+        - Gy11
+        - Gysär13
+        - Lvux1
+    languageCode:
+      type: string
+      description: Språkkod för moderna språk och modersmål. Enligt ISO 639-3.
+    specialisationCourseContent:
+      type: string
+      description: Beskrivning av innehållet i en specialiseringskurs på gymnasiet.
+    official:
+      type: boolean
+      description: Attributet anger om ämnet är ett officiellt ämne från Skolverket eller annan myndighet. Icke officiella ämnen kan skapas för andra ändamål än undervisning.
+  required:
+    - schoolType
+    - subjectCode
+    - subjectName
+    - official
+

@@ -1,0 +1,61 @@
+SchoolUnit:
+  type: object
+  description: >
+    En Skolenhet, i förekommande fall med skolenhetskod
+    enligt Skolenhetsregistret.
+  properties:
+    organisation:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - description: Organisationstillhörighet.
+    schoolUnitGroup:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - description: >
+            Möjlighet att ange vilken skolenhetsgrupp
+            som skolenheten tillhör.
+    displayName:
+      type: string
+      description: Namn för skolenheten.
+    schoolUnitCode:
+      type: string
+      description: >
+        Skolenhetskod. Identifierare för skolenheten enligt Skolverket.
+        Används för de skolformer där skolverket bestämmer en
+        skolenhetskod för varje enhet.
+    schoolTypes:
+      type: array
+      items:
+        type: string
+        enum:
+          - FS
+          - FSK
+          - FTH
+          - GR
+          - GRS
+          - SP
+          - SAM
+          - GY
+          - GYS
+          - VUX
+          - SUV
+          - YH
+          - FHS
+          - HS
+          - AU
+    municipalityCode:
+      type: string
+      description: >
+        Län och kommunkod för den kommun där skolan är belägen.
+    startDate:
+      type: string
+      format: date
+      description: >
+        Startdatum för skolenhetens giltighetstid,
+        från och med (ISO8601 format, e.g. "1976-01-01")
+    endDate:
+      type: string
+      format: date
+      description: >
+        Slutdatum för skolenhetens giltighetstid,
+        från och med (ISO8601 format, e.g. "2016-10-15")

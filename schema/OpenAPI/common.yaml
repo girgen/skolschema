@@ -22,3 +22,44 @@ Meta:
     lastModified:
       type: string
       format: date-time
+
+SchoolUnitReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - description: Referens till skolenhet
+
+ActivityReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - description: Referens till en aktivitet
+
+PersonReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - description: Referens till en person
+
+StudentGroupReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - type: object
+      description: Referens till en elevgrupp
+
+SyllabusReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - type: object
+
+DateConstrainedObjectReference:
+  allOf:
+    - $ref: "#/ObjectReference"
+    - type: object
+      required:
+        - startDate
+        - endDate
+      properties:
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date

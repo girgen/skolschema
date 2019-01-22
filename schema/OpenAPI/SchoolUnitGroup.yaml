@@ -1,0 +1,18 @@
+SchoolUnitGroup:
+  type: object
+  description: >
+    En samling av en eller flera skolenheter som delar resurser
+    och byggnader som omfattar en eller skolenheter.
+  properties:
+    displayName:
+      type: string
+      description: Namn på samlingen.
+    schoolUnits:
+      type: array
+      description: >
+        En lista på skolenhetsgruppens ingående skolenheter.
+        Dessa visas vid läsning som redundant information,
+        och är READ-ONLY.
+      items:
+        $ref: "common.yaml#/ObjectReference"
+

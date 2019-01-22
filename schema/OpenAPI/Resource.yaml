@@ -1,0 +1,14 @@
+Resource:
+  type: object
+  properties:
+    displayName:
+      type: string
+      description: Namn på resursen.
+    description:
+      type: string
+      description: Beskrivning av resursen.
+    owner:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - description: >
+            Möjlighet att ange vilken skolenhetsgrupp resursen tillhör.

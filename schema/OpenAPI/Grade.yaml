@@ -1,0 +1,139 @@
+Grade:
+  type: object
+  description: Avser ett registrerat betyg för en elev i ett ämne eller en kurs.
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: ID för betyget.
+    student:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: Referens till eleven.
+    schoolUnit:
+      allOf:
+        - $ref: "common.yaml#/SchoolUnitReference"
+        - description: Skolenheten där undervisningen genomförts.
+    registeredBy:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: Den person som registrerade betyget.
+    gradingTeacher:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: Den behöriga lärare som är ansvarig för betyget.
+    studentGroup:
+      allOf:
+        - $ref: "common.yaml#/StudentGroupReference"
+        - description: Anger vilken elevgrupp eleven ingick i.
+    registeredDate:
+      type: string
+      format: date
+      description: Det datum då betyget registrerades.
+    gradeValue:
+      type: string
+      description: Anger vilket betyg eleven har tilldelats.
+    finalGrade:
+      type: boolean
+      description: Anger om det registrerade betyget är ett slutbetyg för ämnet eller kursen.
+    trial:
+      type: boolean
+      description: Anger om betyget satts vid en prövning. Förvalt värde är "false".
+    schoolType:
+      type: string
+      description: Skolform där kursen eller ämnet ges. Förklaring till Skolverkets kodsystem finns på deras webbplats. Exempelvis MATMAT01a.
+      enum:
+        - FS
+        - FSK
+        - FTH
+        - GR
+        - GRS
+        - SP
+        - SAM
+        - GY
+        - GYS
+        - VUX
+        - SUV
+        - YH
+        - FHS
+        - HS
+        - AU
+    subjectCode:
+      type: string
+      description: Ämneskod enligt Skolverket, om det är ett officellt ämne eller en officiell kurs, eller annars efter eget val.
+    subjectName:
+      type: string
+      description: Ämnets namn, exempelvis Matematik.
+    courseCode:
+      type: string
+      description: Kurskod enligt Skolverket, om det är en officiell kurs, eller annars efter eget val.
+    courseName:
+      type: string
+      description: Kursens namn, exempelvis Matematik A.
+    points:
+      type: integer
+      description: Antalet poäng för en specifik kurs. Exempelvis 100 poäng. Detta värde krävs för gymnasiekurser.
+    correctionType:
+      type: string
+      description: Ändringstyp för betyget, om det är ändrat.
+      enum:
+        - Ändring
+        - Rättelse
+    converted:
+      type: boolean
+      default: false
+      description: Anger om betyget är omvandlat. Förvalt värde är "false".
+    diplomaProject:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Titel på gymnasiearbete.
+        description:
+          type: string
+          description: Beskrivning av gymnasiearbete.
+        titleEngish:
+          type: string
+          description: Eventuell engelsk titel på gymnasiearbete.
+        descriptionEnglish:
+          type: string
+          description: Eventuell engelsk beskrivning av gymnasiearbete.
+      required:
+        - title
+        - description
+    adaptedStudyPlan:
+      type: string
+      description: Om en specialinriktad ämnesplan (GY) eller anpassad studiegång (GR) har använts för kursen så beskrivs här på vilket sätt studiegången anpassats.
+    remark:
+      type: string
+      description: Andra anmärkningar för betygsraden.
+    schoolYear:
+      type: string
+      description: Elevens årskurs när betyget sattes, exempelvis 9. Endast applicerbart för obligatoriska skolformer.
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+    semester:
+      type: string
+      description: Om betyget avser höst- eller vårtermin.
+      enum:
+        - HT
+        - VT
+    curriculum:
+      type: string
+      description: |
+        Referens till Skolverkets läroplan om det är en officiell
+        kurs eller ett officiellt ämne, annars valfritt.
+        Exempelvis GY2011, LGR11.
+    specialisationSyllabusContent:
+      type: string
+      description: Beskrivning av ett specialiseringskurs innehåll på gymnasiet.

@@ -1,0 +1,13 @@
+Organisation:
+  type: object
+  required:
+    - displayName
+  properties:
+    displayName:
+      type: string
+      description: Namn på organisationen
+    parentOrganisation:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - description: Identifierare för en eventellt överliggande organisation.
+  description: En skolhuvudman eller annan slags organisatorisk enhet.

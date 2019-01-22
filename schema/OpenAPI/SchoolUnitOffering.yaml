@@ -1,0 +1,62 @@
+SchoolUnitOffering:
+  type: object
+  description: Ett utbud av kurser som av en skola.
+  properties:
+    offeredAt:
+      $ref: "common.yaml#/ObjectReference"
+    offeredSyllabus:
+      allOf:
+        - $ref: "common.yaml#/ObjectReference"
+        - type: object
+          properties:
+            startDate:
+              type: string
+              format: date
+              description: >
+                Startdatum för när undervisningen börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att det är
+                odefinierat när kursen började ges vid skolan.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            endDate:
+              type: string
+              format: date
+              description: >
+                Slutdatum för när undervisningen börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att kursen
+                ges aktivt just nu och det finns inga beslut att avsluta
+                erbjudandet. Ett angivet datum innebär att kursen inte ges
+                vid skolan efter det datumet. Anges i ISO8601 format,
+                exempelvis "2016-10-15".
+            displayName:
+              type: string
+              readOnly: true
+              description: >
+                Ett läsbart namn för att identifiera kursen. READ-ONLY.
+    programmes:
+      allOf:
+        - description: Program som ges av skolan.
+        - $ref: "common.yaml#/ObjectReference"
+        - properties:
+            startDate:
+              type: string
+              format: date
+              description: >
+                Startdatum för när programmet börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att det
+                är odefinierat när kursen började ges vid skolan.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            endDate:
+              type: string
+              format: date
+              description: >
+                Slutdatum för när programmet börjar erbjudas vid skolan,
+                i förekommande fall. Kan utelämnas vilket innebär att
+                kursen ges aktivt just nu och det finns inga beslut att
+                avsluta erbjudandet. Ett angivet datum innebär att
+                kursen inte ges vid skolan efter det datumet.
+                Anges i ISO8601 format, exempelvis "2016-10-15".
+            displayName:
+              type: string
+              readOnly: true
+              description: >
+                Ett läsbart namn för att identifiera kursen. READ-ONLY.

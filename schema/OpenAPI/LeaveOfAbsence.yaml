@@ -1,0 +1,41 @@
+LeaveOfAbsence:
+  type: object
+  properties:
+    ## id, hur ska vi hantera det?
+    id:
+      type: string
+      format: uuid
+      readOnly: true
+    startTime:
+      type: string
+      format: date-time
+      description: Starttid för den anmälda frånvaron.
+    endTime:
+      type: string
+      format: date-time
+      description: Sluttid för den anmälda frånvaron.
+    type:
+      type: string
+      description: Anger om det rör beviljad ledighet eller frånvaro anmäld av vårdnadshavare.
+      enum:
+        - Ledighet
+        - Anmälan
+    student:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: Referens till eleven.
+    schoolUnit:
+      allOf:
+        - $ref: "common.yaml#/SchoolUnitReference"
+        - description: Den skolenhet som den anmälda frånvaron avser.
+    registeredBy:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: |
+            Referens till den person som registrerat den anmälda frånvaron.
+  required:
+    - id
+    - startTime
+    - endTime
+    - type
+    - student

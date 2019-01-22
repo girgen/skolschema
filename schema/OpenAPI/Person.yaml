@@ -10,6 +10,8 @@ Person:
         således är det ett enda namespace för de gemensamma ID:na.
         Objektidentifikatorn är den nyckel som skall vara persistent
         mellan olika processer (enl figur 1).
+    meta:
+      $ref: "common.yaml#/Meta"
     eduPersonPrincipalName:
       type: string
       description: >

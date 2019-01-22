@@ -1,0 +1,60 @@
+ChildCareSchedule:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+      description: Ett ID för schemat.
+    meta:
+      $ref: "common.yaml#/Meta"
+    temporary:
+      type: boolean
+      description: Anger om detta är ett undantag som gäller istället för normalschemat, oftast under en begränsad tid.
+    startDate:
+      type: string
+      format: date
+      description: Startdatum för schemat (ISO8601 format, t.ex. "2016-10-15").
+    endDate:
+      type: string
+      format: date
+      description: Startdatum för schemat (ISO8601 format, t.ex. "2016-10-15").
+    numberOfWeeks:
+      type: integer
+      description: Hur många veckor schemat gäller för innan det "börjar om".
+    request:
+      type: boolean
+      description: >
+        Beskriver om detta är en begäran som ännu ej är godkänd.
+        Förvalt är false.
+    scheduleDays:
+      type: array
+      items:
+        type: object
+        properties:
+          weekOffset:
+            type: integer
+            description: >
+              Anger vecka för alternerande schema, exempelvis 0, 1, eller 2
+              beroende på hur många olika veckor som är specificerade i schemat.
+          dayOfWeek:
+            type: integer
+            minimum: 1
+            maximum: 7
+            description: >
+              Anger dag i veckan, enligt ISO 8601. 1 = måndag, 7 = söndag.
+          startTime:
+            type: string
+            format: "^[0-9]{2}:[0-9]{2}$"
+            description: Starttid på dagen för schemat (ISO8601 format, t.ex. "08:30").
+          endTime:
+            type: string
+            format: "^[0-9]{2}:[0-9]{2}$"
+            description: Sluttid på dagen för schemat (ISO8601 format, t.ex. "16:30").
+    child:
+      allOf:
+        - $ref: "common.yaml#/PersonReference"
+        - description: Referens till barnet
+    group:
+      allOf:
+        - $ref: "common.yaml#/StudentGroupReference"
+        - description: Den avdelning eller grupp på förskoleenheten som schemat avser.

@@ -18,7 +18,7 @@ tags:
   - name: person
     description: Operations about person
 paths:
-  /person:
+  /persons:
     post:
       tags:
         - person
@@ -53,28 +53,6 @@ paths:
               $ref: 'Person.yaml#/Person'
         description: Updated person object
         required: true
-  /persons/:
-    get:
-      tags:
-        - person
-      summary: Get persons
-      operationId: getAllPersons
-      parameters:
-        - $ref: '#/components/parameters/FilterParam'
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: 'schemas.yaml#/Person'
-            application/xml:
-              schema:
-                $ref: 'schemas.yaml#/Person'
-        '400':
-          description: Invalid personname supplied
-        '404':
-          description: Person not found
   /person/{id}:
     get:
       tags:
@@ -131,12 +109,34 @@ components:
       $ref: 'AggregatedAttendance.yaml#/AggregatedAttendance'
     Attenance:
       $ref: 'Attendance.yaml#/Attendance'
+    AttendanceEvent:
+      $ref: 'AttendanceEvent.yaml#/AttendanceEvent'
     CalendarEvent:
       $ref: 'CalendarEvent.yaml#/CalendarEvent'
-#    CalendarEventResponse:
-#      $ref: 'CalendarEvent.yaml#/CalendarEventResponse'
-#    ChildAttendanceEvent:
-#      $ref: 'ChildCareAttendance.yaml'
+    ChildCareSchedule:
+      $ref: 'ChildCareSchedule.yaml#/ChildCareSchedule'
+    Duty:
+      $ref: 'Duty.yaml#/Duty'
+    Grade:
+      $ref: 'Grade.yaml#/Grade'
+    LeaveOfAbsence:
+      $ref: 'LeaveOfAbsence.yaml#/LeaveOfAbsence'
+    Organisation:
+      $ref: 'Organisation.yaml#/Organisation'
+    Programme:
+      $ref: 'Programme.yaml#/Programme'
+    Syllabus:
+      $ref: 'Syllabus.yaml#/Syllabus'
+    Resource:
+      $ref: 'Resource.yaml#/Resource'
+    Room:
+      $ref: 'Room.yaml#/Room'
+    SchoolUnit:
+      $ref: 'SchoolUnit.yaml#/SchoolUnit'
+    SchoolUnitGroup:
+      $ref: 'SchoolUnitGroup.yaml#/SchoolUnitGroup'
+    SchoolUnitOffering:
+      $ref: 'SchoolUnitOffering.yaml#/SchoolUnitOffering'
   parameters:
     FilterParam:
       in: query
