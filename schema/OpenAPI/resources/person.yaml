@@ -11,7 +11,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '/Users/girgen/repos/skolschema/schema/OpenAPI/Person.yaml'
+          $ref: "../Person.yaml#/Person"
     description: Created person object
     required: true
 put:
@@ -21,14 +21,14 @@ put:
   description: This can only be done by the logged in person.
   operationId: updatePerson
   responses:
-    '400':
+    "400":
       description: Invalid person supplied
-    '404':
+    "404":
       description: Person not found
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '/Users/girgen/repos/skolschema/schema/OpenAPI/Person.yaml'
+          $ref: "../Person.yaml#/Person"
     description: Updated person object
     required: true

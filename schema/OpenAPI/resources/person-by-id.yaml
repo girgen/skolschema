@@ -1,0 +1,69 @@
+get:
+  tags:
+    - person
+  summary: Get person by person name
+  operationId: getPersonByName
+  parameters:
+    - name: id
+      in: path
+      description: The name that needs to be fetched. Use person1 for testing.
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: "../Person.yaml#/Person"
+        application/xml:
+          schema:
+            $ref: "../Person.yaml#/Person"
+    "400":
+      description: Invalid personname supplied
+    "404":
+      description: Person not found
+delete:
+  tags:
+    - person
+  summary: Delete person
+  description: This can only be done by the logged in person.
+  operationId: deletePerson
+  parameters:
+    - name: id
+      in: path
+      description: The person that needs to be deleted
+      required: true
+      schema:
+        type: string
+  responses:
+    "400":
+      description: Invalid personname supplied
+    "404":
+      description: Person not found
+patch:
+  tags:
+    - person
+  summary: Updated person
+  description: This can only be done by the logged in person.
+  operationId: updatePerson
+  parameters:
+    - name: id
+      in: path
+      description: The person that needs to be deleted
+      required: true
+      schema:
+        type: string
+  responses:
+    "400":
+      description: Invalid person supplied
+    "404":
+      description: Person not found
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../Person.yaml#/Person"
+    description: Updated person object
+    required: true

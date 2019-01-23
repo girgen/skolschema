@@ -1,6 +1,20 @@
 för samtliga objekt som har start- och slutdatum så ska alltid alla nuvarande och framtida objekt skickas med om ingen annan filtrering anges
 
 /person/id/adfasdfas-asdfasdf-asdf?expand=duty,enrolment,relations
+/persons/?eppn=girgen@pingpong.se&pnr=200001011234
+/persons/?pnr=200001011234
+
+meta.created.after=
+meta.created.before=
+
+meta.modified.after=
+meta.modified.before=
+
+/persons/?duty.dutyRole=teacher
+/persons/duty?dutyRole=teacher
+
+/activity/
+
 /person/eppn/girgen@pingpong.se
 /person/pnr/200001011234
 - söka på eppn, id eller pnr

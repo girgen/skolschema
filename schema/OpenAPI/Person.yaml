@@ -5,8 +5,7 @@ Person:
       type: string
       format: uuid
       description: >
-        I SS12000 är det ett krav att ett objekt har samma
-        överförings-ID mellan samtliga ingående system och
+        Ett objekt ska ha samma överförings-ID mellan samtliga ingående system och
         således är det ett enda namespace för de gemensamma ID:na.
         Objektidentifikatorn är den nyckel som skall vara persistent
         mellan olika processer (enl figur 1).
@@ -50,7 +49,6 @@ Person:
             enligt ISO 3166-1 alpha-2.
       required:
         - value
-
     givenName:
       type: string
       description: Förnamn.
@@ -62,7 +60,7 @@ Person:
       description: Efternamn.
     emails:
       type: array
-      description: epostadress
+      description: En lista med personens epostadresser
       items:
         type: object
         properties:
@@ -137,3 +135,13 @@ Person:
             enum:
               - photo
               - thumbnail
+    enrolments:
+      type: array
+      description: En lista med inskrivningar för personen
+      items:
+        $ref: "Enrolment.yaml#/Enrolment"
+
+Persons:
+  type: array
+  items:
+    $ref: "#/Person"
