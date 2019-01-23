@@ -23,7 +23,7 @@
   ],
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
-    "securityMarking": "false",
+    "securityMarking": false,
     "userRelations": [
       {
         "value": "26118915-6090-4610-aaaa-49d8ca9f808d",
