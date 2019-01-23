@@ -8,6 +8,9 @@ Standarden baseras på en öppen standard för informationsutbyte från Internet
 
 I schema finns SCIM-schema för de tillägg som gjorts. I mappen exempel finns exempel för samtliga objekt.
 
-En del mindre justeringar har gjorts efter releasen av standarden. Ändringar i exempel dokumenteras bara via _commit-loggen_. Errata för schemat listas här:
+En del mindre justeringar har gjorts efter releasen av standarden. Ändringar i exempel dokumenteras bara via _commit-loggen_. Errata för standarddokumentet listas **enbart** här.
+
+Errata för schemat och standarddokumentet:
 - **schema/SchoolUnit.json:** lagt till referensen till _organisation_. Det är korrekt i standarddokumentet.
 - **schema/StudentGroup.json:** korrigerat referensen till elever så att read-only-attributet för elevens namn heter "display". Det är korrekt i standarddokumentet.
+- **enrolments:** på en User finns en lista med _"enrolments"_. Det attributet ska stavas med enbart gemener. Se [schemat](https://github.com/girgen/skolschema/blob/f214c070d3ee5ece2819f50e118ec438c20fc3dc/schema/User.json#L113)
