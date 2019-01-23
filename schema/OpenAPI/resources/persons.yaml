@@ -1,0 +1,29 @@
+get:
+  tags:
+    - person
+  summary: Get a list of all persons
+  responses:
+    "200":
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../Person.yaml#/Person"
+post:
+  tags:
+    - person
+  summary: Create person
+  description: This can only be done by the logged in person.
+  operationId: createPerson
+  responses:
+    default:
+      description: successful operation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../Person.yaml#/Person"
+    description: Created person object
+    required: true
