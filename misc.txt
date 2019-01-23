@@ -1,3 +1,9 @@
+Vi behöver dokumentera
+  - hur villkor skall kombineras med "och" och "eller"
+     - För samma parameter gäller eller 
+     - För olika parametrar gäller och
+     - När . notatinen används för att filtrera ett en till mågna relaterad typ så ska vilkoren matchas med "och" för varje underliggande rad.
+
 för samtliga objekt som har start- och slutdatum så ska alltid alla nuvarande och framtida objekt skickas med om ingen annan filtrering anges
 
 /person/id/adfasdfas-asdfasdf-asdf?expand=duty,enrolment,relations

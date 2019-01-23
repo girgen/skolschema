@@ -1,6 +1,6 @@
 get:
   tags:
-    - person
+    - Person
   summary: Get a list of all persons
   parameters:
     - name: norEduPersonNIN
@@ -65,9 +65,11 @@ get:
             $ref: "../Person.yaml#/Persons"
 post:
   tags:
-    - person
-  summary: Create person
-  description: This can only be done by the logged in person.
+    - Person
+  summary: Skapar eller uppdaterar en person.
+  description: >
+    Anges ID i requestBody så ska ett eventuellt existerande 
+    person objekt uppdateras, annars ska objektet skapas.
   operationId: createPerson
   responses:
     default:

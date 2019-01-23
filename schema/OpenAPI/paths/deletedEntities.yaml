@@ -1,0 +1,128 @@
+get:
+  tags:
+    - Verktyg
+  summary: Get a list of events regarding the entities handled by the service.
+  parameters:
+    - name: after
+      in: query
+      description: Get events that occured after the specified timestamp
+      schema:
+        type: string
+        format: date-time
+    - name: entity
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - Activity
+            - AggregatedAttendance
+            - AttendanceEvent
+            - CalendarEvent
+            - ChildCareSchedule
+            - Duty
+            - Grade
+            - LeaveOfAbsence
+            - Organisation
+            - Person
+            - Programme
+            - Resource
+            - Room
+            - SchoolUnit
+            - SchoolUnitGroup
+            - SchoolUnitOffering
+            - Syllabus
+  responses:
+    "200":
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              Activity:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              AggregatedAttendance:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              AttendanceEvent:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              CalendarEvent:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              ChildCareSchedule:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Duty:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Grade:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              LeaveOfAbsence:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Organisation:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Person:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Programme:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Resource:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Room:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              SchoolUnit:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              SchoolUnitGroup:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              SchoolUnitOffering:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+              Syllabus:
+                type: array
+                items:
+                  type: string
+                  format: uuid
