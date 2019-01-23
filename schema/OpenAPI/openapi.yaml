@@ -20,8 +20,6 @@ tags:
 paths:
   /persons:
     $ref: resources/persons.yaml
-  /persons/search:
-    $ref: resources/persons-search.yaml
   /person/{id}:
     $ref: resources/person-by-id.yaml
 externalDocs:

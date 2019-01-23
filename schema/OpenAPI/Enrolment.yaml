@@ -1,0 +1,41 @@
+Enrolment:
+  type: object
+  properties:
+    enrolledAt:
+      type: string
+      format: uuid
+      description: Identifierare för skolenheten där eleven är inskriven.
+    schoolYear:
+      type: integer
+      description: "Värdet årskurs anger det år efter skolstarten för vilket en student följer undervisningen."
+      minimum: 0
+      maximum: 10
+    schoolType:
+      type: string
+      description: Skolform, exempelvis GR, GY.
+      enum:
+        - FS
+        - FSK
+        - FTH
+        - GRS
+        - SP
+        - SAM
+        - GY
+        - GYS
+        - VUX
+        - SUV
+        - YH
+        - FHS
+        - HS
+        - AU
+    startDate:
+      type: string
+      format: date
+      description: "Startdatum för inskrivningen."
+    endDate:
+      type: string
+      format: date
+      description: "Slutdatum för inskrivningen."
+    educationCode:
+      type: string
+      description: "Studievägskod för den aktuella inskrivningen."
