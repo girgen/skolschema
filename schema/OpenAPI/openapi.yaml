@@ -15,13 +15,17 @@ info:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
-  - name: person
+  - name: Person
     description: Operations about person
+  - name: Verktyg
+    description: Methoder för att hantera metadata
 paths:
+  /deletedEntities:
+    $ref: paths/deletedEntities.yaml
   /persons:
-    $ref: resources/persons.yaml
+    $ref: paths/persons.yaml
   /person/{id}:
-    $ref: resources/person-by-id.yaml
+    $ref: paths/person-by-id.yaml
 externalDocs:
   description: Find out more about Swagger
   url: "http://swagger.io"
