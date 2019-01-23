@@ -9,6 +9,7 @@
   "startDate": "1970-01-23",
   "endDate": "2013-06-30",
   "hoursPerYear": 1340,
+  "employmentRole": "Lärare",
   "employedAt": {
     "value": "e9ddadba-f08f-4109-8486-d5c6a331660a"
   },
