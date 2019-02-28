@@ -1,15 +1,17 @@
 get:
   tags:
-    - Person
-  summary: Get a list of all persons
+    - person
+  summary: Hämta en lista med personer.
   parameters:
-    - name: norEduPersonNIN
+    - name: id
+      description: Begränsa urvalet till utpekade person-ID:n.
       in: query
       schema:
         type: array
         items:
           type: string
-    - name: id
+    - name: norEduPersonNIN
+      description: Begränsa urvalet till utpekade personnummer.
       in: query
       schema:
         type: array
@@ -46,16 +48,16 @@ get:
         minimum: 0
         default: 0
       required: false
-      description: The number of items to skip before starting to collect the result set.
+      description: Antal poster, från början av listan, som ska hoppas över innan resultatet börjar presenteras.
     - in: query
       name: limit
       schema:
         type: integer
         minimum: 1
-        maximum: 100
-        default: 20
+        maximum: 1000000
+        default: 1000000
       required: false
-      description: The number of items to return.
+      description: Antal poster som ska visas i resultatet.
   responses:
     "200":
       description: successful operation
