@@ -25,7 +25,7 @@
   "urn:scim:schemas:extension:sis:school:1.0:User": {
     "civicNo": "200710042710",
     "securityMarking": false,
-    "studentMemberships": [
+    "studentGruops": [
       {
         "value": "965cc531-d077-421b-b476-25d1d62f6587",
         "$ref": "/v2/StudentGroups/965cc531-d077-421b-b476-25d1d62f6587",
