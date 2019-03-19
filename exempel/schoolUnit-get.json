@@ -11,8 +11,6 @@
     "GRS"
   ],
   "municipalityCode": "1480",
-  "responsibleBody": "Göteborgs stad",
-  "responsibleBodyType": "Kommun",
   "organisation": {
     "value": "e9e30dba-f08f-4109-8486-d5c6a331660a",
     "$ref": "/v2/Organisations/e9e30dba-f08f-4109-8486-d5c6a331660a",
